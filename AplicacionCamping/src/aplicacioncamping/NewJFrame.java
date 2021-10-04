@@ -54,7 +54,7 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 270, 80));
 
         jLabel1.setText("Camping Party");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 530, 140));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 530, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
