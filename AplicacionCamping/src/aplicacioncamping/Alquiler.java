@@ -42,6 +42,7 @@ public class Alquiler extends javax.swing.JFrame {
         nombreApellidos = new javax.swing.JTextField();
         luzNo = new javax.swing.JRadioButton();
         luzSi = new javax.swing.JRadioButton();
+        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -123,6 +124,7 @@ public class Alquiler extends javax.swing.JFrame {
             }
         });
         getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
+        getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -184,6 +186,7 @@ public class Alquiler extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DNI;
+    private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
