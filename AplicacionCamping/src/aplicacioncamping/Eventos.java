@@ -16,6 +16,8 @@ public class Eventos extends javax.swing.JFrame {
      */
     public Eventos() {
         initComponents();
+        setLocationRelativeTo(null);
+        setSize(1100, 800);
     }
 
     /**
@@ -49,9 +51,11 @@ public class Eventos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btn_continuar = new javax.swing.JButton();
+        btn_atras = new javax.swing.JButton();
 
+        ListadoEventos.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        ListadoEventos.setSize(new java.awt.Dimension(640, 640));
         ListadoEventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -67,14 +71,30 @@ public class Eventos extends javax.swing.JFrame {
         ListadoEventos.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 130, 40));
 
         jButton2.setText("Reserva");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         ListadoEventos.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 160, 50));
 
         jButton3.setText("Cancelación");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         ListadoEventos.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 150, 50));
 
         jButton7.setText("Atras");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         ListadoEventos.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 150, 40));
 
+        ReservaEventos.setSize(new java.awt.Dimension(640, 640));
         ReservaEventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
@@ -90,11 +110,17 @@ public class Eventos extends javax.swing.JFrame {
         ReservaEventos.getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 180, 50));
 
         jButton5.setText("Atras");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         ReservaEventos.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 180, 50));
 
         jLabel4.setText("Eventos disponibles:");
-        ReservaEventos.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 100, 60));
+        ReservaEventos.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 140, 60));
 
+        CancelacionEventos.setSize(new java.awt.Dimension(640, 640));
         CancelacionEventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setText("Eventos reservados:");
@@ -113,28 +139,92 @@ public class Eventos extends javax.swing.JFrame {
         CancelacionEventos.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 160, 40));
 
         jButton9.setText("Atras");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         CancelacionEventos.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 150, 40));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Eventos de Camping Pary");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 260, 70));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 260, 70));
 
         jLabel2.setText("Introduce tu DNI:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 90, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 100, 30));
 
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 130, 30));
+        jTextField1.setToolTipText("");
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 130, 30));
 
-        jButton1.setText("Continuar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 130, 40));
+        btn_continuar.setText("Continuar");
+        btn_continuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_continuarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 130, 40));
 
-        jButton6.setText("Atras");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 130, 40));
+        btn_atras.setText("Atras");
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 130, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btn_continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_continuarActionPerformed
+       Eventos eventos = new Eventos();
+       this.setVisible(false);
+       eventos.ListadoEventos.setVisible(true);
+    }//GEN-LAST:event_btn_continuarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Eventos eventos = new Eventos();
+        this.ListadoEventos.setVisible(false);
+        eventos.ReservaEventos.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+        this.setVisible(false);
+        Principal prin = new Principal();
+        prin.setVisible(true);
+        
+    }//GEN-LAST:event_btn_atrasActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        this.ListadoEventos.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.ListadoEventos.setVisible(false);
+        this.CancelacionEventos.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        this.ReservaEventos.setVisible(false);
+        this.ListadoEventos.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        this.CancelacionEventos.setVisible(false);
+        this.ListadoEventos.setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,12 +265,12 @@ public class Eventos extends javax.swing.JFrame {
     private javax.swing.JFrame CancelacionEventos;
     private javax.swing.JFrame ListadoEventos;
     private javax.swing.JFrame ReservaEventos;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_atras;
+    private javax.swing.JButton btn_continuar;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;

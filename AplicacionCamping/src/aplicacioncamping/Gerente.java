@@ -65,7 +65,6 @@ public class Gerente extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
 
-        parcelas.setPreferredSize(new java.awt.Dimension(1000, 550));
         parcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -177,7 +176,6 @@ public class Gerente extends javax.swing.JFrame {
         });
         parcelas.getContentPane().add(salir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, 140, 40));
 
-        eventos.setPreferredSize(new java.awt.Dimension(1000, 550));
         eventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre Evento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
@@ -256,7 +254,6 @@ public class Gerente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 90, 20));
-        modificar.getAccessibleContext().setAccessibleParent(parcelas);
 
         jList1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parcelas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {

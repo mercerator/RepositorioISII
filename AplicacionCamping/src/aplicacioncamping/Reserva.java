@@ -162,7 +162,9 @@ public class Reserva extends javax.swing.JFrame {
     }//GEN-LAST:event_luzNOActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        Principal prin = new Principal();
+        prin.setVisible(true);
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed

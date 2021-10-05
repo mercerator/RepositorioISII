@@ -41,12 +41,16 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1100, 560));
-        setPreferredSize(new java.awt.Dimension(1100, 560));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Introduzca sus credenciales:", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
         btn_aceptar.setText("Aceptar");
+        btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_aceptarActionPerformed(evt);
+            }
+        });
 
         btn_atras.setText("Atrás");
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +67,6 @@ public class Login extends javax.swing.JFrame {
         });
 
         contraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        contraseña.setForeground(new java.awt.Color(255, 255, 255));
         contraseña.setText("Contraseña:");
 
         campo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -74,7 +77,6 @@ public class Login extends javax.swing.JFrame {
         });
 
         usuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        usuario.setForeground(new java.awt.Color(255, 255, 255));
         usuario.setText("Usuario:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -142,6 +144,10 @@ public class Login extends javax.swing.JFrame {
     private void jPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordActionPerformed
+
+    private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
+        
+    }//GEN-LAST:event_btn_aceptarActionPerformed
 
     /**
      * @param args the command line arguments
