@@ -5,16 +5,20 @@
  */
 package aplicacioncamping;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author anita
  */
 public class Gerente extends javax.swing.JFrame {
-
+    private JFrame vistaAnterior;
+    
     /**
      * Creates new form Gerente
      */
-    public Gerente() {
+    public Gerente(JFrame vistaAnterior) {
+        this.vistaAnterior = vistaAnterior;
         initComponents();
     }
 
@@ -43,14 +47,14 @@ public class Gerente extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        eliminar = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         aceptar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        salir1 = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
         eventos = new javax.swing.JFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
@@ -126,15 +130,15 @@ public class Gerente extends javax.swing.JFrame {
         jLabel11.setText("¿Desea contar con servicio de luz en su parcela ?");
         parcelas.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 450, 50));
 
-        eliminar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        eliminar.setText("Salir");
-        eliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        eliminar.addActionListener(new java.awt.event.ActionListener() {
+        salir.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        salir.setText("Salir");
+        salir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarActionPerformed(evt);
+                salirActionPerformed(evt);
             }
         });
-        parcelas.getContentPane().add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 140, 40));
+        parcelas.getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 140, 40));
 
         aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         aceptar.setText("Aceptar");
@@ -166,15 +170,15 @@ public class Gerente extends javax.swing.JFrame {
         jLabel16.setText("qchua");
         parcelas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, 30));
 
-        salir1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        salir1.setText("Eliminar Reserva");
-        salir1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        salir1.addActionListener(new java.awt.event.ActionListener() {
+        eliminar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        eliminar.setText("Eliminar Reserva");
+        eliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salir1ActionPerformed(evt);
+                eliminarActionPerformed(evt);
             }
         });
-        parcelas.getContentPane().add(salir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, 140, 40));
+        parcelas.getContentPane().add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, 140, 40));
 
         eventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -279,35 +283,46 @@ public class Gerente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void administrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_administrarActionPerformed
-        // TODO add your handling code here:
+        eventos.setSize(1000, 600);
+        eventos.setVisible(true);
+        this.setVisible(false);
+
     }//GEN-LAST:event_administrarActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        // TODO add your handling code here:
+        vistaAnterior.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
 
     private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
-        // TODO add your handling code here:
+        parcelas.setSize(1000, 600);
+        parcelas.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_modificarActionPerformed
 
     private void luzNOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzNOActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_luzNOActionPerformed
 
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        parcelas.setVisible(false);
+        this.setVisible(true);
+
+    }//GEN-LAST:event_salirActionPerformed
+
+    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+        parcelas.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_aceptarActionPerformed
+
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_eliminarActionPerformed
 
-    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aceptarActionPerformed
-
-    private void salir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_salir1ActionPerformed
-
     private void atras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atras1ActionPerformed
-        // TODO add your handling code here:
+        eventos.setVisible(false);
+        this.setVisible(true);
     }//GEN-LAST:event_atras1ActionPerformed
 
     private void sancionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sancionarActionPerformed
@@ -389,7 +404,7 @@ public class Gerente extends javax.swing.JFrame {
     private javax.swing.JRadioButton luzSi;
     private javax.swing.JButton modificar;
     private javax.swing.JFrame parcelas;
-    private javax.swing.JButton salir1;
+    private javax.swing.JButton salir;
     private javax.swing.JButton sancionar;
     // End of variables declaration//GEN-END:variables
 }
