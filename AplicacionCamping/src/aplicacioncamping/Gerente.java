@@ -363,7 +363,7 @@ public class Gerente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Gerente().setVisible(true);
+                new Gerente(new JFrame()).setVisible(true);
             }
         });
     }
