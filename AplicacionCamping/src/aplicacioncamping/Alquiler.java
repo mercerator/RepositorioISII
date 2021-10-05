@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicaioncamping;
+package aplicacioncamping;
 
 /**
  *
@@ -172,7 +172,9 @@ public class Alquiler extends javax.swing.JFrame {
     }//GEN-LAST:event_luzSiActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        Principal pri = new Principal();
+        pri.setVisible(true);
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed

@@ -134,7 +134,9 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        Principal pri = new Principal();
+        pri.setVisible(true);
     }//GEN-LAST:event_btn_atrasActionPerformed
 
     private void campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoActionPerformed
@@ -146,7 +148,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        
+        this.setVisible(false);
+        Gerente ger = new Gerente(this);
+        ger.setVisible(true);
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     /**
