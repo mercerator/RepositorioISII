@@ -55,67 +55,89 @@ public class Reserva extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Nombre:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 50, 30));
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel1.setText("Nombre y Apellidos:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 30));
 
         jTextField1.setText("jTextField1");
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 180, 30));
 
+        jLabel2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel2.setText("DNI:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 30, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 140, 30));
 
         jTextField2.setText("jTextField2");
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 180, 30));
 
+        jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel3.setText("Nº de parcelas:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 90, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 130, 30));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 100, 90, 30));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 90, 30));
 
-        jLabel4.setText("Fecha de inicio de la reserva:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 150, 30));
-        getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, -1, 30));
+        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel4.setText("Fecha de entrada:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 140, 30));
+        getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, 30));
 
-        jLabel5.setText("Fecha de final de la reserva:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 160, 30));
-        getContentPane().add(dateChooserCombo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, -1, 30));
+        jLabel5.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel5.setText("Fecha de salida:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 130, 30));
+        getContentPane().add(dateChooserCombo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, -1, 30));
 
-        jLabel6.setText("Introduce la medida de tu tienda de camapaña:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 250, 30));
+        jLabel6.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel6.setText("Metros cuadrados:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 140, 30));
 
         jTextField3.setText("jTextField3");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 150, 30));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 150, 30));
 
-        jLabel7.setText("Nombre de la tienda de campaña:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 190, 30));
+        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel7.setText("Nombre:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 70, 30));
 
         jTextField4.setText("jTextField4");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 150, 30));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 150, 30));
 
+        jRadioButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jRadioButton1.setText("Si");
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, -1, -1));
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 150, -1));
 
+        jRadioButton2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jRadioButton2.setText("No");
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, -1));
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, -1));
 
         jButton1.setText("Finalizar reserva");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 620, 180, 40));
 
-        jLabel8.setText("Datos del cliente:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 110, 40));
+        jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel8.setText("Introduzca sus datos:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 200, 40));
 
+        jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel9.setText("Datos de la reserva:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 210, 40));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 320, 40));
 
+        jLabel10.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 50));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 460, 50));
 
+        jLabel11.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel11.setText("¿Desea contar con servicio de luz en su parcela ?");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 340, 50));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 450, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     /**
      * @param args the command line arguments
