@@ -31,98 +31,100 @@ public class Reserva extends javax.swing.JFrame {
         dateChooserDialog2 = new datechooser.beans.DateChooserDialog();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nombreyApellidos = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        DNI = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        nParcelas = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
+        fEntrada = new datechooser.beans.DateChooserCombo();
         jLabel5 = new javax.swing.JLabel();
-        dateChooserCombo2 = new datechooser.beans.DateChooserCombo();
+        fSalida = new datechooser.beans.DateChooserCombo();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        mTienda = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        tipoTienda = new javax.swing.JTextField();
+        luzSi = new javax.swing.JRadioButton();
+        luzNO = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        cancelar = new javax.swing.JButton();
+        aceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel1.setText("Nombre y Apellidos:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 170, 30));
 
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 180, 30));
+        nombreyApellidos.setText("jTextField1");
+        getContentPane().add(nombreyApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 180, 30));
 
         jLabel2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel2.setText("DNI:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 140, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 140, 30));
 
-        jTextField2.setText("jTextField2");
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 180, 30));
+        DNI.setText("jTextField2");
+        getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 180, 30));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel3.setText("Nº de parcelas:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 130, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 130, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 90, 30));
+        nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 90, 30));
 
         jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel4.setText("Fecha de entrada:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 140, 30));
-        getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 140, 30));
+        getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, 30));
 
         jLabel5.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel5.setText("Fecha de salida:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 130, 30));
-        getContentPane().add(dateChooserCombo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, -1, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 130, 30));
+        getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, 30));
 
         jLabel6.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel6.setText("Metros cuadrados:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 140, 30));
 
-        jTextField3.setText("jTextField3");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 150, 30));
+        mTienda.setText("jTextField3");
+        getContentPane().add(mTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 150, 30));
 
         jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel7.setText("Nombre:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 70, 30));
 
-        jTextField4.setText("jTextField4");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 150, 30));
+        tipoTienda.setText("jTextField4");
+        getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 150, 30));
 
-        jRadioButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jRadioButton1.setText("Si");
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 150, -1));
+        luzSi.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        luzSi.setText("Si");
+        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 150, -1));
 
-        jRadioButton2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        luzNO.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        luzNO.setText("No");
+        luzNO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                luzNOActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, -1));
+        getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, -1));
 
         jButton1.setText("Finalizar reserva");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 620, 180, 40));
 
         jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel8.setText("Introduzca sus datos:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 200, 40));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 40));
 
         jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel9.setText("Datos de la reserva:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 320, 40));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 320, 40));
 
         jLabel10.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
@@ -132,12 +134,40 @@ public class Reserva extends javax.swing.JFrame {
         jLabel11.setText("¿Desea contar con servicio de luz en su parcela ?");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 450, 50));
 
+        cancelar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        cancelar.setText("Cancelar");
+        cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, 140, 40));
+
+        aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        aceptar.setText("Aceptar");
+        aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 510, 140, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void luzNOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzNOActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_luzNOActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,13 +205,15 @@ public class Reserva extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField DNI;
+    private javax.swing.JButton aceptar;
     private javax.swing.ButtonGroup buttonGroup1;
-    private datechooser.beans.DateChooserCombo dateChooserCombo1;
-    private datechooser.beans.DateChooserCombo dateChooserCombo2;
+    private javax.swing.JButton cancelar;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private datechooser.beans.DateChooserDialog dateChooserDialog2;
+    private datechooser.beans.DateChooserCombo fEntrada;
+    private datechooser.beans.DateChooserCombo fSalida;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -193,11 +225,11 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JRadioButton luzNO;
+    private javax.swing.JRadioButton luzSi;
+    private javax.swing.JTextField mTienda;
+    private javax.swing.JComboBox<String> nParcelas;
+    private javax.swing.JTextField nombreyApellidos;
+    private javax.swing.JTextField tipoTienda;
     // End of variables declaration//GEN-END:variables
 }

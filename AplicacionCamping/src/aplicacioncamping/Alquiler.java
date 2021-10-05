@@ -43,6 +43,8 @@ public class Alquiler extends javax.swing.JFrame {
         luzNo = new javax.swing.JRadioButton();
         luzSi = new javax.swing.JRadioButton();
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
+        cancelar = new javax.swing.JButton();
+        aceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -126,6 +128,26 @@ public class Alquiler extends javax.swing.JFrame {
         getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
         getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
 
+        cancelar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        cancelar.setText("Cancelar");
+        cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, 140, 40));
+
+        aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        aceptar.setText("Aceptar");
+        aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 480, 140, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -148,6 +170,14 @@ public class Alquiler extends javax.swing.JFrame {
     private void luzSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzSiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_luzSiActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,6 +216,8 @@ public class Alquiler extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DNI;
+    private javax.swing.JButton aceptar;
+    private javax.swing.JButton cancelar;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
