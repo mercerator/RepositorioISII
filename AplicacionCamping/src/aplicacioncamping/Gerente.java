@@ -36,35 +36,37 @@ public class Gerente extends javax.swing.JFrame {
     private void initComponents() {
 
         parcelas = new javax.swing.JFrame();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lbl_nomape = new javax.swing.JLabel();
+        lbl_dni = new javax.swing.JLabel();
+        lbl_numparcel = new javax.swing.JLabel();
+        lbl_fechentrada = new javax.swing.JLabel();
         fEntrada = new datechooser.beans.DateChooserCombo();
-        jLabel5 = new javax.swing.JLabel();
+        lbl_salida = new javax.swing.JLabel();
         fSalida = new datechooser.beans.DateChooserCombo();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lbl_mcuadrados = new javax.swing.JLabel();
+        lbl_nombre = new javax.swing.JLabel();
         luzSi = new javax.swing.JRadioButton();
         luzNO = new javax.swing.JRadioButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        salir = new javax.swing.JButton();
-        aceptar = new javax.swing.JButton();
+        lbl_datos = new javax.swing.JLabel();
+        lbl_datos_reserva = new javax.swing.JLabel();
+        lbl_detallestienda = new javax.swing.JLabel();
+        lbl_luz = new javax.swing.JLabel();
+        btn_salir = new javax.swing.JButton();
+        btn_aceptar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        eliminar = new javax.swing.JButton();
+        btn_eliminar = new javax.swing.JButton();
         eventos = new javax.swing.JFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
-        atras1 = new javax.swing.JButton();
-        sancionar = new javax.swing.JButton();
-        ganador = new javax.swing.JButton();
+        btn_atras2 = new javax.swing.JButton();
+        btn_sancionar = new javax.swing.JButton();
+        btn_emparejar = new javax.swing.JButton();
+        btn_ganador = new javax.swing.JButton();
+        lbl_iniciosesion = new javax.swing.JLabel();
         btn_administrar = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
@@ -73,41 +75,46 @@ public class Gerente extends javax.swing.JFrame {
         scroll_eventos = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
 
+        parcelas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        parcelas.setTitle("Modificar Parcela");
+        parcelas.setLocation(new java.awt.Point(265, 112));
+        parcelas.setMaximumSize(new java.awt.Dimension(1000, 600));
+        parcelas.setMinimumSize(new java.awt.Dimension(1000, 600));
         parcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel1.setText("Nombre y Apellidos: ");
-        parcelas.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 170, 30));
+        lbl_nomape.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nomape.setText("Nombre y Apellidos: ");
+        parcelas.getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 170, 30));
 
-        jLabel2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel2.setText("DNI:");
-        parcelas.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 40, 30));
+        lbl_dni.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_dni.setText("DNI:");
+        parcelas.getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 40, 30));
 
-        jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel3.setText("Nº de parcelas:");
-        parcelas.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 130, 30));
+        lbl_numparcel.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_numparcel.setText("Nº de parcelas:");
+        parcelas.getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 130, 30));
 
-        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel4.setText("Fecha de entrada:");
-        parcelas.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 140, 30));
+        lbl_fechentrada.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_fechentrada.setText("Fecha de entrada:");
+        parcelas.getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 140, 30));
         parcelas.getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, 30));
 
-        jLabel5.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel5.setText("Fecha de salida:");
-        parcelas.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 130, 30));
+        lbl_salida.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_salida.setText("Fecha de salida:");
+        parcelas.getContentPane().add(lbl_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 130, 30));
         parcelas.getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, -1, 30));
 
-        jLabel6.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel6.setText("Metros cuadrados:");
-        parcelas.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 140, 30));
+        lbl_mcuadrados.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_mcuadrados.setText("Metros cuadrados:");
+        parcelas.getContentPane().add(lbl_mcuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 140, 30));
 
-        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel7.setText("Nombre:");
-        parcelas.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 70, 30));
+        lbl_nombre.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nombre.setText("Nombre:");
+        parcelas.getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 70, 30));
 
         luzSi.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         luzSi.setText("Si");
-        parcelas.getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 150, -1));
+        parcelas.getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
 
         luzNO.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         luzNO.setText("No");
@@ -116,43 +123,43 @@ public class Gerente extends javax.swing.JFrame {
                 luzNOActionPerformed(evt);
             }
         });
-        parcelas.getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 160, -1));
+        parcelas.getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, 160, -1));
 
-        jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel8.setText("Datos Cliente:");
-        parcelas.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 200, 40));
+        lbl_datos.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_datos.setText("Datos Cliente:");
+        parcelas.getContentPane().add(lbl_datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 200, 40));
 
-        jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel9.setText("Datos de la reserva:");
-        parcelas.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 320, 40));
+        lbl_datos_reserva.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_datos_reserva.setText("Datos de la reserva:");
+        parcelas.getContentPane().add(lbl_datos_reserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 240, 40));
 
-        jLabel10.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
-        parcelas.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 460, 50));
+        lbl_detallestienda.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_detallestienda.setText("Introduzca los detalles de su tienda de campaña:");
+        parcelas.getContentPane().add(lbl_detallestienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 460, 30));
 
-        jLabel11.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel11.setText("¿Desea contar con servicio de luz en su parcela ?");
-        parcelas.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 450, 50));
+        lbl_luz.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_luz.setText("¿Desea contar con servicio de luz en su parcela ?");
+        parcelas.getContentPane().add(lbl_luz, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 450, 50));
 
-        salir.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        salir.setText("Salir");
-        salir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        salir.addActionListener(new java.awt.event.ActionListener() {
+        btn_salir.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_salir.setText("Salir");
+        btn_salir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salirActionPerformed(evt);
+                btn_salirActionPerformed(evt);
             }
         });
-        parcelas.getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 140, 40));
+        parcelas.getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 140, 40));
 
-        aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        aceptar.setText("Aceptar");
-        aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        aceptar.addActionListener(new java.awt.event.ActionListener() {
+        btn_aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_aceptar.setText("Aceptar");
+        btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aceptarActionPerformed(evt);
+                btn_aceptarActionPerformed(evt);
             }
         });
-        parcelas.getContentPane().add(aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 500, 140, 40));
+        parcelas.getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 500, 140, 40));
 
         jLabel12.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel12.setText(" Alfredo Clemente");
@@ -160,7 +167,7 @@ public class Gerente extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel13.setText("24");
-        parcelas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 130, 30));
+        parcelas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 130, 30));
 
         jLabel14.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel14.setText("4");
@@ -172,18 +179,22 @@ public class Gerente extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel16.setText("qchua");
-        parcelas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, 30));
+        parcelas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 130, 30));
 
-        eliminar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        eliminar.setText("Eliminar Reserva");
-        eliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        eliminar.addActionListener(new java.awt.event.ActionListener() {
+        btn_eliminar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_eliminar.setText("Eliminar Reserva");
+        btn_eliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarActionPerformed(evt);
+                btn_eliminarActionPerformed(evt);
             }
         });
-        parcelas.getContentPane().add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, 140, 40));
+        parcelas.getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, 140, 40));
 
+        eventos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        eventos.setTitle("Administrar Eventos");
+        eventos.setLocation(new java.awt.Point(265, 112));
+        eventos.setMinimumSize(new java.awt.Dimension(1000, 600));
         eventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre Evento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
@@ -196,37 +207,51 @@ public class Gerente extends javax.swing.JFrame {
         jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(jList2);
 
-        eventos.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 220, 270));
+        eventos.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 220, 270));
 
-        atras1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        atras1.setText("Atras");
-        atras1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        atras1.addActionListener(new java.awt.event.ActionListener() {
+        btn_atras2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_atras2.setText("Atrás");
+        btn_atras2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_atras2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atras1ActionPerformed(evt);
+                btn_atras2ActionPerformed(evt);
             }
         });
-        eventos.getContentPane().add(atras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 140, 40));
+        eventos.getContentPane().add(btn_atras2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 140, 40));
 
-        sancionar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        sancionar.setText("Sancionar");
-        sancionar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        sancionar.addActionListener(new java.awt.event.ActionListener() {
+        btn_sancionar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_sancionar.setText("Sancionar");
+        btn_sancionar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_sancionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sancionarActionPerformed(evt);
+                btn_sancionarActionPerformed(evt);
             }
         });
-        eventos.getContentPane().add(sancionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 140, 40));
+        eventos.getContentPane().add(btn_sancionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, 140, 40));
 
-        ganador.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        ganador.setText("Ganador");
-        ganador.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        ganador.addActionListener(new java.awt.event.ActionListener() {
+        btn_emparejar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_emparejar.setText("Emparejar");
+        btn_emparejar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_emparejar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ganadorActionPerformed(evt);
+                btn_emparejarActionPerformed(evt);
             }
         });
-        eventos.getContentPane().add(ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 140, 40));
+        eventos.getContentPane().add(btn_emparejar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 140, 40));
+
+        btn_ganador.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_ganador.setText("Ganador");
+        btn_ganador.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_ganador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ganadorActionPerformed(evt);
+            }
+        });
+        eventos.getContentPane().add(btn_ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 140, 40));
+
+        lbl_iniciosesion.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lbl_iniciosesion.setText("Seleccione un evento");
+        eventos.getContentPane().add(lbl_iniciosesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 350, 30));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -311,33 +336,37 @@ public class Gerente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_luzNOActionPerformed
 
-    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         parcelas.setVisible(false);
         this.setVisible(true);
 
-    }//GEN-LAST:event_salirActionPerformed
+    }//GEN-LAST:event_btn_salirActionPerformed
 
-    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+    private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
         parcelas.setVisible(false);
         this.setVisible(true);
-    }//GEN-LAST:event_aceptarActionPerformed
+    }//GEN-LAST:event_btn_aceptarActionPerformed
 
-    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarActionPerformed
+    }//GEN-LAST:event_btn_eliminarActionPerformed
 
-    private void atras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atras1ActionPerformed
+    private void btn_atras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atras2ActionPerformed
         eventos.setVisible(false);
         this.setVisible(true);
-    }//GEN-LAST:event_atras1ActionPerformed
+    }//GEN-LAST:event_btn_atras2ActionPerformed
 
-    private void sancionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sancionarActionPerformed
+    private void btn_sancionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sancionarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_sancionarActionPerformed
+    }//GEN-LAST:event_btn_sancionarActionPerformed
 
-    private void ganadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ganadorActionPerformed
+    private void btn_emparejarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_emparejarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ganadorActionPerformed
+    }//GEN-LAST:event_btn_emparejarActionPerformed
+
+    private void btn_ganadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ganadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ganadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -375,41 +404,43 @@ public class Gerente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton aceptar;
-    private javax.swing.JButton atras1;
+    private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_administrar;
     private javax.swing.JButton btn_atras;
+    private javax.swing.JButton btn_atras2;
+    private javax.swing.JButton btn_eliminar;
+    private javax.swing.JButton btn_emparejar;
+    private javax.swing.JButton btn_ganador;
     private javax.swing.JButton btn_modificar;
-    private javax.swing.JButton eliminar;
+    private javax.swing.JButton btn_salir;
+    private javax.swing.JButton btn_sancionar;
     private javax.swing.JFrame eventos;
     private datechooser.beans.DateChooserCombo fEntrada;
     private datechooser.beans.DateChooserCombo fSalida;
-    private javax.swing.JButton ganador;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lbl_datos;
+    private javax.swing.JLabel lbl_datos_reserva;
+    private javax.swing.JLabel lbl_detallestienda;
+    private javax.swing.JLabel lbl_dni;
+    private javax.swing.JLabel lbl_fechentrada;
+    private javax.swing.JLabel lbl_iniciosesion;
+    private javax.swing.JLabel lbl_luz;
+    private javax.swing.JLabel lbl_mcuadrados;
+    private javax.swing.JLabel lbl_nomape;
+    private javax.swing.JLabel lbl_nombre;
+    private javax.swing.JLabel lbl_numparcel;
+    private javax.swing.JLabel lbl_salida;
     private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
     private javax.swing.JFrame parcelas;
-    private javax.swing.JButton salir;
-    private javax.swing.JButton sancionar;
     private javax.swing.JScrollPane scroll_eventos;
     private javax.swing.JScrollPane scroll_parcelas;
     // End of variables declaration//GEN-END:variables

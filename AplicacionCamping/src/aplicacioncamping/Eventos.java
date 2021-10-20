@@ -33,30 +33,35 @@ public class Eventos extends javax.swing.JFrame {
         ListadoEventos = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btn_reserva = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
+        btn_atras2 = new javax.swing.JButton();
+        lbl_iniciosesion = new javax.swing.JLabel();
         ReservaEventos = new javax.swing.JFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        btn_reserva_evento = new javax.swing.JButton();
+        btn_atras3 = new javax.swing.JButton();
+        lbl_iniciosesion2 = new javax.swing.JLabel();
         CancelacionEventos = new javax.swing.JFrame();
-        jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btn_cancelar_evento = new javax.swing.JButton();
+        btn_atras4 = new javax.swing.JButton();
+        lbl_iniciosesion1 = new javax.swing.JLabel();
         lbl_titulo = new javax.swing.JLabel();
         lbl_dni = new javax.swing.JLabel();
         txt_dni = new javax.swing.JTextField();
         btn_continuar = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
 
-        ListadoEventos.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        ListadoEventos.setSize(new java.awt.Dimension(640, 640));
+        ListadoEventos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        ListadoEventos.setTitle("Listado De Eventos");
+        ListadoEventos.setLocation(new java.awt.Point(265, 112));
+        ListadoEventos.setMaximumSize(new java.awt.Dimension(1000, 600));
+        ListadoEventos.setMinimumSize(new java.awt.Dimension(1000, 600));
+        ListadoEventos.setPreferredSize(new java.awt.Dimension(1000, 600));
+        ListadoEventos.setSize(new java.awt.Dimension(1000, 600));
         ListadoEventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -66,36 +71,43 @@ public class Eventos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        ListadoEventos.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 260, 170));
+        ListadoEventos.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 260, 200));
 
-        jLabel3.setText("Listado de eventos:");
-        ListadoEventos.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 130, 40));
-
-        jButton2.setText("Reserva");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_reserva.setText("Reserva Eventos");
+        btn_reserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_reservaActionPerformed(evt);
             }
         });
-        ListadoEventos.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 160, 50));
+        ListadoEventos.getContentPane().add(btn_reserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 160, 50));
 
-        jButton3.setText("Cancelación");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar.setText("Cancelar Eventos");
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_cancelarActionPerformed(evt);
             }
         });
-        ListadoEventos.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 150, 50));
+        ListadoEventos.getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 430, 150, 50));
 
-        jButton7.setText("Atras");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btn_atras2.setText("Atrás");
+        btn_atras2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btn_atras2ActionPerformed(evt);
             }
         });
-        ListadoEventos.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 150, 40));
+        ListadoEventos.getContentPane().add(btn_atras2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 150, 40));
 
-        ReservaEventos.setSize(new java.awt.Dimension(640, 640));
+        lbl_iniciosesion.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lbl_iniciosesion.setText("Listado de eventos");
+        ListadoEventos.getContentPane().add(lbl_iniciosesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 300, 40));
+
+        ReservaEventos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        ReservaEventos.setTitle("Reserva De Eventos");
+        ReservaEventos.setLocation(new java.awt.Point(265, 112));
+        ReservaEventos.setMaximumSize(new java.awt.Dimension(1000, 600));
+        ReservaEventos.setMinimumSize(new java.awt.Dimension(1000, 600));
+        ReservaEventos.setPreferredSize(new java.awt.Dimension(1000, 600));
+        ReservaEventos.setSize(new java.awt.Dimension(1000, 600));
         ReservaEventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
@@ -105,27 +117,31 @@ public class Eventos extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jList2);
 
-        ReservaEventos.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 340, 170));
+        ReservaEventos.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 340, 170));
 
-        jButton4.setText("Reservar");
-        ReservaEventos.getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 180, 50));
+        btn_reserva_evento.setText("Reservar Evento");
+        ReservaEventos.getContentPane().add(btn_reserva_evento, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 440, 180, 50));
 
-        jButton5.setText("Atras");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_atras3.setText("Atrás");
+        btn_atras3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_atras3ActionPerformed(evt);
             }
         });
-        ReservaEventos.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 180, 50));
+        ReservaEventos.getContentPane().add(btn_atras3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 180, 50));
 
-        jLabel4.setText("Eventos disponibles:");
-        ReservaEventos.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 140, 60));
+        lbl_iniciosesion2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lbl_iniciosesion2.setText("Eventos Disponibles");
+        ReservaEventos.getContentPane().add(lbl_iniciosesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 320, 50));
 
-        CancelacionEventos.setSize(new java.awt.Dimension(640, 640));
+        CancelacionEventos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        CancelacionEventos.setTitle("Cancelación De Eventos");
+        CancelacionEventos.setLocation(new java.awt.Point(265, 112));
+        CancelacionEventos.setMaximumSize(new java.awt.Dimension(1000, 600));
+        CancelacionEventos.setMinimumSize(new java.awt.Dimension(1000, 600));
+        CancelacionEventos.setPreferredSize(new java.awt.Dimension(1000, 600));
+        CancelacionEventos.setSize(new java.awt.Dimension(1000, 600));
         CancelacionEventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setText("Eventos reservados:");
-        CancelacionEventos.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 120, 50));
 
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -134,18 +150,27 @@ public class Eventos extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jList3);
 
-        CancelacionEventos.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 260, 170));
+        CancelacionEventos.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 290, 190));
 
-        jButton8.setText("Cancelar");
-        CancelacionEventos.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 160, 40));
-
-        jButton9.setText("Atras");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar_evento.setText("Cancelar Evento");
+        btn_cancelar_evento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btn_cancelar_eventoActionPerformed(evt);
             }
         });
-        CancelacionEventos.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 150, 40));
+        CancelacionEventos.getContentPane().add(btn_cancelar_evento, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 160, 40));
+
+        btn_atras4.setText("Atrás");
+        btn_atras4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atras4ActionPerformed(evt);
+            }
+        });
+        CancelacionEventos.getContentPane().add(btn_atras4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 150, 40));
+
+        lbl_iniciosesion1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lbl_iniciosesion1.setText("Eventos reservados");
+        CancelacionEventos.getContentPane().add(lbl_iniciosesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, 40));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -196,11 +221,11 @@ public class Eventos extends javax.swing.JFrame {
         eventos.ListadoEventos.setVisible(true);
     }//GEN-LAST:event_btn_continuarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_reservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reservaActionPerformed
         Eventos eventos = new Eventos();
         this.ListadoEventos.setVisible(false);
         eventos.ReservaEventos.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_reservaActionPerformed
 
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         this.setVisible(false);
@@ -209,25 +234,29 @@ public class Eventos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_atrasActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btn_atras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atras2ActionPerformed
         this.ListadoEventos.setVisible(false);
         this.setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btn_atras2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         this.ListadoEventos.setVisible(false);
         this.CancelacionEventos.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btn_atras3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atras3ActionPerformed
         this.ReservaEventos.setVisible(false);
         this.ListadoEventos.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btn_atras3ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btn_atras4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atras4ActionPerformed
         this.CancelacionEventos.setVisible(false);
         this.ListadoEventos.setVisible(true);
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_btn_atras4ActionPerformed
+
+    private void btn_cancelar_eventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelar_eventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_cancelar_eventoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,17 +298,14 @@ public class Eventos extends javax.swing.JFrame {
     private javax.swing.JFrame ListadoEventos;
     private javax.swing.JFrame ReservaEventos;
     private javax.swing.JButton btn_atras;
+    private javax.swing.JButton btn_atras2;
+    private javax.swing.JButton btn_atras3;
+    private javax.swing.JButton btn_atras4;
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_cancelar_evento;
     private javax.swing.JButton btn_continuar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton btn_reserva;
+    private javax.swing.JButton btn_reserva_evento;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
@@ -287,6 +313,9 @@ public class Eventos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lbl_dni;
+    private javax.swing.JLabel lbl_iniciosesion;
+    private javax.swing.JLabel lbl_iniciosesion1;
+    private javax.swing.JLabel lbl_iniciosesion2;
     private javax.swing.JLabel lbl_titulo;
     private javax.swing.JTextField txt_dni;
     // End of variables declaration//GEN-END:variables
