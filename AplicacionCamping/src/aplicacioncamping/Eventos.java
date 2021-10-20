@@ -15,9 +15,10 @@ public class Eventos extends javax.swing.JFrame {
      * Creates new form Eventos
      */
     public Eventos() {
+        
         initComponents();
         setLocationRelativeTo(null);
-        setSize(1100, 800);
+        this.setTitle("Eventos Camping");
     }
 
     /**
@@ -147,13 +148,15 @@ public class Eventos extends javax.swing.JFrame {
         CancelacionEventos.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 150, 40));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 600));
+        setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Eventos de Camping Pary");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 260, 70));
 
         jLabel2.setText("Introduce tu DNI:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 100, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 100, 30));
 
         jTextField1.setToolTipText("");
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -162,7 +165,7 @@ public class Eventos extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 130, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 130, 30));
 
         btn_continuar.setText("Continuar");
         btn_continuar.addActionListener(new java.awt.event.ActionListener() {
@@ -170,27 +173,27 @@ public class Eventos extends javax.swing.JFrame {
                 btn_continuarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 130, 40));
+        getContentPane().add(btn_continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, 130, 40));
 
-        btn_atras.setText("Atras");
+        btn_atras.setText("Atrás");
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_atrasActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 130, 40));
+        getContentPane().add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 130, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btn_continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_continuarActionPerformed
-       Eventos eventos = new Eventos();
-       this.setVisible(false);
-       eventos.ListadoEventos.setVisible(true);
+        Eventos eventos = new Eventos();
+        this.setVisible(false);
+        eventos.ListadoEventos.setVisible(true);
     }//GEN-LAST:event_btn_continuarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -203,7 +206,7 @@ public class Eventos extends javax.swing.JFrame {
         this.setVisible(false);
         Principal prin = new Principal();
         prin.setVisible(true);
-        
+
     }//GEN-LAST:event_btn_atrasActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed

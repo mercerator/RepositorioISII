@@ -12,14 +12,18 @@ import javax.swing.JFrame;
  * @author anita
  */
 public class Gerente extends javax.swing.JFrame {
+
     private JFrame vistaAnterior;
-    
+
     /**
      * Creates new form Gerente
      */
     public Gerente(JFrame vistaAnterior) {
         this.vistaAnterior = vistaAnterior;
         initComponents();
+        setLocationRelativeTo(null);
+        this.setTitle("Administración Gerente");
+
     }
 
     /**
@@ -225,6 +229,8 @@ public class Gerente extends javax.swing.JFrame {
         eventos.getContentPane().add(ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 140, 40));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 600));
+        setMinimumSize(new java.awt.Dimension(1000, 600));
         setPreferredSize(new java.awt.Dimension(1000, 550));
         setSize(new java.awt.Dimension(1000, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -240,7 +246,7 @@ public class Gerente extends javax.swing.JFrame {
         getContentPane().add(administrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 110, 20));
 
         atras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        atras.setText("Atras");
+        atras.setText("Atrás");
         atras.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,7 +304,7 @@ public class Gerente extends javax.swing.JFrame {
         parcelas.setSize(1000, 600);
         parcelas.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_modificarActionPerformed
 
     private void luzNOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzNOActionPerformed

@@ -15,7 +15,11 @@ public class Reserva extends javax.swing.JFrame {
      * Creates new form Reserva
      */
     public Reserva() {
+        
         initComponents();
+        setLocationRelativeTo(null);
+        this.setTitle("Reservas");
+
     }
 
     /**
@@ -55,21 +59,19 @@ public class Reserva extends javax.swing.JFrame {
         aceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 600));
+        setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel1.setText("Nombre y Apellidos:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 170, 30));
-
-        nombreyApellidos.setText("jTextField1");
-        getContentPane().add(nombreyApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 180, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 170, 30));
+        getContentPane().add(nombreyApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 180, 30));
 
         jLabel2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel2.setText("DNI:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 140, 30));
-
-        DNI.setText("jTextField2");
-        getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 180, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 50, 30));
+        getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 180, 30));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel3.setText("Nº de parcelas:");
@@ -90,21 +92,17 @@ public class Reserva extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel6.setText("Metros cuadrados:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 140, 30));
-
-        mTienda.setText("jTextField3");
-        getContentPane().add(mTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 150, 30));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 140, 30));
+        getContentPane().add(mTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 150, 30));
 
         jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel7.setText("Nombre:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 70, 30));
-
-        tipoTienda.setText("jTextField4");
-        getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 150, 30));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 70, 30));
+        getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 150, 30));
 
         luzSi.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         luzSi.setText("Si");
-        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 150, -1));
+        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 120, -1));
 
         luzNO.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         luzNO.setText("No");
@@ -113,10 +111,10 @@ public class Reserva extends javax.swing.JFrame {
                 luzNOActionPerformed(evt);
             }
         });
-        getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, -1));
+        getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 120, -1));
 
         jButton1.setText("Finalizar reserva");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 620, 180, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 180, 40));
 
         jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel8.setText("Introduzca sus datos:");
@@ -128,11 +126,11 @@ public class Reserva extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 460, 50));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 460, 20));
 
         jLabel11.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel11.setText("¿Desea contar con servicio de luz en su parcela ?");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 450, 50));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 370, 20));
 
         cancelar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         cancelar.setText("Cancelar");
@@ -142,7 +140,7 @@ public class Reserva extends javax.swing.JFrame {
                 cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, 140, 40));
+        getContentPane().add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 140, 40));
 
         aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         aceptar.setText("Aceptar");
@@ -152,7 +150,7 @@ public class Reserva extends javax.swing.JFrame {
                 aceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 510, 140, 40));
+        getContentPane().add(aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 420, 140, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

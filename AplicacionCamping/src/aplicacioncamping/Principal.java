@@ -15,7 +15,11 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public Principal() {
+        
         initComponents();
+        setLocationRelativeTo(null);
+        this.setTitle("Menú Principal");
+
     }
 
     /**
@@ -34,6 +38,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 600));
+        setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Reserva");
@@ -42,15 +48,15 @@ public class Principal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 250, 80));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 250, 80));
 
-        jButton2.setText("Iniciar Sesion");
+        jButton2.setText("Iniciar Sesión");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 140, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 140, 30));
 
         jButton3.setText("Eventos Camping");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -58,25 +64,25 @@ public class Principal extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 520, 140, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 140, 40));
 
-        jButton4.setText("Alquiler");
+        jButton4.setText("Sin Reserva");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 270, 80));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 270, 80));
 
         jLabel1.setText("Camping Party");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 530, 140));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 340, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.setVisible(false);
-        Alquiler al = new Alquiler();
+        SinReserva al = new SinReserva();
         al.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
