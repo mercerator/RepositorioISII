@@ -65,12 +65,12 @@ public class Gerente extends javax.swing.JFrame {
         atras1 = new javax.swing.JButton();
         sancionar = new javax.swing.JButton();
         ganador = new javax.swing.JButton();
-        administrar = new javax.swing.JButton();
-        atras = new javax.swing.JButton();
-        modificar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        btn_administrar = new javax.swing.JButton();
+        btn_atras = new javax.swing.JButton();
+        btn_modificar = new javax.swing.JButton();
+        scroll_parcelas = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        scroll_eventos = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
 
         parcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -235,35 +235,35 @@ public class Gerente extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1000, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        administrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        administrar.setText("Administrar");
-        administrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        administrar.addActionListener(new java.awt.event.ActionListener() {
+        btn_administrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_administrar.setText("Administrar");
+        btn_administrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_administrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                administrarActionPerformed(evt);
+                btn_administrarActionPerformed(evt);
             }
         });
-        getContentPane().add(administrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 110, 20));
+        getContentPane().add(btn_administrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 110, 20));
 
-        atras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        atras.setText("Atrás");
-        atras.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        atras.addActionListener(new java.awt.event.ActionListener() {
+        btn_atras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_atras.setText("Atrás");
+        btn_atras.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atrasActionPerformed(evt);
+                btn_atrasActionPerformed(evt);
             }
         });
-        getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 140, 40));
+        getContentPane().add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 140, 40));
 
-        modificar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        modificar.setText("Modificar");
-        modificar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        modificar.addActionListener(new java.awt.event.ActionListener() {
+        btn_modificar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_modificar.setText("Modificar");
+        btn_modificar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarActionPerformed(evt);
+                btn_modificarActionPerformed(evt);
             }
         });
-        getContentPane().add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 90, 20));
+        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 90, 20));
 
         jList1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parcelas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -271,9 +271,9 @@ public class Gerente extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        scroll_parcelas.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 170, 210));
+        getContentPane().add(scroll_parcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 170, 210));
 
         jList3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Eventos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
@@ -281,31 +281,31 @@ public class Gerente extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane3.setViewportView(jList3);
+        scroll_eventos.setViewportView(jList3);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 170, 210));
+        getContentPane().add(scroll_eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 170, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void administrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_administrarActionPerformed
+    private void btn_administrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_administrarActionPerformed
         eventos.setSize(1000, 600);
         eventos.setVisible(true);
         this.setVisible(false);
 
-    }//GEN-LAST:event_administrarActionPerformed
+    }//GEN-LAST:event_btn_administrarActionPerformed
 
-    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         vistaAnterior.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_atrasActionPerformed
+    }//GEN-LAST:event_btn_atrasActionPerformed
 
-    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
+    private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
         parcelas.setSize(1000, 600);
         parcelas.setVisible(true);
         this.setVisible(false);
 
-    }//GEN-LAST:event_modificarActionPerformed
+    }//GEN-LAST:event_btn_modificarActionPerformed
 
     private void luzNOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzNOActionPerformed
         // TODO add your handling code here:
@@ -376,9 +376,10 @@ public class Gerente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptar;
-    private javax.swing.JButton administrar;
-    private javax.swing.JButton atras;
     private javax.swing.JButton atras1;
+    private javax.swing.JButton btn_administrar;
+    private javax.swing.JButton btn_atras;
+    private javax.swing.JButton btn_modificar;
     private javax.swing.JButton eliminar;
     private javax.swing.JFrame eventos;
     private datechooser.beans.DateChooserCombo fEntrada;
@@ -403,14 +404,13 @@ public class Gerente extends javax.swing.JFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
-    private javax.swing.JButton modificar;
     private javax.swing.JFrame parcelas;
     private javax.swing.JButton salir;
     private javax.swing.JButton sancionar;
+    private javax.swing.JScrollPane scroll_eventos;
+    private javax.swing.JScrollPane scroll_parcelas;
     // End of variables declaration//GEN-END:variables
 }

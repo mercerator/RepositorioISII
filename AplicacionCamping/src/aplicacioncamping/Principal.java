@@ -31,78 +31,78 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btn_reserva = new javax.swing.JButton();
+        btn_ini_sesion = new javax.swing.JButton();
+        btn_eventos = new javax.swing.JButton();
+        btn_sinreserva = new javax.swing.JButton();
+        lbl_titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Reserva");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_reserva.setText("Reserva");
+        btn_reserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_reservaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 250, 80));
+        getContentPane().add(btn_reserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 250, 80));
 
-        jButton2.setText("Iniciar Sesión");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_ini_sesion.setText("Iniciar Sesión");
+        btn_ini_sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_ini_sesionActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 140, 30));
+        getContentPane().add(btn_ini_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 140, 30));
 
-        jButton3.setText("Eventos Camping");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_eventos.setText("Eventos Camping");
+        btn_eventos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_eventosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 140, 40));
+        getContentPane().add(btn_eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 140, 40));
 
-        jButton4.setText("Sin Reserva");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_sinreserva.setText("Sin Reserva");
+        btn_sinreserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_sinreservaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 270, 80));
+        getContentPane().add(btn_sinreserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 270, 80));
 
-        jLabel1.setText("Camping Party");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 340, 140));
+        lbl_titulo.setText("Camping Party");
+        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 340, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_sinreservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sinreservaActionPerformed
         this.setVisible(false);
         SinReserva al = new SinReserva();
         al.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btn_sinreservaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_eventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eventosActionPerformed
         this.setVisible(false);
         Eventos eventos = new Eventos();
         eventos.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_eventosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_reservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reservaActionPerformed
         this.setVisible(false);
         Reserva res = new Reserva();
         res.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_reservaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_ini_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ini_sesionActionPerformed
         this.setVisible(false);
         Login log = new Login();
         log.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_ini_sesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,10 +141,10 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_eventos;
+    private javax.swing.JButton btn_ini_sesion;
+    private javax.swing.JButton btn_reserva;
+    private javax.swing.JButton btn_sinreserva;
+    private javax.swing.JLabel lbl_titulo;
     // End of variables declaration//GEN-END:variables
 }

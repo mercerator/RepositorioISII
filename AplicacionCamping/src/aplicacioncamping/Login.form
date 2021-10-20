@@ -61,14 +61,14 @@
                   <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="contraseña" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_contraseña" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="jPassword" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txt_passwd" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="usuario" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_usuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="campo" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txt_campo" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="169" max="32767" attributes="0"/>
@@ -80,13 +80,13 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="usuario" min="-2" max="-2" attributes="0"/>
-                      <Component id="campo" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="lbl_usuario" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_campo" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="contraseña" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPassword" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="lbl_contraseña" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_passwd" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="56" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -115,7 +115,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_atrasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPassword">
+        <Component class="javax.swing.JPasswordField" name="txt_passwd">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -124,10 +124,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPasswordActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_passwdActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="contrase&#xf1;a">
+        <Component class="javax.swing.JLabel" name="lbl_contrase&#xf1;a">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -135,7 +135,7 @@
             <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campo">
+        <Component class="javax.swing.JTextField" name="txt_campo">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -144,10 +144,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_campoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="usuario">
+        <Component class="javax.swing.JLabel" name="lbl_usuario">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -157,7 +157,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lbl_iniciosesion">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="36" style="0"/>
@@ -170,7 +170,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lbl_titulo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Camping Party"/>
       </Properties>

@@ -31,96 +31,96 @@ public class SinReserva extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        metrosTienda = new javax.swing.JTextField();
-        DNI = new javax.swing.JTextField();
-        tipoTienda = new javax.swing.JTextField();
+        lbl_mcuadrados = new javax.swing.JLabel();
+        lbl_nomape = new javax.swing.JLabel();
+        lbl_dni = new javax.swing.JLabel();
+        lbl_fechsalida = new javax.swing.JLabel();
+        lbl_numparcel = new javax.swing.JLabel();
+        lbl_luz = new javax.swing.JLabel();
+        lbl_nombre = new javax.swing.JLabel();
+        lbl_detalles = new javax.swing.JLabel();
+        txt_metrosTienda = new javax.swing.JTextField();
+        txt_DNI = new javax.swing.JTextField();
+        txt_tienda = new javax.swing.JTextField();
         nParcelas = new javax.swing.JComboBox<>();
-        nombreApellidos = new javax.swing.JTextField();
+        txt_nombreApellidos = new javax.swing.JTextField();
         luzNo = new javax.swing.JRadioButton();
         luzSi = new javax.swing.JRadioButton();
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
-        cancelar = new javax.swing.JButton();
-        aceptar = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
+        btn_aceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel1.setText("Metros cuadrados:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, 20));
+        lbl_mcuadrados.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_mcuadrados.setText("Metros cuadrados:");
+        getContentPane().add(lbl_mcuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel2.setText("Nombre y Apellidos:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, 20));
+        lbl_nomape.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nomape.setText("Nombre y Apellidos:");
+        getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, 20));
 
-        jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel3.setText("DNI:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, 20));
+        lbl_dni.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_dni.setText("DNI:");
+        getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, 20));
 
-        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel4.setText("Fecha de salida:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, 60));
+        lbl_fechsalida.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_fechsalida.setText("Fecha de salida:");
+        getContentPane().add(lbl_fechsalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, 60));
 
-        jLabel5.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel5.setText("Nº de Parcelas:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, -1, 20));
+        lbl_numparcel.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_numparcel.setText("Nº de Parcelas:");
+        getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, -1, 20));
 
-        jLabel6.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel6.setText("¿Desea contar con servicio de luz en la parcela?");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, -1, 20));
+        lbl_luz.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_luz.setText("¿Desea contar con servicio de luz en la parcela?");
+        getContentPane().add(lbl_luz, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, -1, 20));
 
-        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel7.setText("Nombre:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, 20));
+        lbl_nombre.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nombre.setText("Nombre:");
+        getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, 20));
 
-        jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel8.setText("Introduzca los detalles de su tienda de campaña:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, 20));
+        lbl_detalles.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_detalles.setText("Introduzca los detalles de su tienda de campaña:");
+        getContentPane().add(lbl_detalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, 20));
 
-        metrosTienda.setToolTipText("");
-        metrosTienda.addActionListener(new java.awt.event.ActionListener() {
+        txt_metrosTienda.setToolTipText("");
+        txt_metrosTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                metrosTiendaActionPerformed(evt);
+                txt_metrosTiendaActionPerformed(evt);
             }
         });
-        getContentPane().add(metrosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 150, -1));
+        getContentPane().add(txt_metrosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 150, -1));
 
-        DNI.setToolTipText("");
-        DNI.addActionListener(new java.awt.event.ActionListener() {
+        txt_DNI.setToolTipText("");
+        txt_DNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DNIActionPerformed(evt);
+                txt_DNIActionPerformed(evt);
             }
         });
-        getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, -1));
+        getContentPane().add(txt_DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, -1));
 
-        tipoTienda.setToolTipText("");
-        tipoTienda.addActionListener(new java.awt.event.ActionListener() {
+        txt_tienda.setToolTipText("");
+        txt_tienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipoTiendaActionPerformed(evt);
+                txt_tiendaActionPerformed(evt);
             }
         });
-        getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 150, -1));
+        getContentPane().add(txt_tienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 150, -1));
 
         nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, -1, -1));
 
-        nombreApellidos.setToolTipText("");
-        nombreApellidos.addActionListener(new java.awt.event.ActionListener() {
+        txt_nombreApellidos.setToolTipText("");
+        txt_nombreApellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreApellidosActionPerformed(evt);
+                txt_nombreApellidosActionPerformed(evt);
             }
         });
-        getContentPane().add(nombreApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 150, -1));
+        getContentPane().add(txt_nombreApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 150, -1));
 
         luzNo.setText("No");
         getContentPane().add(luzNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
@@ -134,58 +134,58 @@ public class SinReserva extends javax.swing.JFrame {
         getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
         getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
 
-        cancelar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        cancelar.setText("Cancelar");
-        cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        cancelar.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_cancelar.setText("Cancelar");
+        btn_cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarActionPerformed(evt);
+                btn_cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, 140, 40));
+        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, 140, 40));
 
-        aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        aceptar.setText("Aceptar");
-        aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        aceptar.addActionListener(new java.awt.event.ActionListener() {
+        btn_aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_aceptar.setText("Aceptar");
+        btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aceptarActionPerformed(evt);
+                btn_aceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 480, 140, 40));
+        getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 480, 140, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void metrosTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metrosTiendaActionPerformed
+    private void txt_metrosTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_metrosTiendaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_metrosTiendaActionPerformed
+    }//GEN-LAST:event_txt_metrosTiendaActionPerformed
 
-    private void DNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DNIActionPerformed
+    private void txt_DNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_DNIActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DNIActionPerformed
+    }//GEN-LAST:event_txt_DNIActionPerformed
 
-    private void tipoTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoTiendaActionPerformed
+    private void txt_tiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tiendaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tipoTiendaActionPerformed
+    }//GEN-LAST:event_txt_tiendaActionPerformed
 
-    private void nombreApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreApellidosActionPerformed
+    private void txt_nombreApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreApellidosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreApellidosActionPerformed
+    }//GEN-LAST:event_txt_nombreApellidosActionPerformed
 
     private void luzSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzSiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_luzSiActionPerformed
 
-    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         this.setVisible(false);
         Principal pri = new Principal();
         pri.setVisible(true);
-    }//GEN-LAST:event_cancelarActionPerformed
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
-    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+    private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_aceptarActionPerformed
+    }//GEN-LAST:event_btn_aceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,23 +224,23 @@ public class SinReserva extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DNI;
-    private javax.swing.JButton aceptar;
-    private javax.swing.JButton cancelar;
+    private javax.swing.JButton btn_aceptar;
+    private javax.swing.JButton btn_cancelar;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel lbl_detalles;
+    private javax.swing.JLabel lbl_dni;
+    private javax.swing.JLabel lbl_fechsalida;
+    private javax.swing.JLabel lbl_luz;
+    private javax.swing.JLabel lbl_mcuadrados;
+    private javax.swing.JLabel lbl_nomape;
+    private javax.swing.JLabel lbl_nombre;
+    private javax.swing.JLabel lbl_numparcel;
     private javax.swing.JRadioButton luzNo;
     private javax.swing.JRadioButton luzSi;
-    private javax.swing.JTextField metrosTienda;
     private javax.swing.JComboBox<String> nParcelas;
-    private javax.swing.JTextField nombreApellidos;
-    private javax.swing.JTextField tipoTienda;
+    private javax.swing.JTextField txt_DNI;
+    private javax.swing.JTextField txt_metrosTienda;
+    private javax.swing.JTextField txt_nombreApellidos;
+    private javax.swing.JTextField txt_tienda;
     // End of variables declaration//GEN-END:variables
 }

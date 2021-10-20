@@ -49,9 +49,9 @@ public class Eventos extends javax.swing.JFrame {
         jList3 = new javax.swing.JList<>();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        lbl_titulo = new javax.swing.JLabel();
+        lbl_dni = new javax.swing.JLabel();
+        txt_dni = new javax.swing.JTextField();
         btn_continuar = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
 
@@ -152,20 +152,20 @@ public class Eventos extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Eventos de Camping Pary");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 260, 70));
+        lbl_titulo.setText("Eventos de Camping Pary");
+        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 260, 70));
 
-        jLabel2.setText("Introduce tu DNI:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 100, 30));
+        lbl_dni.setText("Introduce tu DNI:");
+        getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 100, 30));
 
-        jTextField1.setToolTipText("");
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txt_dni.setToolTipText("");
+        txt_dni.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_dni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txt_dniActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 130, 30));
+        getContentPane().add(txt_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 130, 30));
 
         btn_continuar.setText("Continuar");
         btn_continuar.addActionListener(new java.awt.event.ActionListener() {
@@ -186,9 +186,9 @@ public class Eventos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txt_dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dniActionPerformed
 
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txt_dniActionPerformed
 
     private void btn_continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_continuarActionPerformed
         Eventos eventos = new Eventos();
@@ -277,8 +277,6 @@ public class Eventos extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -288,6 +286,8 @@ public class Eventos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lbl_dni;
+    private javax.swing.JLabel lbl_titulo;
+    private javax.swing.JTextField txt_dni;
     // End of variables declaration//GEN-END:variables
 }
