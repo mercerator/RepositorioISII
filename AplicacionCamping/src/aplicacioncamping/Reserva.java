@@ -5,6 +5,8 @@
  */
 package aplicacioncamping;
 
+import javax.swing.JComboBox;
+
 /**
  *
  * @author antho
@@ -14,11 +16,19 @@ public class Reserva extends javax.swing.JFrame {
     /**
      * Creates new form Reserva
      */
+    
+    String Item = "";
+    
     public Reserva() {
         
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Reservas");
+        
+        //Seleccion del radioButton de la Luz
+        grupo_botones_luz.add(luzSi);
+        grupo_botones_luz.add(luzNO);
+        
 
     }
 
@@ -33,13 +43,13 @@ public class Reserva extends javax.swing.JFrame {
 
         dateChooserDialog1 = new datechooser.beans.DateChooserDialog();
         dateChooserDialog2 = new datechooser.beans.DateChooserDialog();
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        grupo_botones_luz = new javax.swing.ButtonGroup();
         lbl_nomape = new javax.swing.JLabel();
         nombreyApellidos = new javax.swing.JTextField();
         lbl_dni = new javax.swing.JLabel();
         DNI = new javax.swing.JTextField();
         lbl_numparcel = new javax.swing.JLabel();
-        nParcelas = new javax.swing.JComboBox<>();
+        cb_nParcelas = new javax.swing.JComboBox<>();
         lbl_fechentrada = new javax.swing.JLabel();
         fEntrada = new datechooser.beans.DateChooserCombo();
         lbl_fechasalida = new javax.swing.JLabel();
@@ -50,7 +60,7 @@ public class Reserva extends javax.swing.JFrame {
         tipoTienda = new javax.swing.JTextField();
         luzSi = new javax.swing.JRadioButton();
         luzNO = new javax.swing.JRadioButton();
-        btn_finreserva = new javax.swing.JButton();
+        btn_confirmareserva = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -59,7 +69,6 @@ public class Reserva extends javax.swing.JFrame {
         btn_aceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -77,8 +86,13 @@ public class Reserva extends javax.swing.JFrame {
         lbl_numparcel.setText("Nº de parcelas:");
         getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 130, 30));
 
-        nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 90, 30));
+        cb_nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Una", "Dos", "Tres", "Cuatro" }));
+        cb_nParcelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_nParcelasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cb_nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 90, 30));
 
         lbl_fechentrada.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         lbl_fechentrada.setText("Fecha de entrada:");
@@ -102,7 +116,7 @@ public class Reserva extends javax.swing.JFrame {
 
         luzSi.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         luzSi.setText("Si");
-        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 120, -1));
+        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 80, -1));
 
         luzNO.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         luzNO.setText("No");
@@ -111,18 +125,24 @@ public class Reserva extends javax.swing.JFrame {
                 luzNOActionPerformed(evt);
             }
         });
-        getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 120, -1));
+        getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 90, -1));
 
-        btn_finreserva.setText("Finalizar reserva");
-        getContentPane().add(btn_finreserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 180, 40));
+        btn_confirmareserva.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_confirmareserva.setText("Confirmar reserva");
+        btn_confirmareserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_confirmareservaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_confirmareserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 180, 40));
 
         jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel8.setText("Introduzca sus datos:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 40));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 170, 40));
 
         jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel9.setText("Datos de la reserva:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 320, 40));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 160, 40));
 
         jLabel10.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
@@ -169,6 +189,16 @@ public class Reserva extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
+    private void cb_nParcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_nParcelasActionPerformed
+        
+    }//GEN-LAST:event_cb_nParcelasActionPerformed
+
+    private void btn_confirmareservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmareservaActionPerformed
+        String Item = cb_nParcelas.getSelectedItem().toString();
+        
+        
+    }//GEN-LAST:event_btn_confirmareservaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -208,12 +238,13 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JTextField DNI;
     private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_cancelar;
-    private javax.swing.JButton btn_finreserva;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton btn_confirmareserva;
+    private javax.swing.JComboBox<String> cb_nParcelas;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private datechooser.beans.DateChooserDialog dateChooserDialog2;
     private datechooser.beans.DateChooserCombo fEntrada;
     private datechooser.beans.DateChooserCombo fSalida;
+    private javax.swing.ButtonGroup grupo_botones_luz;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -228,7 +259,6 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
     private javax.swing.JTextField mTienda;
-    private javax.swing.JComboBox<String> nParcelas;
     private javax.swing.JTextField nombreyApellidos;
     private javax.swing.JTextField tipoTienda;
     // End of variables declaration//GEN-END:variables

@@ -5,17 +5,25 @@
  */
 package aplicacioncamping;
 
+import aplicacioncamping.controlador.GestoresCamping;
+
+import aplicacioncamping.model.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Epic
  */
 public class Login extends javax.swing.JFrame {
 
+    protected Camping camping;
+    protected GestoresCamping perCamping;
+
     /**
      * Creates new form Login
      */
     public Login() {
-        
+
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Inicio de Sesión");
@@ -150,9 +158,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_passwdActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        this.setVisible(false);
-        Gerente ger = new Gerente(this);
-        ger.setVisible(true);
+        String nombre = txt_campo.getText();
+        String contrasenya = String.valueOf(txt_passwd.getPassword());
+
+        if ((camping.usuario1.equals(nombre) || camping.usuario2.equals(nombre)
+                || camping.usuario3.equals(nombre) || camping.usuario4.equals(nombre)
+                )&& camping.contra.equals(contrasenya)) {
+            Gerente ger = new Gerente(this);
+            ger.setVisible(true);
+            this.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario Invalido. Vuelva a intentarlo");
+        }
+
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     /**

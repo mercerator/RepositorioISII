@@ -14,12 +14,19 @@ public class SinReserva extends javax.swing.JFrame {
     /**
      * Creates new form Alquiler
      */
+    
+    String Item = "";
+    
     public SinReserva() {
 
         initComponents();
         setLocationRelativeTo(null);
 
         this.setTitle("Sin Reserva");
+        
+        //Seleccion del radioButton de la Luz
+        grupo_botones_luz.add(luzSi);
+        grupo_botones_luz.add(luzNO);
     }
 
     /**
@@ -31,6 +38,7 @@ public class SinReserva extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupo_botones_luz = new javax.swing.ButtonGroup();
         lbl_mcuadrados = new javax.swing.JLabel();
         lbl_nomape = new javax.swing.JLabel();
         lbl_dni = new javax.swing.JLabel();
@@ -42,16 +50,16 @@ public class SinReserva extends javax.swing.JFrame {
         txt_metrosTienda = new javax.swing.JTextField();
         txt_DNI = new javax.swing.JTextField();
         txt_tienda = new javax.swing.JTextField();
-        nParcelas = new javax.swing.JComboBox<>();
+        cb_nParcelas = new javax.swing.JComboBox<>();
         txt_nombreApellidos = new javax.swing.JTextField();
-        luzNo = new javax.swing.JRadioButton();
-        luzSi = new javax.swing.JRadioButton();
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
         btn_cancelar = new javax.swing.JButton();
         btn_aceptar = new javax.swing.JButton();
+        luzSi = new javax.swing.JRadioButton();
+        luzNO = new javax.swing.JRadioButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -61,7 +69,7 @@ public class SinReserva extends javax.swing.JFrame {
 
         lbl_nomape.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         lbl_nomape.setText("Nombre y Apellidos:");
-        getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, 20));
+        getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 20));
 
         lbl_dni.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         lbl_dni.setText("DNI:");
@@ -111,8 +119,13 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(txt_tienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 150, -1));
 
-        nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, -1, -1));
+        cb_nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Una", "Dos", "Tres", "Cuatro" }));
+        cb_nParcelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_nParcelasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cb_nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, -1, -1));
 
         txt_nombreApellidos.setToolTipText("");
         txt_nombreApellidos.addActionListener(new java.awt.event.ActionListener() {
@@ -120,18 +133,7 @@ public class SinReserva extends javax.swing.JFrame {
                 txt_nombreApellidosActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_nombreApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 150, -1));
-
-        luzNo.setText("No");
-        getContentPane().add(luzNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
-
-        luzSi.setText("Si");
-        luzSi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                luzSiActionPerformed(evt);
-            }
-        });
-        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
+        getContentPane().add(txt_nombreApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 150, -1));
         getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
 
         btn_cancelar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -154,6 +156,23 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 480, 140, 40));
 
+        luzSi.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        luzSi.setText("Si");
+        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 80, -1));
+
+        luzNO.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        luzNO.setText("No");
+        luzNO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                luzNOActionPerformed(evt);
+            }
+        });
+        getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 90, -1));
+
+        jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel8.setText("Introduzca sus datos:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -173,10 +192,6 @@ public class SinReserva extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_nombreApellidosActionPerformed
 
-    private void luzSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzSiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_luzSiActionPerformed
-
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         this.setVisible(false);
         Principal pri = new Principal();
@@ -186,6 +201,14 @@ public class SinReserva extends javax.swing.JFrame {
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_aceptarActionPerformed
+
+    private void luzNOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzNOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_luzNOActionPerformed
+
+    private void cb_nParcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_nParcelasActionPerformed
+        String Item = cb_nParcelas.getSelectedItem().toString();
+    }//GEN-LAST:event_cb_nParcelasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,7 +249,10 @@ public class SinReserva extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_cancelar;
+    private javax.swing.JComboBox<String> cb_nParcelas;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
+    private javax.swing.ButtonGroup grupo_botones_luz;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel lbl_detalles;
     private javax.swing.JLabel lbl_dni;
     private javax.swing.JLabel lbl_fechsalida;
@@ -235,9 +261,8 @@ public class SinReserva extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_nomape;
     private javax.swing.JLabel lbl_nombre;
     private javax.swing.JLabel lbl_numparcel;
-    private javax.swing.JRadioButton luzNo;
+    private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
-    private javax.swing.JComboBox<String> nParcelas;
     private javax.swing.JTextField txt_DNI;
     private javax.swing.JTextField txt_metrosTienda;
     private javax.swing.JTextField txt_nombreApellidos;
