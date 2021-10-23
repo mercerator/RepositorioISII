@@ -87,6 +87,7 @@ public class Gerente extends javax.swing.JFrame {
         parcelas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         parcelas.setTitle("Modificar Parcela");
         parcelas.setLocation(new java.awt.Point(265, 112));
+        parcelas.setMaximumSize(new java.awt.Dimension(1000, 600));
         parcelas.setMinimumSize(new java.awt.Dimension(1000, 600));
         parcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -437,6 +438,8 @@ public class Gerente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         descuento.setVisible(false);
         descuentoAct.setText(JOptionPane.showInputDialog(null, "Introduce el descuento que quiere aplicar: "));
+        if ("".equals(descuentoAct.getText()))
+            descuentoAct.setText(" 0");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
