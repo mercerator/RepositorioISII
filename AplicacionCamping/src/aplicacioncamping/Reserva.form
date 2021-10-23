@@ -251,8 +251,8 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="luzSi">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel10" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Si"/>
       </Properties>
@@ -264,8 +264,8 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="luzNO">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel10" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="No"/>
       </Properties>
@@ -347,7 +347,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="400" width="410" height="20"/>
+          <AbsoluteConstraints x="50" y="390" width="410" height="30"/>
         </Constraint>
       </Constraints>
     </Component>

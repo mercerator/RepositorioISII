@@ -167,19 +167,20 @@ public class Eventos extends javax.swing.JFrame {
         CancelacionEventos.getContentPane().add(lbl_iniciosesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, 40));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Eventos");
         setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl_titulo.setFont(new java.awt.Font("Georgia", 1, 48)); // NOI18N
-        lbl_titulo.setText("Eventos de Camping Pary");
-        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 630, 70));
+        lbl_titulo.setText("Eventos de Camping Party");
+        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 650, 70));
 
-        lbl_dni.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_dni.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_dni.setText("Introduce tu DNI:");
-        getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 150, 30));
+        getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 160, 30));
 
-        txt_dni.setFont(new java.awt.Font("Georgia", 0, 11)); // NOI18N
+        txt_dni.setFont(lbl_dni.getFont());
         txt_dni.setToolTipText("");
         txt_dni.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_dni.setOpaque(false);
@@ -190,9 +191,9 @@ public class Eventos extends javax.swing.JFrame {
         });
         getContentPane().add(txt_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 150, 30));
 
-        btn_continuar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_continuar.setFont(lbl_dni.getFont());
         btn_continuar.setText("Continuar");
-        btn_continuar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_continuar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         btn_continuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_continuarActionPerformed(evt);
@@ -200,9 +201,9 @@ public class Eventos extends javax.swing.JFrame {
         });
         getContentPane().add(btn_continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 260, 40));
 
-        btn_atras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_atras.setFont(lbl_dni.getFont());
         btn_atras.setText("Atrás");
-        btn_atras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_atras.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_atrasActionPerformed(evt);

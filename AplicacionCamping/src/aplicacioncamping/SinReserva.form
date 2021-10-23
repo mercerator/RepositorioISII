@@ -34,8 +34,8 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lbl_mcuadrados">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Metros cuadrados:"/>
       </Properties>
@@ -47,8 +47,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_nomape">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nombre y Apellidos:"/>
       </Properties>
@@ -60,8 +60,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_dni">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="DNI:"/>
       </Properties>
@@ -73,8 +73,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_fechsalida">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Fecha de salida:"/>
       </Properties>
@@ -86,8 +86,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_numparcel">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="N&#xba; de Parcelas:"/>
       </Properties>
@@ -99,8 +99,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_luz">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xbf;Desea contar con servicio de luz en la parcela?"/>
       </Properties>
@@ -112,8 +112,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_nombre">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
@@ -125,8 +125,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_detalles">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Introduzca los detalles de su tienda de campa&#xf1;a:"/>
       </Properties>
@@ -264,8 +264,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_cancelar">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -285,8 +285,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_aceptar">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Aceptar"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -306,8 +306,8 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="luzSi">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Si"/>
       </Properties>
@@ -319,8 +319,8 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="luzNO">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection component="jLabel8" name="font" type="property"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="No"/>
       </Properties>

@@ -82,7 +82,7 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btn_sinreserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 270, 80));
 
-        lbl_titulo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lbl_titulo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lbl_titulo.setText("Camping Party");
         getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 340, 140));
 

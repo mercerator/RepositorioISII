@@ -135,11 +135,11 @@ public class Reserva extends javax.swing.JFrame {
         tipoTienda.setOpaque(false);
         getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 150, 30));
 
-        luzSi.setFont(jLabel10.getFont());
+        luzSi.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         luzSi.setText("Si");
         getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 80, -1));
 
-        luzNO.setFont(jLabel10.getFont());
+        luzNO.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         luzNO.setText("No");
         luzNO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,7 +172,7 @@ public class Reserva extends javax.swing.JFrame {
 
         lbl_luzparcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_luzparcela.setText("¿Desea contar con servicio de luz en su parcela ?");
-        getContentPane().add(lbl_luzparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 410, 20));
+        getContentPane().add(lbl_luzparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 410, 30));
 
         btn_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_cancelar.setText("Cancelar");

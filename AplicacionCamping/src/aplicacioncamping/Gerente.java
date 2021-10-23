@@ -87,7 +87,6 @@ public class Gerente extends javax.swing.JFrame {
         parcelas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         parcelas.setTitle("Modificar Parcela");
         parcelas.setLocation(new java.awt.Point(265, 112));
-        parcelas.setMaximumSize(new java.awt.Dimension(1000, 600));
         parcelas.setMinimumSize(new java.awt.Dimension(1000, 600));
         parcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -263,6 +262,7 @@ public class Gerente extends javax.swing.JFrame {
         eventos.getContentPane().add(lbl_iniciosesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 350, 30));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Administración");
         setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         setPreferredSize(new java.awt.Dimension(1000, 550));
