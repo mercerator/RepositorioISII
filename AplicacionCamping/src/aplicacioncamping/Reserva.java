@@ -90,7 +90,7 @@ public class Reserva extends javax.swing.JFrame {
         DNI.setOpaque(false);
         getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 180, 30));
 
-        lbl_numparcel.setFont(jLabel10.getFont());
+        lbl_numparcel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_numparcel.setText("Nº de parcelas:");
         getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 130, 30));
 
@@ -103,14 +103,14 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(cb_nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 90, 30));
 
-        lbl_fechentrada.setFont(jLabel10.getFont());
+        lbl_fechentrada.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechentrada.setText("Fecha de entrada:");
         getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 150, 30));
 
         fEntrada.setFieldFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
         getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, 30));
 
-        lbl_fechasalida.setFont(jLabel10.getFont());
+        lbl_fechasalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechasalida.setText("Fecha de salida:");
         getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 140, 30));
 
@@ -148,8 +148,9 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 90, -1));
 
-        btn_confirmareserva.setFont(jLabel10.getFont());
+        btn_confirmareserva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_confirmareserva.setText("Confirmar reserva");
+        btn_confirmareserva.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_confirmareserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_confirmareservaActionPerformed(evt);
@@ -161,7 +162,7 @@ public class Reserva extends javax.swing.JFrame {
         jLabel8.setText("Introduzca sus datos:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 210, 40));
 
-        jLabel9.setFont(jLabel10.getFont());
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("Datos de la reserva:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 160, 40));
 
@@ -169,11 +170,11 @@ public class Reserva extends javax.swing.JFrame {
         jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 460, 20));
 
-        lbl_luzparcela.setFont(jLabel10.getFont());
+        lbl_luzparcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_luzparcela.setText("¿Desea contar con servicio de luz en su parcela ?");
         getContentPane().add(lbl_luzparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 410, 20));
 
-        btn_cancelar.setFont(jLabel10.getFont());
+        btn_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_cancelar.setText("Cancelar");
         btn_cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +184,7 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 140, 40));
 
-        btn_aceptar.setFont(jLabel10.getFont());
+        btn_aceptar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_aceptar.setText("Aceptar");
         btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
