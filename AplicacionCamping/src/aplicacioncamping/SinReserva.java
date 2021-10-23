@@ -63,39 +63,42 @@ public class SinReserva extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl_mcuadrados.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_mcuadrados.setFont(jLabel8.getFont());
         lbl_mcuadrados.setText("Metros cuadrados:");
-        getContentPane().add(lbl_mcuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, 20));
+        getContentPane().add(lbl_mcuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 360, 160, 20));
 
-        lbl_nomape.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nomape.setFont(jLabel8.getFont());
         lbl_nomape.setText("Nombre y Apellidos:");
-        getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 20));
+        getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 90, 180, 20));
 
-        lbl_dni.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_dni.setFont(jLabel8.getFont());
         lbl_dni.setText("DNI:");
-        getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, 20));
+        getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 130, 50, 20));
 
-        lbl_fechsalida.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_fechsalida.setFont(jLabel8.getFont());
         lbl_fechsalida.setText("Fecha de salida:");
-        getContentPane().add(lbl_fechsalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, 60));
+        getContentPane().add(lbl_fechsalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 140, 60));
 
-        lbl_numparcel.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_numparcel.setFont(jLabel8.getFont());
         lbl_numparcel.setText("Nº de Parcelas:");
-        getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, -1, 20));
+        getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 70, 130, 20));
 
-        lbl_luz.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_luz.setFont(jLabel8.getFont());
         lbl_luz.setText("¿Desea contar con servicio de luz en la parcela?");
-        getContentPane().add(lbl_luz, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, -1, 20));
+        getContentPane().add(lbl_luz, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 420, 400, 40));
 
-        lbl_nombre.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nombre.setFont(jLabel8.getFont());
         lbl_nombre.setText("Nombre:");
-        getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, 20));
+        getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 320, 80, 20));
 
-        lbl_detalles.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_detalles.setFont(jLabel8.getFont());
         lbl_detalles.setText("Introduzca los detalles de su tienda de campaña:");
-        getContentPane().add(lbl_detalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, 20));
+        getContentPane().add(lbl_detalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 270, 410, 20));
 
+        txt_metrosTienda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_metrosTienda.setToolTipText("");
+        txt_metrosTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_metrosTienda.setOpaque(false);
         txt_metrosTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_metrosTiendaActionPerformed(evt);
@@ -103,7 +106,10 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(txt_metrosTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 150, -1));
 
+        txt_DNI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_DNI.setToolTipText("");
+        txt_DNI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_DNI.setOpaque(false);
         txt_DNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_DNIActionPerformed(evt);
@@ -111,7 +117,10 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(txt_DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, -1));
 
+        txt_tienda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_tienda.setToolTipText("");
+        txt_tienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_tienda.setOpaque(false);
         txt_tienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_tiendaActionPerformed(evt);
@@ -119,6 +128,7 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(txt_tienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 150, -1));
 
+        cb_nParcelas.setFont(txt_metrosTienda.getFont());
         cb_nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Una", "Dos", "Tres", "Cuatro" }));
         cb_nParcelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,16 +137,21 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(cb_nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, -1, -1));
 
+        txt_nombreApellidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_nombreApellidos.setToolTipText("");
+        txt_nombreApellidos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_nombreApellidos.setOpaque(false);
         txt_nombreApellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_nombreApellidosActionPerformed(evt);
             }
         });
         getContentPane().add(txt_nombreApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 150, -1));
+
+        dateChooserCombo1.setFieldFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
 
-        btn_cancelar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_cancelar.setFont(jLabel8.getFont());
         btn_cancelar.setText("Cancelar");
         btn_cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +161,7 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, 140, 40));
 
-        btn_aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_aceptar.setFont(jLabel8.getFont());
         btn_aceptar.setText("Aceptar");
         btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -156,11 +171,11 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 480, 140, 40));
 
-        luzSi.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        luzSi.setFont(jLabel8.getFont());
         luzSi.setText("Si");
         getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 80, -1));
 
-        luzNO.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        luzNO.setFont(jLabel8.getFont());
         luzNO.setText("No");
         luzNO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +184,7 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 90, -1));
 
-        jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Introduzca sus datos:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 40));
 

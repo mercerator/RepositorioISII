@@ -72,20 +72,29 @@ public class Reserva extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl_nomape.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nomape.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_nomape.setText("Nombre y Apellidos:");
-        getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 170, 30));
+        getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 170, 30));
+
+        nombreyApellidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        nombreyApellidos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        nombreyApellidos.setOpaque(false);
         getContentPane().add(nombreyApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 180, 30));
 
-        lbl_dni.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_dni.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_dni.setText("DNI:");
         getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 50, 30));
+
+        DNI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        DNI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        DNI.setOpaque(false);
         getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 180, 30));
 
-        lbl_numparcel.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_numparcel.setFont(jLabel10.getFont());
         lbl_numparcel.setText("Nº de parcelas:");
         getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 130, 30));
 
+        cb_nParcelas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         cb_nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Una", "Dos", "Tres", "Cuatro" }));
         cb_nParcelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,31 +103,43 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(cb_nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 90, 30));
 
-        lbl_fechentrada.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_fechentrada.setFont(jLabel10.getFont());
         lbl_fechentrada.setText("Fecha de entrada:");
-        getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 140, 30));
+        getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 150, 30));
+
+        fEntrada.setFieldFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
         getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, 30));
 
-        lbl_fechasalida.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_fechasalida.setFont(jLabel10.getFont());
         lbl_fechasalida.setText("Fecha de salida:");
-        getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 130, 30));
+        getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 140, 30));
+
+        fSalida.setFieldFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
         getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, 30));
 
-        lbl_mcuadrados.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_mcuadrados.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_mcuadrados.setText("Metros cuadrados:");
-        getContentPane().add(lbl_mcuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 140, 30));
+        getContentPane().add(lbl_mcuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 160, 30));
+
+        mTienda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        mTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        mTienda.setOpaque(false);
         getContentPane().add(mTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 150, 30));
 
-        lbl_nombre.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_nombre.setText("Nombre:");
-        getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 70, 30));
+        getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 80, 30));
+
+        tipoTienda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tipoTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tipoTienda.setOpaque(false);
         getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 150, 30));
 
-        luzSi.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        luzSi.setFont(jLabel10.getFont());
         luzSi.setText("Si");
         getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 80, -1));
 
-        luzNO.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        luzNO.setFont(jLabel10.getFont());
         luzNO.setText("No");
         luzNO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +148,7 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 90, -1));
 
-        btn_confirmareserva.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_confirmareserva.setFont(jLabel10.getFont());
         btn_confirmareserva.setText("Confirmar reserva");
         btn_confirmareserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,23 +157,23 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(btn_confirmareserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 180, 40));
 
-        jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Introduzca sus datos:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 170, 40));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 210, 40));
 
-        jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel9.setFont(jLabel10.getFont());
         jLabel9.setText("Datos de la reserva:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 160, 40));
 
-        jLabel10.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 460, 20));
 
-        lbl_luzparcela.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_luzparcela.setFont(jLabel10.getFont());
         lbl_luzparcela.setText("¿Desea contar con servicio de luz en su parcela ?");
-        getContentPane().add(lbl_luzparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 370, 20));
+        getContentPane().add(lbl_luzparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 410, 20));
 
-        btn_cancelar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_cancelar.setFont(jLabel10.getFont());
         btn_cancelar.setText("Cancelar");
         btn_cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +183,7 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 140, 40));
 
-        btn_aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_aceptar.setFont(jLabel10.getFont());
         btn_aceptar.setText("Aceptar");
         btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_aceptar.addActionListener(new java.awt.event.ActionListener() {

@@ -91,33 +91,33 @@ public class Gerente extends javax.swing.JFrame {
         parcelas.setMinimumSize(new java.awt.Dimension(1000, 600));
         parcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl_nomape.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nomape.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_nomape.setText("Nombre y Apellidos: ");
         parcelas.getContentPane().add(lbl_nomape, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 170, 30));
 
-        lbl_dni.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_dni.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_dni.setText("DNI:");
         parcelas.getContentPane().add(lbl_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 40, 30));
 
-        lbl_numparcel.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_numparcel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_numparcel.setText("Nº de parcelas:");
         parcelas.getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 130, 30));
 
-        lbl_fechentrada.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_fechentrada.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_fechentrada.setText("Fecha de entrada:");
         parcelas.getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 140, 30));
         parcelas.getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, 30));
 
-        lbl_salida.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_salida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_salida.setText("Fecha de salida:");
         parcelas.getContentPane().add(lbl_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 130, 30));
         parcelas.getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, -1, 30));
 
-        lbl_mcuadrados.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_mcuadrados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_mcuadrados.setText("Metros cuadrados:");
         parcelas.getContentPane().add(lbl_mcuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 140, 30));
 
-        lbl_nombre.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_nombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_nombre.setText("Nombre:");
         parcelas.getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 70, 30));
 
@@ -134,23 +134,23 @@ public class Gerente extends javax.swing.JFrame {
         });
         parcelas.getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, 160, -1));
 
-        lbl_datos.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_datos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_datos.setText("Datos Cliente:");
         parcelas.getContentPane().add(lbl_datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 200, 40));
 
-        lbl_datos_reserva.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_datos_reserva.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_datos_reserva.setText("Datos de la reserva:");
         parcelas.getContentPane().add(lbl_datos_reserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 240, 40));
 
-        lbl_detallestienda.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_detallestienda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_detallestienda.setText("Introduzca los detalles de su tienda de campaña:");
         parcelas.getContentPane().add(lbl_detallestienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 460, 30));
 
-        lbl_luz.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        lbl_luz.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_luz.setText("¿Desea contar con servicio de luz en su parcela ?");
         parcelas.getContentPane().add(lbl_luz, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 450, 50));
 
-        btn_salir.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_salir.setText("Salir");
         btn_salir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +160,7 @@ public class Gerente extends javax.swing.JFrame {
         });
         parcelas.getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 140, 40));
 
-        btn_aceptar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_aceptar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_aceptar.setText("Aceptar");
         btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -170,27 +170,27 @@ public class Gerente extends javax.swing.JFrame {
         });
         parcelas.getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 500, 140, 40));
 
-        jLabel12.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText(" Alfredo Clemente");
         parcelas.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel13.setText("24");
         parcelas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 130, 30));
 
-        jLabel14.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel14.setText("4");
         parcelas.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel15.setText("485586954L");
         parcelas.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, 30));
 
-        jLabel16.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setText("qchua");
         parcelas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 130, 30));
 
-        btn_eliminar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_eliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_eliminar.setText("Eliminar Reserva");
         btn_eliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {

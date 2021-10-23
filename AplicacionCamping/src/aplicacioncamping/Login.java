@@ -50,27 +50,32 @@ public class Login extends javax.swing.JFrame {
         lbl_titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Introduzca sus credenciales:", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
+        btn_aceptar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_aceptar.setText("Aceptar");
+        btn_aceptar.setBorder(btn_atras.getBorder());
         btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_aceptarActionPerformed(evt);
             }
         });
 
+        btn_atras.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_atras.setText("Atrás");
+        btn_atras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_atrasActionPerformed(evt);
             }
         });
 
-        txt_passwd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_passwd.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        txt_passwd.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_passwd.setOpaque(false);
         txt_passwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_passwdActionPerformed(evt);
@@ -80,7 +85,9 @@ public class Login extends javax.swing.JFrame {
         lbl_contraseña.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_contraseña.setText("Contraseña:");
 
-        txt_campo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txt_campo.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        txt_campo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_campo.setOpaque(false);
         txt_campo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_campoActionPerformed(evt);
@@ -137,8 +144,9 @@ public class Login extends javax.swing.JFrame {
         lbl_iniciosesion.setText("Inicio de Sesión");
         getContentPane().add(lbl_iniciosesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 250, 30));
 
+        lbl_titulo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lbl_titulo.setText("Camping Party");
-        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 530, 140));
+        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 530, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
