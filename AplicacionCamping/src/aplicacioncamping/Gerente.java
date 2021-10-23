@@ -6,6 +6,7 @@
 package aplicacioncamping;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -67,6 +68,13 @@ public class Gerente extends javax.swing.JFrame {
         btn_emparejar = new javax.swing.JButton();
         btn_ganador = new javax.swing.JButton();
         lbl_iniciosesion = new javax.swing.JLabel();
+        descuento = new javax.swing.JInternalFrame();
+        eldescuentoes = new javax.swing.JLabel();
+        descuentoAct = new javax.swing.JLabel();
+        xcien = new javax.swing.JLabel();
+        atras = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         btn_administrar = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
@@ -74,11 +82,11 @@ public class Gerente extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         scroll_eventos = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
+        btn_descuento = new javax.swing.JButton();
 
         parcelas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         parcelas.setTitle("Modificar Parcela");
         parcelas.setLocation(new java.awt.Point(265, 112));
-        parcelas.setMaximumSize(new java.awt.Dimension(1000, 600));
         parcelas.setMinimumSize(new java.awt.Dimension(1000, 600));
         parcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -260,6 +268,50 @@ public class Gerente extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1000, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        descuento.setTitle("Descuento");
+        descuento.setToolTipText("");
+        descuento.setVisible(false);
+        descuento.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        eldescuentoes.setFont(jLabel15.getFont());
+        eldescuentoes.setText("El descuento actual es de un");
+        descuento.getContentPane().add(eldescuentoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 220, 20));
+
+        descuentoAct.setFont(jLabel15.getFont());
+        descuentoAct.setText(" 0");
+        descuento.getContentPane().add(descuentoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 20, -1));
+
+        xcien.setFont(jLabel15.getFont());
+        xcien.setText("%.");
+        descuento.getContentPane().add(xcien, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+
+        atras.setFont(btn_atras.getFont());
+        atras.setText("Atrás");
+        atras.setBorder(btn_atras.getBorder());
+        atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasActionPerformed(evt);
+            }
+        });
+        descuento.getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 100, 40));
+
+        jButton1.setFont(atras.getFont());
+        jButton1.setText("Actualizar");
+        jButton1.setActionCommand("actualizarDescuento");
+        jButton1.setBorder(atras.getBorder());
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        descuento.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 100, 40));
+
+        jLabel1.setFont(jLabel15.getFont());
+        jLabel1.setText("¿Desea actualizar el descuento?");
+        descuento.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+
+        getContentPane().add(descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 330, 250));
+
         btn_administrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_administrar.setText("Administrar");
         btn_administrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -268,7 +320,7 @@ public class Gerente extends javax.swing.JFrame {
                 btn_administrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_administrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 110, 20));
+        getContentPane().add(btn_administrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 110, 20));
 
         btn_atras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_atras.setText("Atrás");
@@ -308,7 +360,17 @@ public class Gerente extends javax.swing.JFrame {
         });
         scroll_eventos.setViewportView(jList3);
 
-        getContentPane().add(scroll_eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 170, 210));
+        getContentPane().add(scroll_eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 170, 210));
+
+        btn_descuento.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_descuento.setText("Descuento");
+        btn_descuento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_descuento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_descuentoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 110, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -368,6 +430,19 @@ public class Gerente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ganadorActionPerformed
 
+    private void btn_descuentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_descuentoActionPerformed
+        descuento.setVisible(true);
+    }//GEN-LAST:event_btn_descuentoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        descuento.setVisible(false);
+        descuentoAct.setText(JOptionPane.showInputDialog(null, "Introduce el descuento que quiere aplicar: "));
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+        descuento.setVisible(false);
+    }//GEN-LAST:event_atrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -404,19 +479,26 @@ public class Gerente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton atras;
     private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_administrar;
     private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_atras2;
+    private javax.swing.JButton btn_descuento;
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_emparejar;
     private javax.swing.JButton btn_ganador;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_sancionar;
+    private javax.swing.JInternalFrame descuento;
+    private javax.swing.JLabel descuentoAct;
+    private javax.swing.JLabel eldescuentoes;
     private javax.swing.JFrame eventos;
     private datechooser.beans.DateChooserCombo fEntrada;
     private datechooser.beans.DateChooserCombo fSalida;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -443,5 +525,6 @@ public class Gerente extends javax.swing.JFrame {
     private javax.swing.JFrame parcelas;
     private javax.swing.JScrollPane scroll_eventos;
     private javax.swing.JScrollPane scroll_parcelas;
+    private javax.swing.JLabel xcien;
     // End of variables declaration//GEN-END:variables
 }
