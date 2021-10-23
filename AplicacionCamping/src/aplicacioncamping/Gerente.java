@@ -437,7 +437,7 @@ public class Gerente extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         descuento.setVisible(false);
-        descuentoAct.setText(JOptionPane.showInputDialog(null, "Introduce el descuento que quiere aplicar: "));
+        descuentoAct.setText(JOptionPane.showInputDialog(null, "Introduce el descuento que quiere aplicar: ", "Descuento", JOptionPane.QUESTION_MESSAGE));
         if ("".equals(descuentoAct.getText()))
             descuentoAct.setText(" 0");
     }//GEN-LAST:event_jButton1ActionPerformed

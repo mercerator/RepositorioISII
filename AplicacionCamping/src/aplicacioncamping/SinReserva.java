@@ -5,6 +5,10 @@
  */
 package aplicacioncamping;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
+
 /**
  *
  * @author anita
@@ -50,7 +54,6 @@ public class SinReserva extends javax.swing.JFrame {
         txt_metrosTienda = new javax.swing.JTextField();
         txt_DNI = new javax.swing.JTextField();
         txt_tienda = new javax.swing.JTextField();
-        cb_nParcelas = new javax.swing.JComboBox<>();
         txt_nombreApellidos = new javax.swing.JTextField();
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
         btn_cancelar = new javax.swing.JButton();
@@ -58,6 +61,8 @@ public class SinReserva extends javax.swing.JFrame {
         luzSi = new javax.swing.JRadioButton();
         luzNO = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
+        nparcelas = new javax.swing.JSpinner();
+        lbl_numparcel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -77,11 +82,11 @@ public class SinReserva extends javax.swing.JFrame {
 
         lbl_fechsalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechsalida.setText("Fecha de salida:");
-        getContentPane().add(lbl_fechsalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 140, 60));
+        getContentPane().add(lbl_fechsalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 140, 20));
 
         lbl_numparcel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_numparcel.setText("Nº de Parcelas:");
-        getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 70, 130, 20));
+        getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 130, 20));
 
         lbl_luz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_luz.setText("¿Desea contar con servicio de luz en la parcela?");
@@ -127,15 +132,6 @@ public class SinReserva extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_tienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 150, -1));
-
-        cb_nParcelas.setFont(txt_metrosTienda.getFont());
-        cb_nParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Una", "Dos", "Tres", "Cuatro" }));
-        cb_nParcelas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_nParcelasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cb_nParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, -1, -1));
 
         txt_nombreApellidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_nombreApellidos.setToolTipText("");
@@ -188,11 +184,24 @@ public class SinReserva extends javax.swing.JFrame {
         jLabel8.setText("Introduzca sus datos:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 40));
 
+        nparcelas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        nparcelas.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        nparcelas.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                nparcelasStateChanged(evt);
+            }
+        });
+        getContentPane().add(nparcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 60, 30));
+
+        lbl_numparcel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lbl_numparcel1.setText("20 metros por parcela");
+        getContentPane().add(lbl_numparcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 74, 130, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_metrosTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_metrosTiendaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txt_metrosTiendaActionPerformed
 
     private void txt_DNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_DNIActionPerformed
@@ -214,16 +223,24 @@ public class SinReserva extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        // TODO add your handling code here:
+        int mtienda = Integer.parseInt(txt_metrosTienda.getText());
+        int mparcelas = (Integer)nparcelas.getValue() * 20;
+        
+        if ( (mparcelas - mtienda) >= 0 ){
+            //Sr guarda y cerramos 
+        }
+        else
+            JOptionPane.showMessageDialog(new JFrame(), "La tienda excede los "
+                    + "metrso de las parcelas seleccionadas.", "Error", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     private void luzNOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzNOActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_luzNOActionPerformed
 
-    private void cb_nParcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_nParcelasActionPerformed
-        String Item = cb_nParcelas.getSelectedItem().toString();
-    }//GEN-LAST:event_cb_nParcelasActionPerformed
+    private void nparcelasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nparcelasStateChanged
+        
+    }//GEN-LAST:event_nparcelasStateChanged
 
     /**
      * @param args the command line arguments
@@ -264,7 +281,6 @@ public class SinReserva extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_cancelar;
-    private javax.swing.JComboBox<String> cb_nParcelas;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.ButtonGroup grupo_botones_luz;
     private javax.swing.JLabel jLabel8;
@@ -276,8 +292,10 @@ public class SinReserva extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_nomape;
     private javax.swing.JLabel lbl_nombre;
     private javax.swing.JLabel lbl_numparcel;
+    private javax.swing.JLabel lbl_numparcel1;
     private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
+    private javax.swing.JSpinner nparcelas;
     private javax.swing.JTextField txt_DNI;
     private javax.swing.JTextField txt_metrosTienda;
     private javax.swing.JTextField txt_nombreApellidos;
