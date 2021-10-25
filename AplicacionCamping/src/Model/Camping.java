@@ -19,9 +19,11 @@ public class Camping {
     public static String usuario4 = "Jacques";
     
     public static String contra = "123";
-
+    
+    //Variables
+    private ArrayList<Actividad> actividades = new ArrayList<Actividad>();
+    
     public Camping() {
-
     }
 
 }
