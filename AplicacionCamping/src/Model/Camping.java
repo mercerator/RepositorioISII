@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  *
- * @author Epic
+ * @author EpicGames
  */
 public class Camping {
 

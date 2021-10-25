@@ -15,7 +15,7 @@ import java.util.Date;
 
 /**
  *
- * @author Alex
+ * @author Alexandra
  */
 public class Cliente extends UsuarioRegistrado{
     private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();

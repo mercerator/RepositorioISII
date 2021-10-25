@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class Gerente extends javax.swing.JFrame {
 
     private JFrame vistaAnterior;
+    private Gerente gerente;
 
     /**
      * Creates new form Gerente
@@ -305,33 +306,19 @@ public class Gerente extends javax.swing.JFrame {
         reciboPago.getContentPane().add(label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 190, 30));
 
         label5.setText("Con luz");
-        reciboPago.getContentPane().add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 40, 30));
+        reciboPago.getContentPane().add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 50, 30));
 
         label6.setText("Dias totales de la estancia:");
         reciboPago.getContentPane().add(label6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, 30));
 
         label7.setText("Coste total:");
         reciboPago.getContentPane().add(label7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
-
-        costeDescuento.setText("jLabel9");
-        reciboPago.getContentPane().add(costeDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 140, 30));
-
-        nomCliente.setText("jLabel9");
+        reciboPago.getContentPane().add(costeDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 230, 30));
         reciboPago.getContentPane().add(nomCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 140, 30));
-
-        dni.setText("jLabel9");
         reciboPago.getContentPane().add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 140, 30));
-
-        diasEstancia.setText("jLabel9");
-        reciboPago.getContentPane().add(diasEstancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 140, 30));
-
-        numParcelas.setText("jLabel9");
-        reciboPago.getContentPane().add(numParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 140, 30));
-
-        luz.setText("jLabel9");
-        reciboPago.getContentPane().add(luz, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 140, 30));
-
-        costeTotal.setText("jLabel9");
+        reciboPago.getContentPane().add(diasEstancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 140, 30));
+        reciboPago.getContentPane().add(numParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 140, 30));
+        reciboPago.getContentPane().add(luz, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 140, 30));
         reciboPago.getContentPane().add(costeTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 140, 30));
 
         imprimir.setText("Imprimir");
@@ -470,6 +457,7 @@ public class Gerente extends javax.swing.JFrame {
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
         parcelas.setSize(1000, 600);
         parcelas.setVisible(true);
+        
         this.setVisible(false);
 
     }//GEN-LAST:event_btn_modificarActionPerformed
@@ -528,6 +516,14 @@ public class Gerente extends javax.swing.JFrame {
     private void btn_pagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagoActionPerformed
         this.parcelas.setVisible(false);
         this.reciboPago.setVisible(true);
+        
+        this.nomCliente.setText("Luis Fernando");
+        this.costeDescuento.setText("170.00 € (Con un descuento del 15%)");
+        this.costeTotal.setText("200.00");
+        this.dni.setText("23960564L");
+        this.numParcelas.setText("5");
+        this.diasEstancia.setText("3");
+        this.luz.setText("Si");
     }//GEN-LAST:event_btn_pagoActionPerformed
 
     private void imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirActionPerformed
