@@ -5,10 +5,13 @@
  */
 package Controlador;
 
+import Datos.DatosParcela;
 import Model.Camping;
+import Model.Parcela;
 import Model.Reserva;
 import Model.Tienda;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -24,5 +27,23 @@ public class Cliente extends UsuarioRegistrado{
         super(usuario, null, camping);
     }
     
+    public DatosParcela consultarDatosParcela(Object parcela){
+        Parcela par = (Parcela)parcela;
+        return par.consultarDatosParcela();
+    }
     
+    public ArrayList consultarParcelas(){
+        return camping.consultarParcelas();
+    }
+    
+    public void reserva(String nombreApellidos, String dni, ArrayList<String> nombresTiendas, 
+            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList parcelasSeleccionadas){
+        Reserva reserva = camping.reserva(nombreApellidos, dni, luz, fechaIni, 
+                fechaFin, (ArrayList<Parcela>) parcelasSeleccionadas, this);
+        reservas.add(reserva);
+        for(int i = 0; i < nombresTiendas.size(); i++){
+            Tienda tienda = new Tienda(nombresTiendas.get(i), metrosTiendas.get(i));
+            tiendas.add(tienda);
+        }
+    }
 }

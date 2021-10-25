@@ -14,7 +14,7 @@ import Model.Camping;
 public class UsuarioRegistrado {
     private String usuario;
     private String contrasenya;
-    private Camping camping;
+    protected Camping camping;
     
     public UsuarioRegistrado(String usuario, String contrasenya, Camping camping){
         this.usuario = usuario;

@@ -6,8 +6,12 @@
 package Vista;
 
 import Controlador.Cliente;
+import Datos.DatosParcela;
+import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +24,9 @@ public class Reserva extends javax.swing.JFrame {
      */
     private Cliente cliente;
     private JFrame vistaAnterior;
+    private ArrayList<Object> parcelasSeleccionadas = new ArrayList<Object>();
+    private ArrayList<String> nombresTiendas = new ArrayList<String>();
+    private ArrayList<Integer> metrosTiendas = new ArrayList<Integer>();
     String Item = "";
     
     public Reserva() {
@@ -32,7 +39,13 @@ public class Reserva extends javax.swing.JFrame {
         grupo_botones_luz.add(luzSi);
         grupo_botones_luz.add(luzNO);
         
-
+        for(Object item: cliente.consultarParcelas()){
+            combo_parcelas.addItem(item);
+        }
+        Object parcela = combo_parcelas.getSelectedItem();
+        DatosParcela datosParcela = cliente.consultarDatosParcela(parcela);
+        lbl_metrosparcela.setText(Integer.toString(datosParcela.metrosCuadrados));
+        lbl_precioParcela.setText(Integer.toString(datosParcela.precioDia));
     }
 
     /**
@@ -225,9 +238,24 @@ public class Reserva extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        String Item = nparcelas.toString();
-        
-        
+        try{
+            //Guardamos los datos en variables auxiliares
+            String nombreApellidos = nombreyApellidos.getText();
+            String dni = DNI.getText();
+            String nombreTienda = tipoTienda.getText();
+            int metrosTienda = Integer.parseInt(mTienda.getText());
+            boolean luz = false;
+            if(luzSi.isSelected())
+                luz = true;
+            Date fechaIni = fEntrada.getSelectedDate().getTime();
+            Date fechaFin = fSalida.getSelectedDate().getTime();
+            cliente.reserva(nombreApellidos, dni, nombresTiendas, metrosTiendas, luz,
+                    fechaIni, fechaFin, parcelasSeleccionadas);
+            
+        }   
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error en alguno de los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     private void mTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mTiendaActionPerformed
@@ -235,11 +263,15 @@ public class Reserva extends javax.swing.JFrame {
     }//GEN-LAST:event_mTiendaActionPerformed
 
     private void btn_selecParcelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_selecParcelaActionPerformed
-        // TODO add your handling code here:
+        parcelasSeleccionadas.add(combo_parcelas.getSelectedItem());
+        nombresTiendas.add(tipoTienda.getText());
+        metrosTiendas.add(Integer.parseInt(mTienda.getText()));
     }//GEN-LAST:event_btn_selecParcelaActionPerformed
 
     private void combo_parcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_parcelasActionPerformed
-        // TODO add your handling code here:
+        DatosParcela datosParcela = cliente.consultarDatosParcela(combo_parcelas.getSelectedItem());
+        lbl_metrosparcela.setText(Integer.toString(datosParcela.metrosCuadrados));
+        lbl_precioParcela.setText(Integer.toString(datosParcela.precioDia));
     }//GEN-LAST:event_combo_parcelasActionPerformed
 
     /**
@@ -282,7 +314,7 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_selecParcela;
-    private javax.swing.JComboBox<String> combo_parcelas;
+    private javax.swing.JComboBox<Object> combo_parcelas;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private datechooser.beans.DateChooserDialog dateChooserDialog2;
     private datechooser.beans.DateChooserCombo fEntrada;

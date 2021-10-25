@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Controlador.Cliente;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,10 +17,12 @@ public class Reserva {
     private Date fechaIni;
     private Date fechaFin;
     private ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
+    private Cliente cliente;
     
-    public Reserva(Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelas){
+    public Reserva(Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelas, Cliente cliente){
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
         this.parcelas = parcelas;
+        this.cliente = cliente;
     }
 }

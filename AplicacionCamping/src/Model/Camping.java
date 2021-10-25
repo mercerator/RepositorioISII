@@ -5,7 +5,9 @@
  */
 package Model;
 
+import Controlador.Cliente;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -22,8 +24,24 @@ public class Camping {
     
     //Variables
     private ArrayList<Actividad> actividades = new ArrayList<Actividad>();
+    private ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
+    private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
     
     public Camping() {
     }
-
+    
+    public ArrayList consultarParcelas(){
+        return parcelas;
+    } 
+    
+    public Reserva reserva(String nombreApellidos, String dni, boolean luz, 
+            Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas,Cliente cliente){
+        for(Parcela parcela: parcelasSeleccionadas){
+            parcelas.remove(parcela);
+        }
+        Reserva reserva = new Reserva(fechaIni, fechaFin, parcelasSeleccionadas, cliente);
+        reservas.add(reserva);
+        
+        return reserva;
+    }
 }

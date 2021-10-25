@@ -5,6 +5,8 @@
  */
 package Model;
 
+import Datos.DatosParcela;
+
 /**
  *
  * @author Alex
@@ -20,5 +22,11 @@ public class Parcela {
         this.metrosCuadrados = metrosCuadrados;
         this.luz = luz;
         this.precioDia = precioDia;
+    }
+    
+    public DatosParcela consultarDatosParcela(){
+        DatosParcela datosParcela = new DatosParcela(this.identificador,
+            this.metrosCuadrados, this.luz, this.precioDia);
+        return datosParcela;
     }
 }
