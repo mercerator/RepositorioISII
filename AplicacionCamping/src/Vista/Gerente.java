@@ -53,13 +53,14 @@ public class Gerente extends javax.swing.JFrame {
         lbl_detallestienda = new javax.swing.JLabel();
         lbl_luz = new javax.swing.JLabel();
         btn_salir = new javax.swing.JButton();
-        btn_aceptar = new javax.swing.JButton();
+        btn_guardar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         btn_eliminar = new javax.swing.JButton();
+        btn_pago = new javax.swing.JButton();
         eventos = new javax.swing.JFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
@@ -68,6 +69,22 @@ public class Gerente extends javax.swing.JFrame {
         btn_emparejar = new javax.swing.JButton();
         btn_ganador = new javax.swing.JButton();
         lbl_iniciosesion = new javax.swing.JLabel();
+        reciboPago = new javax.swing.JFrame();
+        label1 = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
+        label3 = new javax.swing.JLabel();
+        label4 = new javax.swing.JLabel();
+        label5 = new javax.swing.JLabel();
+        label6 = new javax.swing.JLabel();
+        label7 = new javax.swing.JLabel();
+        costeDescuento = new javax.swing.JLabel();
+        nomCliente = new javax.swing.JLabel();
+        dni = new javax.swing.JLabel();
+        diasEstancia = new javax.swing.JLabel();
+        numParcelas = new javax.swing.JLabel();
+        luz = new javax.swing.JLabel();
+        costeTotal = new javax.swing.JLabel();
+        imprimir = new javax.swing.JButton();
         descuento = new javax.swing.JInternalFrame();
         eldescuentoes = new javax.swing.JLabel();
         descuentoAct = new javax.swing.JLabel();
@@ -159,15 +176,15 @@ public class Gerente extends javax.swing.JFrame {
         });
         parcelas.getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 140, 40));
 
-        btn_aceptar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_aceptar.setText("Aceptar");
-        btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
+        btn_guardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_guardar.setText("Guardar");
+        btn_guardar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_aceptarActionPerformed(evt);
+                btn_guardarActionPerformed(evt);
             }
         });
-        parcelas.getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 500, 140, 40));
+        parcelas.getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 500, 140, 40));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText(" Alfredo Clemente");
@@ -190,7 +207,7 @@ public class Gerente extends javax.swing.JFrame {
         parcelas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 130, 30));
 
         btn_eliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_eliminar.setText("Eliminar Reserva");
+        btn_eliminar.setText("Eliminar estancia");
         btn_eliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,6 +215,14 @@ public class Gerente extends javax.swing.JFrame {
             }
         });
         parcelas.getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, 140, 40));
+
+        btn_pago.setText("Realizar pago");
+        btn_pago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pagoActionPerformed(evt);
+            }
+        });
+        parcelas.getContentPane().add(btn_pago, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 140, 40));
 
         eventos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         eventos.setTitle("Administrar Eventos");
@@ -260,6 +285,62 @@ public class Gerente extends javax.swing.JFrame {
         lbl_iniciosesion.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lbl_iniciosesion.setText("Seleccione un evento");
         eventos.getContentPane().add(lbl_iniciosesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 350, 30));
+
+        reciboPago.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        reciboPago.setLocation(new java.awt.Point(265, 112));
+        reciboPago.setMinimumSize(new java.awt.Dimension(1000, 600));
+        reciboPago.setPreferredSize(new java.awt.Dimension(920, 510));
+        reciboPago.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label1.setText("Nombre del Cliente:");
+        reciboPago.getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 110, 30));
+
+        label2.setText("Coste aplicando el descuento:");
+        reciboPago.getContentPane().add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, 30));
+
+        label3.setText("DNI:");
+        reciboPago.getContentPane().add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 30, 30));
+
+        label4.setText("Numero de parcelas reservadas:");
+        reciboPago.getContentPane().add(label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 190, 30));
+
+        label5.setText("Con luz");
+        reciboPago.getContentPane().add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 40, 30));
+
+        label6.setText("Dias totales de la estancia:");
+        reciboPago.getContentPane().add(label6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, 30));
+
+        label7.setText("Coste total:");
+        reciboPago.getContentPane().add(label7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
+
+        costeDescuento.setText("jLabel9");
+        reciboPago.getContentPane().add(costeDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 140, 30));
+
+        nomCliente.setText("jLabel9");
+        reciboPago.getContentPane().add(nomCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 140, 30));
+
+        dni.setText("jLabel9");
+        reciboPago.getContentPane().add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 140, 30));
+
+        diasEstancia.setText("jLabel9");
+        reciboPago.getContentPane().add(diasEstancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 140, 30));
+
+        numParcelas.setText("jLabel9");
+        reciboPago.getContentPane().add(numParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 140, 30));
+
+        luz.setText("jLabel9");
+        reciboPago.getContentPane().add(luz, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 140, 30));
+
+        costeTotal.setText("jLabel9");
+        reciboPago.getContentPane().add(costeTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 140, 30));
+
+        imprimir.setText("Imprimir");
+        imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imprimirActionPerformed(evt);
+            }
+        });
+        reciboPago.getContentPane().add(imprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 200, 50));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administración");
@@ -403,10 +484,10 @@ public class Gerente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_salirActionPerformed
 
-    private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
+    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
         parcelas.setVisible(false);
         this.setVisible(true);
-    }//GEN-LAST:event_btn_aceptarActionPerformed
+    }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
         // TODO add your handling code here:
@@ -443,6 +524,16 @@ public class Gerente extends javax.swing.JFrame {
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
         descuento.setVisible(false);
     }//GEN-LAST:event_atrasActionPerformed
+
+    private void btn_pagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagoActionPerformed
+        this.parcelas.setVisible(false);
+        this.reciboPago.setVisible(true);
+    }//GEN-LAST:event_btn_pagoActionPerformed
+
+    private void imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirActionPerformed
+        this.reciboPago.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_imprimirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -481,7 +572,6 @@ public class Gerente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atras;
-    private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_administrar;
     private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_atras2;
@@ -489,15 +579,22 @@ public class Gerente extends javax.swing.JFrame {
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_emparejar;
     private javax.swing.JButton btn_ganador;
+    private javax.swing.JButton btn_guardar;
     private javax.swing.JButton btn_modificar;
+    private javax.swing.JButton btn_pago;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_sancionar;
+    private javax.swing.JLabel costeDescuento;
+    private javax.swing.JLabel costeTotal;
     private javax.swing.JInternalFrame descuento;
     private javax.swing.JLabel descuentoAct;
+    private javax.swing.JLabel diasEstancia;
+    private javax.swing.JLabel dni;
     private javax.swing.JLabel eldescuentoes;
     private javax.swing.JFrame eventos;
     private datechooser.beans.DateChooserCombo fEntrada;
     private datechooser.beans.DateChooserCombo fSalida;
+    private javax.swing.JButton imprimir;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
@@ -509,6 +606,13 @@ public class Gerente extends javax.swing.JFrame {
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel label2;
+    private javax.swing.JLabel label3;
+    private javax.swing.JLabel label4;
+    private javax.swing.JLabel label5;
+    private javax.swing.JLabel label6;
+    private javax.swing.JLabel label7;
     private javax.swing.JLabel lbl_datos;
     private javax.swing.JLabel lbl_datos_reserva;
     private javax.swing.JLabel lbl_detallestienda;
@@ -521,9 +625,13 @@ public class Gerente extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_nombre;
     private javax.swing.JLabel lbl_numparcel;
     private javax.swing.JLabel lbl_salida;
+    private javax.swing.JLabel luz;
     private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
+    private javax.swing.JLabel nomCliente;
+    private javax.swing.JLabel numParcelas;
     private javax.swing.JFrame parcelas;
+    private javax.swing.JFrame reciboPago;
     private javax.swing.JScrollPane scroll_eventos;
     private javax.swing.JScrollPane scroll_parcelas;
     private javax.swing.JLabel xcien;
