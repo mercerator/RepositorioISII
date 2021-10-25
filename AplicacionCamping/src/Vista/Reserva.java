@@ -5,7 +5,9 @@
  */
 package Vista;
 
+import Controlador.Cliente;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 
 /**
  *
@@ -16,7 +18,8 @@ public class Reserva extends javax.swing.JFrame {
     /**
      * Creates new form Reserva
      */
-    
+    private Cliente cliente;
+    private JFrame vistaAnterior;
     String Item = "";
     
     public Reserva() {
@@ -48,10 +51,10 @@ public class Reserva extends javax.swing.JFrame {
         nombreyApellidos = new javax.swing.JTextField();
         lbl_dni = new javax.swing.JLabel();
         DNI = new javax.swing.JTextField();
-        lbl_numparcel = new javax.swing.JLabel();
+        lbl_parcela = new javax.swing.JLabel();
         lbl_fechentrada = new javax.swing.JLabel();
         fEntrada = new datechooser.beans.DateChooserCombo();
-        lbl_fechasalida = new javax.swing.JLabel();
+        lbl_mensaje_metrosparcela = new javax.swing.JLabel();
         fSalida = new datechooser.beans.DateChooserCombo();
         lbl_mcuadrados = new javax.swing.JLabel();
         mTienda = new javax.swing.JTextField();
@@ -59,15 +62,18 @@ public class Reserva extends javax.swing.JFrame {
         tipoTienda = new javax.swing.JTextField();
         luzSi = new javax.swing.JRadioButton();
         luzNO = new javax.swing.JRadioButton();
-        btn_confirmareserva = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         lbl_luzparcela = new javax.swing.JLabel();
         btn_cancelar = new javax.swing.JButton();
+        btn_selecParcela = new javax.swing.JButton();
         btn_aceptar = new javax.swing.JButton();
-        lbl_numparcel1 = new javax.swing.JLabel();
-        nparcelas = new javax.swing.JSpinner();
+        combo_parcelas = new javax.swing.JComboBox<>();
+        lbl_fechasalida = new javax.swing.JLabel();
+        lbl_metrosparcela = new javax.swing.JLabel();
+        lbl_mensaje_precioParcela = new javax.swing.JLabel();
+        lbl_precioParcela = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -90,19 +96,19 @@ public class Reserva extends javax.swing.JFrame {
         DNI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 180, 30));
 
-        lbl_numparcel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_numparcel.setText("Nº de parcelas:");
-        getContentPane().add(lbl_numparcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 130, 30));
+        lbl_parcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_parcela.setText("Seleccionar parcela:");
+        getContentPane().add(lbl_parcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 170, 30));
 
         lbl_fechentrada.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechentrada.setText("Fecha de entrada:");
-        getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 150, 30));
-        getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, 30));
+        getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 150, 30));
+        getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, -1, 30));
 
-        lbl_fechasalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_fechasalida.setText("Fecha de salida:");
-        getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 140, 30));
-        getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, 30));
+        lbl_mensaje_metrosparcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_mensaje_metrosparcela.setText("Metros de la parcela:");
+        getContentPane().add(lbl_mensaje_metrosparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 170, 30));
+        getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, -1, 30));
 
         lbl_mcuadrados.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_mcuadrados.setText("Metros cuadrados:");
@@ -138,27 +144,17 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 90, -1));
 
-        btn_confirmareserva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_confirmareserva.setText("Confirmar reserva");
-        btn_confirmareserva.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btn_confirmareserva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_confirmareservaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_confirmareserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 180, 40));
-
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Introduzca sus datos:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 210, 40));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("Datos de la reserva:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 160, 40));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 160, 40));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 460, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 390, 20));
 
         lbl_luzparcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_luzparcela.setText("¿Desea contar con servicio de luz en su parcela ?");
@@ -172,7 +168,17 @@ public class Reserva extends javax.swing.JFrame {
                 btn_cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 140, 40));
+        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 140, 40));
+
+        btn_selecParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_selecParcela.setText("Seleccionar Parcela");
+        btn_selecParcela.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_selecParcela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_selecParcelaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_selecParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, 170, 40));
 
         btn_aceptar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_aceptar.setText("Aceptar");
@@ -182,18 +188,28 @@ public class Reserva extends javax.swing.JFrame {
                 btn_aceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 420, 140, 40));
+        getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 490, 140, 40));
 
-        lbl_numparcel1.setText("20 metros por parcela");
-        getContentPane().add(lbl_numparcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 130, 20));
-
-        nparcelas.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        nparcelas.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                nparcelasStateChanged(evt);
+        combo_parcelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_parcelasActionPerformed(evt);
             }
         });
-        getContentPane().add(nparcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 60, 30));
+        getContentPane().add(combo_parcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 130, -1));
+
+        lbl_fechasalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_fechasalida.setText("Fecha de salida:");
+        getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 140, 30));
+
+        lbl_metrosparcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(lbl_metrosparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 140, 30));
+
+        lbl_mensaje_precioParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_mensaje_precioParcela.setText("Precio de la parcela:");
+        getContentPane().add(lbl_mensaje_precioParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 160, 30));
+
+        lbl_precioParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(lbl_precioParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, 140, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -209,22 +225,22 @@ public class Reserva extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_aceptarActionPerformed
-
-    private void btn_confirmareservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmareservaActionPerformed
         String Item = nparcelas.toString();
         
         
-    }//GEN-LAST:event_btn_confirmareservaActionPerformed
-
-    private void nparcelasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_nparcelasStateChanged
-    int mparcelas = (Integer)nparcelas.getValue() * 20;
-    }//GEN-LAST:event_nparcelasStateChanged
+    }//GEN-LAST:event_btn_aceptarActionPerformed
 
     private void mTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mTiendaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mTiendaActionPerformed
+
+    private void btn_selecParcelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_selecParcelaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_selecParcelaActionPerformed
+
+    private void combo_parcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_parcelasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_parcelasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,7 +281,8 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JTextField DNI;
     private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_cancelar;
-    private javax.swing.JButton btn_confirmareserva;
+    private javax.swing.JButton btn_selecParcela;
+    private javax.swing.JComboBox<String> combo_parcelas;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private datechooser.beans.DateChooserDialog dateChooserDialog2;
     private datechooser.beans.DateChooserCombo fEntrada;
@@ -279,15 +296,17 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_fechentrada;
     private javax.swing.JLabel lbl_luzparcela;
     private javax.swing.JLabel lbl_mcuadrados;
+    private javax.swing.JLabel lbl_mensaje_metrosparcela;
+    private javax.swing.JLabel lbl_mensaje_precioParcela;
+    private javax.swing.JLabel lbl_metrosparcela;
     private javax.swing.JLabel lbl_nomape;
     private javax.swing.JLabel lbl_nombre;
-    private javax.swing.JLabel lbl_numparcel;
-    private javax.swing.JLabel lbl_numparcel1;
+    private javax.swing.JLabel lbl_parcela;
+    private javax.swing.JLabel lbl_precioParcela;
     private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
     private javax.swing.JTextField mTienda;
     private javax.swing.JTextField nombreyApellidos;
-    private javax.swing.JSpinner nparcelas;
     private javax.swing.JTextField tipoTienda;
     // End of variables declaration//GEN-END:variables
 }
