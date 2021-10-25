@@ -90,8 +90,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_sinreservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sinreservaActionPerformed
         this.setVisible(false);
-        SinReserva al = new SinReserva();
-        al.setVisible(true);
+        Reserva res = new Reserva(false);
+        res.setVisible(true);
     }//GEN-LAST:event_btn_sinreservaActionPerformed
 
     private void btn_eventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eventosActionPerformed
@@ -102,7 +102,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_reservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reservaActionPerformed
         this.setVisible(false);
-        Reserva res = new Reserva();
+        Reserva res = new Reserva(true);
         res.setVisible(true);
     }//GEN-LAST:event_btn_reservaActionPerformed
 
