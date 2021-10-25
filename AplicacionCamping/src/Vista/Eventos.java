@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacioncamping;
+package Vista;
 
 /**
  *
@@ -168,7 +168,6 @@ public class Eventos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Eventos");
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -183,7 +182,6 @@ public class Eventos extends javax.swing.JFrame {
         txt_dni.setFont(lbl_dni.getFont());
         txt_dni.setToolTipText("");
         txt_dni.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_dni.setOpaque(false);
         txt_dni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_dniActionPerformed(evt);

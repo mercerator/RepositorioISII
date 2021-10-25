@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacioncamping;
+package Vista;
 
 import javax.swing.JComboBox;
 
@@ -80,7 +80,6 @@ public class Reserva extends javax.swing.JFrame {
         nombreyApellidos.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
         nombreyApellidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         nombreyApellidos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        nombreyApellidos.setOpaque(false);
         getContentPane().add(nombreyApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 180, 30));
 
         lbl_dni.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -89,7 +88,6 @@ public class Reserva extends javax.swing.JFrame {
 
         DNI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         DNI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        DNI.setOpaque(false);
         getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 180, 30));
 
         lbl_numparcel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -99,15 +97,11 @@ public class Reserva extends javax.swing.JFrame {
         lbl_fechentrada.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechentrada.setText("Fecha de entrada:");
         getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 150, 30));
-
-        fEntrada.setFieldFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
         getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, 30));
 
         lbl_fechasalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechasalida.setText("Fecha de salida:");
         getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 140, 30));
-
-        fSalida.setFieldFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
         getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, 30));
 
         lbl_mcuadrados.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -116,7 +110,6 @@ public class Reserva extends javax.swing.JFrame {
 
         mTienda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         mTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        mTienda.setOpaque(false);
         mTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mTiendaActionPerformed(evt);
@@ -130,7 +123,6 @@ public class Reserva extends javax.swing.JFrame {
 
         tipoTienda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tipoTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        tipoTienda.setOpaque(false);
         getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 150, 30));
 
         luzSi.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -192,11 +184,9 @@ public class Reserva extends javax.swing.JFrame {
         });
         getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 420, 140, 40));
 
-        lbl_numparcel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lbl_numparcel1.setText("20 metros por parcela");
         getContentPane().add(lbl_numparcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 130, 20));
 
-        nparcelas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         nparcelas.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
         nparcelas.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {

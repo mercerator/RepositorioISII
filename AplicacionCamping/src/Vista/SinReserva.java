@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacioncamping;
+package Vista;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -103,7 +103,6 @@ public class SinReserva extends javax.swing.JFrame {
         txt_metrosTienda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_metrosTienda.setToolTipText("");
         txt_metrosTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_metrosTienda.setOpaque(false);
         txt_metrosTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_metrosTiendaActionPerformed(evt);
@@ -114,7 +113,6 @@ public class SinReserva extends javax.swing.JFrame {
         txt_DNI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_DNI.setToolTipText("");
         txt_DNI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_DNI.setOpaque(false);
         txt_DNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_DNIActionPerformed(evt);
@@ -125,7 +123,6 @@ public class SinReserva extends javax.swing.JFrame {
         txt_tienda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_tienda.setToolTipText("");
         txt_tienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_tienda.setOpaque(false);
         txt_tienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_tiendaActionPerformed(evt);
@@ -136,15 +133,12 @@ public class SinReserva extends javax.swing.JFrame {
         txt_nombreApellidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_nombreApellidos.setToolTipText("");
         txt_nombreApellidos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_nombreApellidos.setOpaque(false);
         txt_nombreApellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_nombreApellidosActionPerformed(evt);
             }
         });
         getContentPane().add(txt_nombreApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 150, -1));
-
-        dateChooserCombo1.setFieldFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         getContentPane().add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
 
         btn_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -184,7 +178,6 @@ public class SinReserva extends javax.swing.JFrame {
         jLabel8.setText("Introduzca sus datos:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 40));
 
-        nparcelas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         nparcelas.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
         nparcelas.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -193,7 +186,6 @@ public class SinReserva extends javax.swing.JFrame {
         });
         getContentPane().add(nparcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 60, 30));
 
-        lbl_numparcel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lbl_numparcel1.setText("20 metros por parcela");
         getContentPane().add(lbl_numparcel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 74, 130, -1));
 

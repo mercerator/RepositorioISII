@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacioncamping;
+package Vista;
 
-import aplicacioncamping.controlador.GestoresCamping;
+import Model.Camping;
+import Controlador.GestoresCamping;
 
-import aplicacioncamping.model.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -75,7 +75,6 @@ public class Login extends javax.swing.JFrame {
 
         txt_passwd.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         txt_passwd.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_passwd.setOpaque(false);
         txt_passwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_passwdActionPerformed(evt);
@@ -87,7 +86,6 @@ public class Login extends javax.swing.JFrame {
 
         txt_campo.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         txt_campo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txt_campo.setOpaque(false);
         txt_campo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_campoActionPerformed(evt);
