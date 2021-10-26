@@ -290,7 +290,6 @@ public class Gerente extends javax.swing.JFrame {
         reciboPago.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         reciboPago.setLocation(new java.awt.Point(265, 112));
         reciboPago.setMinimumSize(new java.awt.Dimension(1000, 600));
-        reciboPago.setPreferredSize(new java.awt.Dimension(920, 510));
         reciboPago.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label1.setText("Nombre del Cliente:");

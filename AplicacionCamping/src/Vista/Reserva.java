@@ -39,6 +39,8 @@ public class Reserva extends javax.swing.JFrame {
         grupo_botones_luz.add(luzSi);
         grupo_botones_luz.add(luzNO);
         fEntrada.enable(reserva);
+        btn_finalizar.setVisible(false);
+        
         /*
         for(Object item: cliente.consultarParcelas()){
             combo_parcelas.addItem(item);
@@ -61,14 +63,15 @@ public class Reserva extends javax.swing.JFrame {
         dateChooserDialog1 = new datechooser.beans.DateChooserDialog();
         dateChooserDialog2 = new datechooser.beans.DateChooserDialog();
         grupo_botones_luz = new javax.swing.ButtonGroup();
+        mapaParcelas = new javax.swing.JFrame();
+        btn_cancelarMapa = new javax.swing.JButton();
+        btn_guardarParcela = new javax.swing.JButton();
         lbl_nomape = new javax.swing.JLabel();
         nombreyApellidos = new javax.swing.JTextField();
         lbl_dni = new javax.swing.JLabel();
         DNI = new javax.swing.JTextField();
-        lbl_parcela = new javax.swing.JLabel();
         lbl_fechentrada = new javax.swing.JLabel();
         fEntrada = new datechooser.beans.DateChooserCombo();
-        lbl_mensaje_metrosparcela = new javax.swing.JLabel();
         fSalida = new datechooser.beans.DateChooserCombo();
         lbl_mcuadrados = new javax.swing.JLabel();
         mTienda = new javax.swing.JTextField();
@@ -77,17 +80,37 @@ public class Reserva extends javax.swing.JFrame {
         luzSi = new javax.swing.JRadioButton();
         luzNO = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         lbl_luzparcela = new javax.swing.JLabel();
         btn_cancelar = new javax.swing.JButton();
-        btn_selecParcela = new javax.swing.JButton();
-        btn_aceptar = new javax.swing.JButton();
-        combo_parcelas = new javax.swing.JComboBox<>();
+        btn_finalizar = new javax.swing.JButton();
         lbl_fechasalida = new javax.swing.JLabel();
-        lbl_metrosparcela = new javax.swing.JLabel();
-        lbl_mensaje_precioParcela = new javax.swing.JLabel();
-        lbl_precioParcela = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jLabel11 = new javax.swing.JLabel();
+        btn_seleccParcelas = new javax.swing.JButton();
+
+        mapaParcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_cancelarMapa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_cancelarMapa.setText("Cancelar");
+        btn_cancelarMapa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_cancelarMapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarMapaActionPerformed(evt);
+            }
+        });
+        mapaParcelas.getContentPane().add(btn_cancelarMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 200, 40));
+
+        btn_guardarParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_guardarParcela.setText("Guardar Parcela");
+        btn_guardarParcela.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_guardarParcela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardarParcelaActionPerformed(evt);
+            }
+        });
+        mapaParcelas.getContentPane().add(btn_guardarParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 200, 40));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -110,19 +133,11 @@ public class Reserva extends javax.swing.JFrame {
         DNI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 180, 30));
 
-        lbl_parcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_parcela.setText("Seleccionar parcela:");
-        getContentPane().add(lbl_parcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 170, 30));
-
         lbl_fechentrada.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechentrada.setText("Fecha de entrada:");
-        getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 150, 30));
-        getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, -1, 30));
-
-        lbl_mensaje_metrosparcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_mensaje_metrosparcela.setText("Metros de la parcela:");
-        getContentPane().add(lbl_mensaje_metrosparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 190, 30));
-        getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, -1, 30));
+        getContentPane().add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 150, 40));
+        getContentPane().add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 80, -1, 40));
+        getContentPane().add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, -1, 40));
 
         lbl_mcuadrados.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_mcuadrados.setText("Metros cuadrados:");
@@ -152,7 +167,7 @@ public class Reserva extends javax.swing.JFrame {
                 luzSiActionPerformed(evt);
             }
         });
-        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 80, -1));
+        getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 80, 30));
 
         luzNO.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         luzNO.setText("No");
@@ -161,23 +176,19 @@ public class Reserva extends javax.swing.JFrame {
                 luzNOActionPerformed(evt);
             }
         });
-        getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 90, -1));
+        getContentPane().add(luzNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 90, 30));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Introduzca sus datos:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 210, 40));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel9.setText("Datos de la reserva:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 160, 40));
-
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("Introduzca los detalles de su tienda de campaña:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 410, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 410, 20));
 
         lbl_luzparcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_luzparcela.setText("¿Desea contar con servicio de luz en su parcela ?");
-        getContentPane().add(lbl_luzparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 410, 30));
+        getContentPane().add(lbl_luzparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 410, 30));
 
         btn_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_cancelar.setText("Cancelar");
@@ -187,48 +198,44 @@ public class Reserva extends javax.swing.JFrame {
                 btn_cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 140, 40));
+        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 140, 40));
 
-        btn_selecParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_selecParcela.setText("Guardar");
-        btn_selecParcela.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btn_selecParcela.addActionListener(new java.awt.event.ActionListener() {
+        btn_finalizar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_finalizar.setText("Finalizar");
+        btn_finalizar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_finalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_selecParcelaActionPerformed(evt);
+                btn_finalizarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_selecParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, 170, 40));
-
-        btn_aceptar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_aceptar.setText("Finalizar");
-        btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_aceptarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 490, 140, 40));
-
-        combo_parcelas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combo_parcelasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(combo_parcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 102, 130, 30));
+        getContentPane().add(btn_finalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 520, 140, 40));
 
         lbl_fechasalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechasalida.setText("Fecha de salida:");
-        getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 140, 30));
+        getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 140, 40));
 
-        lbl_metrosparcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(lbl_metrosparcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 140, 30));
+        jList1.setBorder(javax.swing.BorderFactory.createTitledBorder("Mis parcelas reservadas:"));
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
-        lbl_mensaje_precioParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_mensaje_precioParcela.setText("Precio de la parcela:");
-        getContentPane().add(lbl_mensaje_precioParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 170, 30));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 290, 120));
 
-        lbl_precioParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(lbl_precioParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, 140, 30));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 410, 20));
+
+        btn_seleccParcelas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_seleccParcelas.setText("Seleccionar Parcela");
+        btn_seleccParcelas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_seleccParcelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_seleccParcelasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_seleccParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, 200, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -243,7 +250,7 @@ public class Reserva extends javax.swing.JFrame {
         prin.setVisible(true);
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
-    private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
+    private void btn_finalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finalizarActionPerformed
         try{
             //Guardamos los datos en variables auxiliares
             String nombreApellidos = nombreyApellidos.getText();
@@ -263,57 +270,65 @@ public class Reserva extends javax.swing.JFrame {
         catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error en alguno de los campos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btn_aceptarActionPerformed
+    }//GEN-LAST:event_btn_finalizarActionPerformed
 
     private void mTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mTiendaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mTiendaActionPerformed
 
-    private void btn_selecParcelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_selecParcelaActionPerformed
-        parcelasSeleccionadas.add(combo_parcelas.getSelectedItem());
-        nombresTiendas.add(tipoTienda.getText());
-        metrosTiendas.add(Integer.parseInt(mTienda.getText()));
-    }//GEN-LAST:event_btn_selecParcelaActionPerformed
-
-    private void combo_parcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_parcelasActionPerformed
-        DatosParcela datosParcela = cliente.consultarDatosParcela(combo_parcelas.getSelectedItem());
-        lbl_metrosparcela.setText(Integer.toString(datosParcela.metrosCuadrados));
-        lbl_precioParcela.setText(Integer.toString(datosParcela.precioDia));
-    }//GEN-LAST:event_combo_parcelasActionPerformed
-
     private void luzSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzSiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_luzSiActionPerformed
 
+    private void btn_seleccParcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seleccParcelasActionPerformed
+        this.setVisible(false);
+        mapaParcelas.setVisible(true);
+        
+    }//GEN-LAST:event_btn_seleccParcelasActionPerformed
+
+    private void btn_cancelarMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarMapaActionPerformed
+                                                           
+        this.setVisible(true);
+        mapaParcelas.setVisible(false);
+    }//GEN-LAST:event_btn_cancelarMapaActionPerformed
+
+    private void btn_guardarParcelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarParcelaActionPerformed
+                                                           
+        this.setVisible(true);
+        mapaParcelas.setVisible(false);
+        btn_finalizar.setVisible(true);
+        //guardar parcela seleccionada
+        
+    }//GEN-LAST:event_btn_guardarParcelaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DNI;
-    private javax.swing.JButton btn_aceptar;
     private javax.swing.JButton btn_cancelar;
-    private javax.swing.JButton btn_selecParcela;
-    private javax.swing.JComboBox<Object> combo_parcelas;
+    private javax.swing.JButton btn_cancelarMapa;
+    private javax.swing.JButton btn_finalizar;
+    private javax.swing.JButton btn_guardarParcela;
+    private javax.swing.JButton btn_seleccParcelas;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private datechooser.beans.DateChooserDialog dateChooserDialog2;
     private datechooser.beans.DateChooserCombo fEntrada;
     private datechooser.beans.DateChooserCombo fSalida;
     private javax.swing.ButtonGroup grupo_botones_luz;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_dni;
     private javax.swing.JLabel lbl_fechasalida;
     private javax.swing.JLabel lbl_fechentrada;
     private javax.swing.JLabel lbl_luzparcela;
     private javax.swing.JLabel lbl_mcuadrados;
-    private javax.swing.JLabel lbl_mensaje_metrosparcela;
-    private javax.swing.JLabel lbl_mensaje_precioParcela;
-    private javax.swing.JLabel lbl_metrosparcela;
     private javax.swing.JLabel lbl_nomape;
     private javax.swing.JLabel lbl_nombre;
-    private javax.swing.JLabel lbl_parcela;
-    private javax.swing.JLabel lbl_precioParcela;
     private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
     private javax.swing.JTextField mTienda;
+    private javax.swing.JFrame mapaParcelas;
     private javax.swing.JTextField nombreyApellidos;
     private javax.swing.JTextField tipoTienda;
     // End of variables declaration//GEN-END:variables
