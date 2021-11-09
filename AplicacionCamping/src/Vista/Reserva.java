@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -26,6 +27,7 @@ public class Reserva extends javax.swing.JFrame {
     private ArrayList<Object> parcelasSeleccionadas = new ArrayList<Object>();
     private ArrayList<String> nombresTiendas = new ArrayList<String>();
     private ArrayList<Integer> metrosTiendas = new ArrayList<Integer>();
+    private JRadioButton[] radiobutton = new JRadioButton[37];
     private boolean reserva;
     
     public Reserva(boolean reserva) {
@@ -40,6 +42,11 @@ public class Reserva extends javax.swing.JFrame {
         grupo_botones_luz.add(luzNO);
         fEntrada.enable(reserva);
         btn_finalizar.setVisible(false);
+        
+        for(int i = 1; i < 38; i++){
+            radiobutton[i] = new JRadioButton(""+i);
+            botonesParcelas.add(radiobutton[i]);
+        }
         
         /*
         for(Object item: cliente.consultarParcelas()){
@@ -66,6 +73,45 @@ public class Reserva extends javax.swing.JFrame {
         mapaParcelas = new javax.swing.JFrame();
         btn_cancelarMapa = new javax.swing.JButton();
         btn_guardarParcela = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton14 = new javax.swing.JRadioButton();
+        jRadioButton15 = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
+        jRadioButton17 = new javax.swing.JRadioButton();
+        jRadioButton18 = new javax.swing.JRadioButton();
+        jRadioButton19 = new javax.swing.JRadioButton();
+        jRadioButton20 = new javax.swing.JRadioButton();
+        jRadioButton21 = new javax.swing.JRadioButton();
+        jRadioButton22 = new javax.swing.JRadioButton();
+        jRadioButton23 = new javax.swing.JRadioButton();
+        jRadioButton24 = new javax.swing.JRadioButton();
+        jRadioButton25 = new javax.swing.JRadioButton();
+        jRadioButton26 = new javax.swing.JRadioButton();
+        jRadioButton27 = new javax.swing.JRadioButton();
+        jRadioButton28 = new javax.swing.JRadioButton();
+        jRadioButton29 = new javax.swing.JRadioButton();
+        jRadioButton30 = new javax.swing.JRadioButton();
+        jRadioButton31 = new javax.swing.JRadioButton();
+        jRadioButton32 = new javax.swing.JRadioButton();
+        jRadioButton33 = new javax.swing.JRadioButton();
+        jRadioButton34 = new javax.swing.JRadioButton();
+        jRadioButton35 = new javax.swing.JRadioButton();
+        jRadioButton37 = new javax.swing.JRadioButton();
+        jRadioButton36 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        botonesParcelas = new javax.swing.ButtonGroup();
         lbl_nomape = new javax.swing.JLabel();
         nombreyApellidos = new javax.swing.JTextField();
         lbl_dni = new javax.swing.JLabel();
@@ -90,6 +136,7 @@ public class Reserva extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         btn_seleccParcelas = new javax.swing.JButton();
 
+        mapaParcelas.setSize(new java.awt.Dimension(920, 610));
         mapaParcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_cancelarMapa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -100,7 +147,7 @@ public class Reserva extends javax.swing.JFrame {
                 btn_cancelarMapaActionPerformed(evt);
             }
         });
-        mapaParcelas.getContentPane().add(btn_cancelarMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 200, 40));
+        mapaParcelas.getContentPane().add(btn_cancelarMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 200, 40));
 
         btn_guardarParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_guardarParcela.setText("Guardar Parcela");
@@ -110,7 +157,54 @@ public class Reserva extends javax.swing.JFrame {
                 btn_guardarParcelaActionPerformed(evt);
             }
         });
-        mapaParcelas.getContentPane().add(btn_guardarParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 200, 40));
+        mapaParcelas.getContentPane().add(btn_guardarParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 200, 40));
+        mapaParcelas.getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 20, -1));
+
+        jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton11ActionPerformed(evt);
+            }
+        });
+        mapaParcelas.getContentPane().add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 360, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 300, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 330, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 290, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 150, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 100, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 20, -1));
+        mapaParcelas.getContentPane().add(jRadioButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 20, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Model/mapa.png"))); // NOI18N
+        jLabel1.setOpaque(true);
+        mapaParcelas.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 510));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -301,8 +395,13 @@ public class Reserva extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_guardarParcelaActionPerformed
 
+    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton11ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DNI;
+    private javax.swing.ButtonGroup botonesParcelas;
     private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_cancelarMapa;
     private javax.swing.JButton btn_finalizar;
@@ -313,10 +412,48 @@ public class Reserva extends javax.swing.JFrame {
     private datechooser.beans.DateChooserCombo fEntrada;
     private datechooser.beans.DateChooserCombo fSalida;
     private javax.swing.ButtonGroup grupo_botones_luz;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton15;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
+    private javax.swing.JRadioButton jRadioButton18;
+    private javax.swing.JRadioButton jRadioButton19;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton20;
+    private javax.swing.JRadioButton jRadioButton21;
+    private javax.swing.JRadioButton jRadioButton22;
+    private javax.swing.JRadioButton jRadioButton23;
+    private javax.swing.JRadioButton jRadioButton24;
+    private javax.swing.JRadioButton jRadioButton25;
+    private javax.swing.JRadioButton jRadioButton26;
+    private javax.swing.JRadioButton jRadioButton27;
+    private javax.swing.JRadioButton jRadioButton28;
+    private javax.swing.JRadioButton jRadioButton29;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton30;
+    private javax.swing.JRadioButton jRadioButton31;
+    private javax.swing.JRadioButton jRadioButton32;
+    private javax.swing.JRadioButton jRadioButton33;
+    private javax.swing.JRadioButton jRadioButton34;
+    private javax.swing.JRadioButton jRadioButton35;
+    private javax.swing.JRadioButton jRadioButton36;
+    private javax.swing.JRadioButton jRadioButton37;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_dni;
     private javax.swing.JLabel lbl_fechasalida;
