@@ -5,6 +5,7 @@
  */
 package Vista;
 
+
 import Controlador.Cliente;
 import Datos.DatosParcela;
 import java.util.ArrayList;
