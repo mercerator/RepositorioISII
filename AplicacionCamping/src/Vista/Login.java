@@ -7,6 +7,8 @@ package Vista;
 
 import Model.Camping;
 import Controlador.GestoresCamping;
+import Controlador.Personal;
+import Controlador.UsuarioRegistrado;
 
 import javax.swing.JOptionPane;
 
@@ -16,18 +18,24 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
 
-    protected Camping camping;
-    protected GestoresCamping perCamping;
+    protected Personal personal;
+    protected GestoresCamping gestoresCamping;
 
     /**
      * Creates new form Login
      */
     public Login() {
-
+        super("Login");
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Inicio de Sesión");
 
+        try {
+            gestoresCamping = new GestoresCamping();
+            personal = gestoresCamping.iniciarPersonal();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }
 
     /**
@@ -167,16 +175,20 @@ public class Login extends javax.swing.JFrame {
         String nombre = txt_campo.getText();
         String contrasenya = String.valueOf(txt_passwd.getPassword());
 
-        if ((camping.usuario1.equals(nombre) || camping.usuario2.equals(nombre)
-                || camping.usuario3.equals(nombre) || camping.usuario4.equals(nombre)
-                )&& camping.contra.equals(contrasenya)) {
-            Gerente ger = new Gerente(this);
-            ger.setVisible(true);
+        UsuarioRegistrado usuario = gestoresCamping.login(nombre, contrasenya);
+
+        if (usuario != null) {
+            Class tipoUsuario = usuario.getClass();
+
+            if (tipoUsuario == Personal.class) {
+                Gerente ger = new Gerente(this);
+                ger.setVisible(true);
+            }
             this.setVisible(false);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Usuario Invalido. Vuelva a intentarlo");
         }
-
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
 

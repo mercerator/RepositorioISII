@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model.Camping>
+  <usuarios>
+    <Controlador.Personal>
+      <nombre>Anthony</nombre>
+      <contrasenya>123</contrasenya>
+      <camping reference="../../.."/>
+    </Controlador.Personal>
+    <Controlador.Personal>
+      <nombre>Alex</nombre>
+      <contrasenya>123</contrasenya>
+      <camping reference="../../.."/>
+    </Controlador.Personal>
+    <Controlador.Personal>
+      <nombre>Ana</nombre>
+      <contrasenya>123</contrasenya>
+      <camping reference="../../.."/>
+    </Controlador.Personal>
+    <Controlador.Personal>
+      <nombre>Jacques</nombre>
+      <contrasenya>123</contrasenya>
+      <camping reference="../../.."/>
+    </Controlador.Personal>
+  </usuarios>
+  <actividades/>
+  <parcelas/>
+  <reservas/>
+</Model.Camping>

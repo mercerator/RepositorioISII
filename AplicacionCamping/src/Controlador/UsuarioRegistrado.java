@@ -6,36 +6,51 @@
 package Controlador;
 
 import Model.Camping;
+import static Model.Camping.ENCONTRADO;
+import static Model.Camping.ERROR;
+import static Model.Camping.SEGUIR;
 
 /**
  *
- * @author Alex
+ * @author Jacques
  */
 public class UsuarioRegistrado {
-    private String usuario;
+    private String nombre;
     private String contrasenya;
     protected Camping camping;
     
-    public UsuarioRegistrado(String usuario, String contrasenya, Camping camping){
-        this.usuario = usuario;
+    public UsuarioRegistrado(String nombre, String contrasenya, Camping camping){
+        this.nombre = nombre;
         this.contrasenya = contrasenya;
         this.camping = camping;
     }
     
-    public boolean validarGerente(String usuario, String contrasenya){
+    public int validarUsuario (String nombre, String contrasenya){
+        int resultado = SEGUIR;
+        
+        if (nombre.equals(this.nombre) && contrasenya.equals(this.contrasenya)){
+            resultado = ENCONTRADO;
+        }else if (nombre.equals(this.nombre)){
+                resultado = ERROR;
+        }
+        
+        return resultado;
+    }
+    
+    public boolean validarGerente(String nombre, String contrasenya){
         boolean resultado = false;
         
-        if(usuario.equals(this.usuario) && contrasenya.equals(this.contrasenya)){
+        if(nombre.equals(this.nombre) && contrasenya.equals(this.contrasenya)){
             resultado = true;
         }
         
         return resultado;
     }
     
-    public boolean validarCliente(String usuario){
+    public boolean validarCliente(String nombre){
         boolean resultado = false;
         
-        if(usuario.equals(this.usuario)){
+        if(nombre.equals(this.nombre)){
             resultado = true;
         }
         
