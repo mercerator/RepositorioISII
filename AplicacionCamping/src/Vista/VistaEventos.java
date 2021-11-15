@@ -9,12 +9,12 @@ package Vista;
  *
  * @author alumno
  */
-public class Eventos extends javax.swing.JFrame {
+public class VistaEventos extends javax.swing.JFrame {
 
     /**
      * Creates new form Eventos
      */
-    public Eventos() {
+    public VistaEventos() {
         
         initComponents();
         setLocationRelativeTo(null);
@@ -217,20 +217,20 @@ public class Eventos extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_dniActionPerformed
 
     private void btn_continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_continuarActionPerformed
-        Eventos eventos = new Eventos();
+        VistaEventos eventos = new VistaEventos();
         this.setVisible(false);
         eventos.ListadoEventos.setVisible(true);
     }//GEN-LAST:event_btn_continuarActionPerformed
 
     private void btn_reservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reservaActionPerformed
-        Eventos eventos = new Eventos();
+        VistaEventos eventos = new VistaEventos();
         this.ListadoEventos.setVisible(false);
         eventos.ReservaEventos.setVisible(true);
     }//GEN-LAST:event_btn_reservaActionPerformed
 
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         this.setVisible(false);
-        Principal prin = new Principal();
+        VistaPrincipal prin = new VistaPrincipal();
         prin.setVisible(true);
 
     }//GEN-LAST:event_btn_atrasActionPerformed

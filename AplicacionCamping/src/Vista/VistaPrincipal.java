@@ -9,12 +9,12 @@ package Vista;
  *
  * @author antho
  */
-public class Principal extends javax.swing.JFrame {
+public class VistaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Principal() {
+    public VistaPrincipal() {
         
         initComponents();
         setLocationRelativeTo(null);
@@ -90,25 +90,25 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_sinreservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sinreservaActionPerformed
         this.setVisible(false);
-        Reserva res = new Reserva(false);
+        VistaReserva res = new VistaReserva(false);
         res.setVisible(true);
     }//GEN-LAST:event_btn_sinreservaActionPerformed
 
     private void btn_eventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eventosActionPerformed
         this.setVisible(false);
-        Eventos eventos = new Eventos();
+        VistaEventos eventos = new VistaEventos();
         eventos.setVisible(true);
     }//GEN-LAST:event_btn_eventosActionPerformed
 
     private void btn_reservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reservaActionPerformed
         this.setVisible(false);
-        Reserva res = new Reserva(true);
+        VistaReserva res = new VistaReserva(true);
         res.setVisible(true);
     }//GEN-LAST:event_btn_reservaActionPerformed
 
     private void btn_ini_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ini_sesionActionPerformed
         this.setVisible(false);
-        Login log = new Login();
+        VistaLogin log = new VistaLogin();
         log.setVisible(true);
     }//GEN-LAST:event_btn_ini_sesionActionPerformed
 

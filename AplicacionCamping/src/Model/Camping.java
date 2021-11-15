@@ -6,7 +6,7 @@
 package Model;
 
 import Controlador.Cliente;
-import Controlador.Personal;
+import Controlador.Gerente;
 import Controlador.UsuarioRegistrado;
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,6 +22,7 @@ public class Camping {
     private ArrayList<Actividad> actividades = new ArrayList<Actividad>();
     private ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
     private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+    private int descuento;
     
     public static final int ERROR = -1;
     public static final int ENCONTRADO = 1;
@@ -31,16 +32,16 @@ public class Camping {
     }
     
     public void cargarDatos() throws Exception {
-        Personal per1 = new Personal("Anthony","123",this);
+        Gerente per1 = new Gerente("Anthony","123",this);
         usuarios.add(per1);
         
-        Personal per2 = new Personal("Alex","123",this);
+        Gerente per2 = new Gerente("Alex","123",this);
         usuarios.add(per2);
         
-        Personal per3 = new Personal("Ana","123",this);
+        Gerente per3 = new Gerente("Ana","123",this);
         usuarios.add(per3);
         
-        Personal per4 = new Personal("Jacques","123",this);
+        Gerente per4 = new Gerente("Jacques","123",this);
         usuarios.add(per4);
     }
     
@@ -73,5 +74,13 @@ public class Camping {
         reservas.add(reserva);
         
         return reserva;
+    }
+    
+    public void setDescuento(int descuento){
+        this.descuento = descuento;
+    }
+    
+    public int getDescuento(){
+        return this.descuento;
     }
 }

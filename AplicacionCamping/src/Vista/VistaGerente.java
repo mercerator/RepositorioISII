@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Gerente;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -12,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author anita
  */
-public class Gerente extends javax.swing.JFrame {
+public class VistaGerente extends javax.swing.JFrame {
 
     private JFrame vistaAnterior;
     private Gerente gerente;
@@ -20,8 +21,9 @@ public class Gerente extends javax.swing.JFrame {
     /**
      * Creates new form Gerente
      */
-    public Gerente(JFrame vistaAnterior) {
+    public VistaGerente(JFrame vistaAnterior, Gerente gerente) {
         this.vistaAnterior = vistaAnterior;
+        this.gerente = gerente;
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Administración Gerente");
@@ -345,7 +347,7 @@ public class Gerente extends javax.swing.JFrame {
 
         descuentoAct.setFont(jLabel15.getFont());
         descuentoAct.setText(" 0");
-        descuento.getContentPane().add(descuentoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 20, -1));
+        descuento.getContentPane().add(descuentoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 40, -1));
 
         xcien.setFont(jLabel15.getFont());
         xcien.setText("%.");
@@ -506,6 +508,7 @@ public class Gerente extends javax.swing.JFrame {
         descuentoAct.setText(JOptionPane.showInputDialog(null, "Introduce el descuento que quiere aplicar: ", "Descuento", JOptionPane.QUESTION_MESSAGE));
         if ("".equals(descuentoAct.getText()))
             descuentoAct.setText(" 0");
+        gerente.setDescuento(Integer.parseInt(descuentoAct.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed

@@ -7,7 +7,7 @@ package Vista;
 
 import Model.Camping;
 import Controlador.GestoresCamping;
-import Controlador.Personal;
+import Controlador.Gerente;
 import Controlador.UsuarioRegistrado;
 
 import javax.swing.JOptionPane;
@@ -16,15 +16,15 @@ import javax.swing.JOptionPane;
  *
  * @author Epic
  */
-public class Login extends javax.swing.JFrame {
+public class VistaLogin extends javax.swing.JFrame {
 
-    protected Personal personal;
+    protected Gerente personal;
     protected GestoresCamping gestoresCamping;
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public VistaLogin() {
         super("Login");
         initComponents();
         setLocationRelativeTo(null);
@@ -159,7 +159,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         this.setVisible(false);
-        Principal pri = new Principal();
+        VistaPrincipal pri = new VistaPrincipal();
         pri.setVisible(true);
     }//GEN-LAST:event_btn_atrasActionPerformed
 
@@ -180,8 +180,8 @@ public class Login extends javax.swing.JFrame {
         if (usuario != null) {
             Class tipoUsuario = usuario.getClass();
 
-            if (tipoUsuario == Personal.class) {
-                Gerente ger = new Gerente(this);
+            if (tipoUsuario == Gerente.class) {
+                VistaGerente ger = new VistaGerente(this, personal);
                 ger.setVisible(true);
             }
             this.setVisible(false);

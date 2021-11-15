@@ -47,8 +47,8 @@ public class GestoresCamping {
         
     }   
     
-    public Personal iniciarPersonal(){        
-        Personal personal = new Personal("", "", this.camping);
+    public Gerente iniciarPersonal(){        
+        Gerente personal = new Gerente("", "", this.camping);
         return personal;
     }
     
