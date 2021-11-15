@@ -6,9 +6,13 @@
 package Vista;
 
 import Controlador.Cliente;
+import Controlador.Gerente;
 import Datos.DatosParcela;
+import Datos.ListaReservas;
+import Model.Parcela;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -24,33 +28,37 @@ public class VistaReserva extends javax.swing.JFrame {
      * Creates new form Reserva
      */
     private Cliente cliente;
+    private Gerente ger;
     private JFrame vistaAnterior;
-    private ArrayList<Object> parcelasSeleccionadas = new ArrayList<Object>();
+    private ArrayList<Parcela> parcelasSeleccionadas = new ArrayList<Parcela>();
     private ArrayList<String> nombresTiendas = new ArrayList<String>();
     private ArrayList<Integer> metrosTiendas = new ArrayList<Integer>();
     private boolean reserva;
     private JRadioButton[] botones;
-    
+    DefaultListModel lParcelas;
+
     public VistaReserva(boolean reserva) {
-        
+        super("Reservas");
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Reservas");
         this.reserva = reserva;
-        
+
+        lParcelas = new DefaultListModel();
+        listaParcelas.setModel(lParcelas);
+
         //Seleccion del radioButton de la 
         grupo_botones_luz.add(luzSi);
         grupo_botones_luz.add(luzNO);
         fEntrada.enable(reserva);
         btn_finalizar.setVisible(false);
-        
-        
+
         /*botones = new JRadioButton[3];
         for (int i = 0; i < botones.length; i++){       //Anyadimos los botones
             botones[i] = new JRadioButton("Boton"+i);
             mapaParcelas.add(botones[i]);
         }*/
-        /*
+ /*
         for(Object item: cliente.consultarParcelas()){
             combo_parcelas.addItem(item);
         }
@@ -134,7 +142,7 @@ public class VistaReserva extends javax.swing.JFrame {
         btn_finalizar = new javax.swing.JButton();
         lbl_fechasalida = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaParcelas = new javax.swing.JList<>();
         jLabel11 = new javax.swing.JLabel();
         btn_seleccParcelas = new javax.swing.JButton();
 
@@ -394,13 +402,13 @@ public class VistaReserva extends javax.swing.JFrame {
         lbl_fechasalida.setText("Fecha de salida:");
         getContentPane().add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 140, 40));
 
-        jList1.setBorder(javax.swing.BorderFactory.createTitledBorder("Mis parcelas reservadas:"));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaParcelas.setBorder(javax.swing.BorderFactory.createTitledBorder("Mis parcelas reservadas:"));
+        listaParcelas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listaParcelas);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 290, 120));
 
@@ -431,23 +439,29 @@ public class VistaReserva extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_finalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finalizarActionPerformed
-        try{
+        try {
             //Guardamos los datos en variables auxiliares
+
             String nombreApellidos = nombreyApellidos.getText();
             String dni = DNI.getText();
             String nombreTienda = tipoTienda.getText();
             int metrosTienda = Integer.parseInt(mTienda.getText());
             boolean luz = false;
-            if(luzSi.isSelected())
+            if (luzSi.isSelected()) {
                 luz = true;
-            Date fechaIni = fEntrada.getSelectedDate().getTime();
+            }
 
+            for (Object item : ger.consultarParcela()) {
+                lParcelas.addElement(item);
+            }
+
+            Date fechaIni = fEntrada.getSelectedDate().getTime();
             Date fechaFin = fSalida.getSelectedDate().getTime();
+
             cliente.reserva(nombreApellidos, dni, nombresTiendas, metrosTiendas, luz,
                     fechaIni, fechaFin, parcelasSeleccionadas);
-            
-        }   
-        catch (Exception e) {
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error en alguno de los campos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_finalizarActionPerformed
@@ -463,22 +477,22 @@ public class VistaReserva extends javax.swing.JFrame {
     private void btn_seleccParcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seleccParcelasActionPerformed
         this.setVisible(false);
         mapaParcelas.setVisible(true);
-        
+
     }//GEN-LAST:event_btn_seleccParcelasActionPerformed
 
     private void btn_cancelarMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarMapaActionPerformed
-                                                           
+
         this.setVisible(true);
         mapaParcelas.setVisible(false);
     }//GEN-LAST:event_btn_cancelarMapaActionPerformed
 
     private void btn_guardarParcelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarParcelaActionPerformed
-                                                           
+
         this.setVisible(true);
         mapaParcelas.setVisible(false);
         btn_finalizar.setVisible(true);
         //guardar parcela seleccionada
-        
+
     }//GEN-LAST:event_btn_guardarParcelaActionPerformed
 
     private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
@@ -510,7 +524,6 @@ public class VistaReserva extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
@@ -556,6 +569,7 @@ public class VistaReserva extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_mcuadrados;
     private javax.swing.JLabel lbl_nomape;
     private javax.swing.JLabel lbl_nombre;
+    private javax.swing.JList<String> listaParcelas;
     private javax.swing.JRadioButton luzNO;
     private javax.swing.JRadioButton luzSi;
     private javax.swing.JTextField mTienda;

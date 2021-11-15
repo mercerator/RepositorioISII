@@ -88,6 +88,7 @@ public class VistaGerente extends javax.swing.JFrame {
         luz = new javax.swing.JLabel();
         costeTotal = new javax.swing.JLabel();
         imprimir = new javax.swing.JButton();
+        botonesLuz = new javax.swing.ButtonGroup();
         descuento = new javax.swing.JInternalFrame();
         eldescuentoes = new javax.swing.JLabel();
         descuentoAct = new javax.swing.JLabel();
@@ -140,10 +141,17 @@ public class VistaGerente extends javax.swing.JFrame {
         lbl_nombre.setText("Nombre:");
         parcelas.getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 70, 30));
 
+        botonesLuz.add(luzSi);
         luzSi.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         luzSi.setText("Si");
+        luzSi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                luzSiActionPerformed(evt);
+            }
+        });
         parcelas.getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
 
+        botonesLuz.add(luzNO);
         luzNO.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         luzNO.setText("No");
         luzNO.addActionListener(new java.awt.event.ActionListener() {
@@ -412,7 +420,7 @@ public class VistaGerente extends javax.swing.JFrame {
 
         jList1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parcelas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "DNI1", "DNI2", "DNI3", "DNI4" };
+            String[] strings = { "Parcela 1", "Parcela 2", "Parcela 3", "Parcela 4" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -533,9 +541,14 @@ public class VistaGerente extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_imprimirActionPerformed
 
+    private void luzSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzSiActionPerformed
+        
+    }//GEN-LAST:event_luzSiActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atras;
+    private javax.swing.ButtonGroup botonesLuz;
     private javax.swing.JButton btn_administrar;
     private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_atras2;

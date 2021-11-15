@@ -6,6 +6,7 @@
 package Controlador;
 
 import Model.Camping;
+import Model.Parcela;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.File;
@@ -13,6 +14,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -70,5 +73,6 @@ public class GestoresCamping {
     
     public UsuarioRegistrado login (String nombre, String contrasenya){
         return camping.login(nombre,contrasenya);
-    }
+    }    
+    
 }

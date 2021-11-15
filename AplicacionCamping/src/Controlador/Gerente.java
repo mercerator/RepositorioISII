@@ -1,7 +1,10 @@
 
 package Controlador;
 
+import Datos.DatosParcela;
+import Datos.ListaReservas;
 import Model.Camping;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,4 +20,10 @@ public class Gerente extends UsuarioRegistrado{
     public void setDescuento(int descuento){
         camping.setDescuento(descuento);
     }
+    
+    public ArrayList consultarParcela(){
+        return camping.consultarParcelas();
+    }
+    
+    
 }

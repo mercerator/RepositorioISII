@@ -6,23 +6,22 @@
 package Model;
 
 import Controlador.Cliente;
+import Datos.DatosReserva;
 import java.util.ArrayList;
 import java.util.Date;
 
 /**
  *
- * @author Alex
+ * @author Jacques
  */
 public class Reserva {
-    private Date fechaIni;
-    private Date fechaFin;
-    private ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
-    private Cliente cliente;
+    protected DatosReserva datosReserva;
+    protected Camping camping;
     
-    public Reserva(Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelas, Cliente cliente){
-        this.fechaIni = fechaIni;
-        this.fechaFin = fechaFin;
-        this.parcelas = parcelas;
-        this.cliente = cliente;
+    public Reserva(DatosReserva _datos){
+        datosReserva = _datos;
     }
+    
+   
+    
 }

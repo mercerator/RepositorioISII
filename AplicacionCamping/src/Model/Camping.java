@@ -8,6 +8,9 @@ package Model;
 import Controlador.Cliente;
 import Controlador.Gerente;
 import Controlador.UsuarioRegistrado;
+import Datos.DatosParcela;
+import Datos.DatosReserva;
+import Datos.ListaReservas;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,71 +19,105 @@ import java.util.Date;
  * @author EpicGames
  */
 public class Camping {
-        
+
     //Variables
+    protected DatosReserva datosReserva;
+    protected DatosParcela datosParcela;
+    protected Cliente cliente;
+
     protected ArrayList<UsuarioRegistrado> usuarios = new ArrayList<UsuarioRegistrado>();
     private ArrayList<Actividad> actividades = new ArrayList<Actividad>();
-    private ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
-    private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+    protected ArrayList<Parcela> parcelaConAsignacion = new ArrayList<Parcela>();
+    protected ArrayList<Parcela> parcelas = new ArrayList<>();
+    protected ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+    protected ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
+
+    private String nombreApellidos;
+    private String dni;
+
     private int descuento;
-    
+    protected Date fechaIni;
+    protected Date fechaFin;
+    public String ubicacion;
+    public String url;
+
     public static final int ERROR = -1;
     public static final int ENCONTRADO = 1;
     public static final int SEGUIR = 0;
-    
+
     public Camping() {
+        
     }
-    
+
     public void cargarDatos() throws Exception {
-        Gerente per1 = new Gerente("Anthony","123",this);
+        Gerente per1 = new Gerente("Anthony", "123", this);
         usuarios.add(per1);
-        
-        Gerente per2 = new Gerente("Alex","123",this);
+
+        Gerente per2 = new Gerente("Alex", "123", this);
         usuarios.add(per2);
-        
-        Gerente per3 = new Gerente("Ana","123",this);
+
+        Gerente per3 = new Gerente("Ana", "123", this);
         usuarios.add(per3);
-        
-        Gerente per4 = new Gerente("Jacques","123",this);
+
+        Gerente per4 = new Gerente("Jacques", "123", this);
         usuarios.add(per4);
+        
+        DatosParcela dp = new DatosParcela(0,0,true,20);
+        Parcela p = new Parcela (dp);
+        parcelas.add(p);
+        
+        
+        
+        
+
     }
-    
-    public UsuarioRegistrado login (String nombre, String contrasenya){
+
+    public UsuarioRegistrado login(String nombre, String contrasenya) {
         UsuarioRegistrado usuario = null, usuarioEncontrado = null;
         int i = 0, resultado = SEGUIR;
-        
-        while (i< usuarios.size() && resultado != ERROR && resultado != ENCONTRADO){
+
+        while (i < usuarios.size() && resultado != ERROR && resultado != ENCONTRADO) {
             usuario = usuarios.get(i);
             resultado = usuario.validarUsuario(nombre, contrasenya);
             i++;
         }
-        if (resultado == ENCONTRADO){
+        if (resultado == ENCONTRADO) {
             usuarioEncontrado = usuario;
-        }       
-        
+        }
+
         return usuarioEncontrado;
     }
-    
-    public ArrayList consultarParcelas(){
-        return parcelas;
-    } 
-    
-    public Reserva reserva(String nombreApellidos, String dni, boolean luz, 
-            Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas,Cliente cliente){
-        for(Parcela parcela: parcelasSeleccionadas){
-            parcelas.remove(parcela);
+
+    public ArrayList<Parcela> consultarParcelas() {
+        ArrayList<Parcela> parcelas = new ArrayList<>();
+
+        for (int i = 0; i < parcelaConAsignacion.size(); i++) {
+            Parcela p = parcelaConAsignacion.get(i);
+            parcelas.add(p);
         }
-        Reserva reserva = new Reserva(fechaIni, fechaFin, parcelasSeleccionadas, cliente);
+        return parcelas;
+    }
+
+    public void nuevaReserva(String nombreApellidos, String dni, ArrayList<String> nombresTiendas,
+            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas) {
+
+        for (Parcela parcela : parcelasSeleccionadas) {
+            parcelas.add(parcela);
+        }
+        Reserva reserva = new Reserva(datosReserva);
         reservas.add(reserva);
         
-        return reserva;
+        for (int i = 0; i < nombresTiendas.size(); i++) {
+            Tienda tienda = new Tienda(nombresTiendas.get(i), metrosTiendas.get(i));
+            tiendas.add(tienda);
+        }
     }
-    
-    public void setDescuento(int descuento){
+
+    public void setDescuento(int descuento) {
         this.descuento = descuento;
     }
-    
-    public int getDescuento(){
+
+    public int getDescuento() {
         return this.descuento;
     }
 }

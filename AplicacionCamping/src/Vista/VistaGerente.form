@@ -125,11 +125,17 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="luzSi">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesLuz"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Georgia" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Si"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="luzSiActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="60" y="470" width="130" height="-1"/>
@@ -138,6 +144,9 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="luzNO">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="botonesLuz"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Georgia" size="14" style="1"/>
             </Property>
@@ -651,6 +660,8 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.ButtonGroup" name="botonesLuz">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -880,10 +891,10 @@
             </Property>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
               <StringArray count="4">
-                <StringItem index="0" value="DNI1"/>
-                <StringItem index="1" value="DNI2"/>
-                <StringItem index="2" value="DNI3"/>
-                <StringItem index="3" value="DNI4"/>
+                <StringItem index="0" value="Parcela 1"/>
+                <StringItem index="1" value="Parcela 2"/>
+                <StringItem index="2" value="Parcela 3"/>
+                <StringItem index="3" value="Parcela 4"/>
               </StringArray>
             </Property>
           </Properties>
