@@ -24,14 +24,13 @@ public class VistaLogin extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public VistaLogin() {
+    public VistaLogin(GestoresCamping gestoresCamping) {
         super("Login");
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Inicio de Sesión");
-
+        this.gestoresCamping = gestoresCamping;
         try {
-            gestoresCamping = new GestoresCamping();
             personal = gestoresCamping.iniciarPersonal();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());

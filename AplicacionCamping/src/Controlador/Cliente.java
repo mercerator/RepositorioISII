@@ -35,9 +35,13 @@ public class Cliente extends UsuarioRegistrado {
     }
     
     public void reserva(String nombreApellidos, String dni, ArrayList<String> nombresTiendas,
-            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas){
+            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList parcelasSeleccionadas){
         
         camping.nuevaReserva(nombreApellidos, dni, nombresTiendas, metrosTiendas, luz, 
-                fechaIni, fechaFin, parcelasSeleccionadas);
+                fechaIni, fechaFin, (ArrayList<Parcela>)parcelasSeleccionadas, this);
     }   
+    
+    public Object devolverParcela(int identificador){
+        return camping.devolverParcela(identificador);
+    }
 }

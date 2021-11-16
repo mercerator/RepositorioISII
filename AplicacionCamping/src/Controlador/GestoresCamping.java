@@ -35,6 +35,7 @@ public class GestoresCamping {
             camping = (Camping) xstream.fromXML(file_input_xml);
             if(camping==null)
                 throw new Exception ("Excepción no se encuentra Camping");
+            camping.cargarDatos();
         }
         catch(FileNotFoundException e){
             camping = new Camping();
@@ -53,6 +54,10 @@ public class GestoresCamping {
     public Gerente iniciarPersonal(){        
         Gerente personal = new Gerente("", "", this.camping);
         return personal;
+    }
+    
+    public UsuarioNoRegistrado iniciarNoRegistrado(){
+        return new UsuarioNoRegistrado(camping);
     }
     
     public void salir(){

@@ -16,8 +16,11 @@ public class Parcela {
     private boolean luz;
     private int precioDia;
     
-    public Parcela(DatosParcela _datos){
-        datosParcela = _datos;
+    public Parcela(int identificador, int metrosCuadrados, boolean luz, int precioDia){
+        this.identificador = identificador;
+        this.metrosCuadrados = metrosCuadrados;
+        this.luz = luz;
+        this.precioDia = precioDia;
     }
     
     public DatosParcela consultarDatosParcela(){
@@ -39,5 +42,9 @@ public class Parcela {
         this.metrosCuadrados = metros;
         this.luz = luz;
         this.precioDia = precio; 
+    }
+    
+    public int getIdentificador(){
+        return identificador;
     }
 }

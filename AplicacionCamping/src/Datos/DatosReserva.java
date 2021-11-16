@@ -15,10 +15,10 @@ import java.util.Date;
  * @author Epic
  */
 public class DatosReserva {
-    protected Date fechaIni;
-    protected Date fechaFin;
-    protected ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
-    protected Cliente cliente;
+    public Date fechaIni;
+    public Date fechaFin;
+    public ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
+    public Cliente cliente;
     
     
      /**

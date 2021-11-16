@@ -50,6 +50,7 @@ public class Camping {
     }
 
     public void cargarDatos() throws Exception {
+        /*
         Gerente per1 = new Gerente("Anthony", "123", this);
         usuarios.add(per1);
 
@@ -61,9 +62,23 @@ public class Camping {
 
         Gerente per4 = new Gerente("Jacques", "123", this);
         usuarios.add(per4);
+        */
         
-        DatosParcela dp = new DatosParcela(0,0,true,20);
-        Parcela p = new Parcela (dp);
+        Parcela p = new Parcela (0, 20, true, 10);
+        parcelas.add(p);
+        p = new Parcela (1, 20, true, 10);
+        parcelas.add(p);
+        p = new Parcela (2, 25, true, 10);
+        parcelas.add(p);
+        p = new Parcela (3, 25, true, 10);
+        parcelas.add(p);
+        p = new Parcela (4, 25, true, 10);
+        parcelas.add(p);
+        p = new Parcela (5, 40, true, 10);
+        parcelas.add(p);
+        p = new Parcela (6, 40, true, 10);
+        parcelas.add(p);
+        p = new Parcela (7, 45, true, 10);
         parcelas.add(p);
         
         
@@ -99,12 +114,12 @@ public class Camping {
     }
 
     public void nuevaReserva(String nombreApellidos, String dni, ArrayList<String> nombresTiendas,
-            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas) {
+            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas, Cliente cliente) {
 
         for (Parcela parcela : parcelasSeleccionadas) {
             parcelas.add(parcela);
         }
-        Reserva reserva = new Reserva(datosReserva);
+        Reserva reserva = new Reserva(fechaIni, fechaFin, parcelasSeleccionadas, cliente);
         reservas.add(reserva);
         
         for (int i = 0; i < nombresTiendas.size(); i++) {
@@ -119,5 +134,14 @@ public class Camping {
 
     public int getDescuento() {
         return this.descuento;
+    }
+    
+    public Object devolverParcela(int identificador){
+        Object res = new Object();
+        for (Parcela p : parcelas){
+            if (p.getIdentificador() == identificador)
+                res = p;
+        }
+        return res;
     }
 }

@@ -5,12 +5,19 @@
  */
 package Vista;
 
+import Controlador.GestoresCamping;
+import Controlador.UsuarioNoRegistrado;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author antho
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
+    GestoresCamping gestoresCamping;
+    UsuarioNoRegistrado noRegistrado;
     /**
      * Creates new form NewJFrame
      */
@@ -19,6 +26,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Menú Principal");
+        
+        
+        try {
+            gestoresCamping = new GestoresCamping();
+            noRegistrado = gestoresCamping.iniciarNoRegistrado();
+        } catch (Exception ex) {
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -90,7 +105,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void btn_sinreservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sinreservaActionPerformed
         this.setVisible(false);
-        VistaReserva res = new VistaReserva(false);
+        VistaReserva res = new VistaReserva(false, noRegistrado, this);
         res.setVisible(true);
     }//GEN-LAST:event_btn_sinreservaActionPerformed
 
@@ -102,13 +117,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void btn_reservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reservaActionPerformed
         this.setVisible(false);
-        VistaReserva res = new VistaReserva(true);
+        VistaReserva res = new VistaReserva(true, noRegistrado, this);
         res.setVisible(true);
     }//GEN-LAST:event_btn_reservaActionPerformed
 
     private void btn_ini_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ini_sesionActionPerformed
         this.setVisible(false);
-        VistaLogin log = new VistaLogin();
+        VistaLogin log = new VistaLogin(gestoresCamping);
         log.setVisible(true);
     }//GEN-LAST:event_btn_ini_sesionActionPerformed
 
