@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import Controlador.Cliente;
@@ -10,7 +5,9 @@ import Controlador.Gerente;
 import Controlador.UsuarioRegistrado;
 import Datos.DatosParcela;
 import Datos.DatosReserva;
+import Datos.ListaParcelas;
 import Datos.ListaReservas;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -26,15 +23,22 @@ public class Camping {
     protected Cliente cliente;
 
     protected ArrayList<UsuarioRegistrado> usuarios = new ArrayList<UsuarioRegistrado>();
-    private ArrayList<Actividad> actividades = new ArrayList<Actividad>();
-    protected ArrayList<Parcela> parcelaConAsignacion = new ArrayList<Parcela>();
-    protected ArrayList<Parcela> parcelas = new ArrayList<>();
+    protected ArrayList<Actividad> actividades = new ArrayList<Actividad>();
+
+    protected ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
     protected ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+
+    protected ArrayList<DatosReserva> reserva = new ArrayList<DatosReserva>();
+
+    protected ArrayList<Parcela> parcelasConAsignacion = new ArrayList<Parcela>();
+    protected ArrayList<Parcela> parcelasSinAsignacion = new ArrayList<Parcela>();
+
     protected ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
 
-    private String nombreApellidos;
-    private String dni;
-
+    /*public static final String gerente2 = "Alex";
+    public static final String gerente3 = "Ana";
+    public static final String gerente4 = "Jacques";
+     */
     private int descuento;
     protected Date fechaIni;
     protected Date fechaFin;
@@ -46,11 +50,10 @@ public class Camping {
     public static final int SEGUIR = 0;
 
     public Camping() {
-        
+        cargarDatos();
     }
 
-    public void cargarDatos() throws Exception {
-        /*
+    public void cargarDatos() {
         Gerente per1 = new Gerente("Anthony", "123", this);
         usuarios.add(per1);
 
@@ -62,29 +65,6 @@ public class Camping {
 
         Gerente per4 = new Gerente("Jacques", "123", this);
         usuarios.add(per4);
-        */
-        
-        Parcela p = new Parcela (0, 20, true, 10);
-        parcelas.add(p);
-        p = new Parcela (1, 20, true, 10);
-        parcelas.add(p);
-        p = new Parcela (2, 25, true, 10);
-        parcelas.add(p);
-        p = new Parcela (3, 25, true, 10);
-        parcelas.add(p);
-        p = new Parcela (4, 25, true, 10);
-        parcelas.add(p);
-        p = new Parcela (5, 40, true, 10);
-        parcelas.add(p);
-        p = new Parcela (6, 40, true, 10);
-        parcelas.add(p);
-        p = new Parcela (7, 45, true, 10);
-        parcelas.add(p);
-        
-        
-        
-        
-
     }
 
     public UsuarioRegistrado login(String nombre, String contrasenya) {
@@ -103,31 +83,54 @@ public class Camping {
         return usuarioEncontrado;
     }
 
-    public ArrayList<Parcela> consultarParcelas() {
-        ArrayList<Parcela> parcelas = new ArrayList<>();
-
-        for (int i = 0; i < parcelaConAsignacion.size(); i++) {
-            Parcela p = parcelaConAsignacion.get(i);
-            parcelas.add(p);
-        }
+    public ArrayList cParcelas() {
         return parcelas;
     }
 
-    public void nuevaReserva(String nombreApellidos, String dni, ArrayList<String> nombresTiendas,
-            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas, Cliente cliente) {
+    public ListaParcelas consultarParcelas() {
+        return new ListaParcelas(parcelas);
+    }
+
+    public ArrayList<Parcela> consultarParcelasDisponibles() {
+        ArrayList<Parcela> parcelasDisponibles = new ArrayList<>();
+        for (int i = 0; i < parcelasConAsignacion.size(); i++) {
+            Parcela parcela = parcelasConAsignacion.get(i);
+            if (parcela.consultarReservas()) {
+                parcelasDisponibles.add(parcela);
+            }
+        }
+        return parcelasDisponibles;
+    }
+
+    public ListaReservas consultarReserva() {
+        return new ListaReservas(reservas);
+    }
+
+    public void nuevaReserva(String nombreApellidos, String dni, String nombresTiendas,
+            int metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas) {
+        Reserva r = new Reserva(datosReserva);
+        reservas.add(r);
+
+        for (Parcela par : parcelasSeleccionadas) {
+            parcelas.add(par);
+        }
+    }
+
+    /*
+    public void nuevaReserva(String nombreApellidos, String dni, String nombresTiendas,
+            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas, Gerente gerente) {
 
         for (Parcela parcela : parcelasSeleccionadas) {
             parcelas.add(parcela);
         }
-        Reserva reserva = new Reserva(fechaIni, fechaFin, parcelasSeleccionadas, cliente);
+        Reserva reserva = new Reserva(fechaIni, fechaFin, parcelasSeleccionadas, gerente);
         reservas.add(reserva);
-        
+
         for (int i = 0; i < nombresTiendas.size(); i++) {
             Tienda tienda = new Tienda(nombresTiendas.get(i), metrosTiendas.get(i));
             tiendas.add(tienda);
         }
-    }
-
+    }*/
     public void setDescuento(int descuento) {
         this.descuento = descuento;
     }
@@ -135,13 +138,15 @@ public class Camping {
     public int getDescuento() {
         return this.descuento;
     }
-    
-    public Object devolverParcela(int identificador){
+
+    public Object devolverParcela(int identificador) {
         Object res = new Object();
-        for (Parcela p : parcelas){
-            if (p.getIdentificador() == identificador)
+        for (Parcela p : parcelas) {
+            if (p.getIdentificador() == identificador) {
                 res = p;
+            }
         }
         return res;
     }
+
 }

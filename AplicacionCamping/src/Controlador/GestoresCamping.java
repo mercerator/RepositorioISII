@@ -22,51 +22,52 @@ import java.util.Date;
  * @author Epic
  */
 public class GestoresCamping {
-    
+
     private Camping camping;
-    private XStream xstream = null;
-    
-       
-    public GestoresCamping() throws Exception{
-        xstream = new XStream(new DomDriver());
+    //private XStream xstream = null;
+
+    public GestoresCamping() {
+        camping = new Camping();
         
-        try{
+        /*xstream = new XStream(new DomDriver());
+
+        try {
             FileInputStream file_input_xml = new FileInputStream(new File("src/AplicacionCamping.xml"));
             camping = (Camping) xstream.fromXML(file_input_xml);
-            if(camping==null)
-                throw new Exception ("Excepción no se encuentra Camping");
-            camping.cargarDatos();
-        }
-        catch(FileNotFoundException e){
-            camping = new Camping();
+            if (camping == null) {
+                throw new Exception("Excepción no se encuentra Camping");
+            }
+            
+        } catch (FileNotFoundException e) {
+            
             camping.cargarDatos();
             this.guardarXML();
+        } catch (IOException e) {
+            throw new Exception("IOExcepcion al cargar los datos " + e.getMessage());
+        } catch (Exception e) {
+            throw new Exception("Excepción al cargar los datos " + e.getMessage());
         }
-        catch (IOException e){
-            throw new Exception ("IOExcepcion al cargar los datos " + e.getMessage());
-        }
-        catch (Exception e){
-            throw new Exception ("Excepción al cargar los datos "+e.getMessage());
-        }
-        
-    }   
-    
-    public Gerente iniciarPersonal(){        
+         */
+    }
+
+    public Gerente iniciarPersonal() {
         Gerente personal = new Gerente("", "", this.camping);
+        camping.cargarDatos();
         return personal;
     }
-    
-    public UsuarioNoRegistrado iniciarNoRegistrado(){
+
+    public UsuarioNoRegistrado iniciarNoRegistrado() {
         return new UsuarioNoRegistrado(camping);
     }
-    
-    public void salir(){
+
+    public void salir() {
         this.guardarXML();
     }
-    
-    private void guardarXML(){
+
+    private void guardarXML() {
+        /*
         String xml = xstream.toXML(camping);
-        try{
+        try {
             FileWriter file_output_xml = new FileWriter(new File("src/AplicacionCamping.xml"));
             file_output_xml.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
             file_output_xml.write(xml);
@@ -74,10 +75,10 @@ public class GestoresCamping {
         } catch (IOException e) {
             e.printStackTrace();
         }
+         */
     }
-    
-    public UsuarioRegistrado login (String nombre, String contrasenya){
-        return camping.login(nombre,contrasenya);
-    }    
-    
+
+    public UsuarioRegistrado login(String nombre, String contrasenya) {
+        return camping.login(nombre, contrasenya);
+    }
 }

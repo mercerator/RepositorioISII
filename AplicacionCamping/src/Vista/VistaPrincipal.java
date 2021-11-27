@@ -18,16 +18,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     GestoresCamping gestoresCamping;
     UsuarioNoRegistrado noRegistrado;
+
     /**
      * Creates new form NewJFrame
      */
     public VistaPrincipal() {
-        
+
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Menú Principal");
-        
-        
+
         try {
             gestoresCamping = new GestoresCamping();
             noRegistrado = gestoresCamping.iniciarNoRegistrado();

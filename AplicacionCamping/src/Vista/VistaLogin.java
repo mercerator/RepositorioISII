@@ -8,7 +8,10 @@ package Vista;
 import Model.Camping;
 import Controlador.GestoresCamping;
 import Controlador.Gerente;
+import Controlador.UsuarioNoRegistrado;
 import Controlador.UsuarioRegistrado;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
@@ -20,6 +23,9 @@ public class VistaLogin extends javax.swing.JFrame {
 
     protected Gerente personal;
     protected GestoresCamping gestoresCamping;
+    protected UsuarioNoRegistrado noRegistrado;
+    protected UsuarioRegistrado ur;
+    protected Camping camping;
 
     /**
      * Creates new form Login
@@ -30,10 +36,12 @@ public class VistaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.setTitle("Inicio de Sesión");
         this.gestoresCamping = gestoresCamping;
+
         try {
+            gestoresCamping = new GestoresCamping();
             personal = gestoresCamping.iniciarPersonal();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 

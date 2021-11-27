@@ -6,6 +6,7 @@
 package Controlador;
 
 import Datos.DatosParcela;
+import Datos.ListaParcelas;
 import Datos.ListaReservas;
 import Model.Camping;
 import Model.Parcela;
@@ -20,28 +21,34 @@ import java.util.Date;
  */
 public class Cliente extends UsuarioRegistrado {
 
-
     public Cliente(String usuario, Camping camping) {
         super(usuario, null, camping);
     }
 
+    
     public DatosParcela consultarDatosParcela(Object parcela) {
         Parcela par = (Parcela) parcela;
-        return par.consultarDatosParcela();
+        return par.consultarDatosParcela((ArrayList) parcela);
+    }
+     
+    public ArrayList consultarParcelas() {
+        return camping.cParcelas();
     }
 
-    public ArrayList consultarParcelas() {
+    /*
+    public ListaParcelas consultarParcelas() {
         return camping.consultarParcelas();
     }
     
     public void reserva(String nombreApellidos, String dni, ArrayList<String> nombresTiendas,
-            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList parcelasSeleccionadas){
-        
-        camping.nuevaReserva(nombreApellidos, dni, nombresTiendas, metrosTiendas, luz, 
-                fechaIni, fechaFin, (ArrayList<Parcela>)parcelasSeleccionadas, this);
-    }   
+            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList parcelasSeleccionadas) {
+
+        camping.nuevaReserva(nombreApellidos, dni, nombresTiendas, metrosTiendas, luz,
+                fechaIni, fechaFin, (ArrayList<Parcela>) parcelasSeleccionadas, this);
+    }
     
-    public Object devolverParcela(int identificador){
+     */
+    public Object devolverParcela(int identificador) {
         return camping.devolverParcela(identificador);
     }
 }

@@ -1,50 +1,88 @@
-
 package Model;
 
 import Datos.DatosParcela;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
  * @author Alex
  */
 public class Parcela {
-    private int identificador;
+
+    public Reserva reserva;
+
     protected DatosParcela datosParcela;
-    private int metrosCuadrados;
-    private boolean luz;
-    private int precioDia;
-    
-    public Parcela(int identificador, int metrosCuadrados, boolean luz, int precioDia){
-        this.identificador = identificador;
-        this.metrosCuadrados = metrosCuadrados;
-        this.luz = luz;
-        this.precioDia = precioDia;
+
+    public int identificador;
+    public int metrosCuadrados;
+    public boolean luz;
+    public int precioDia;
+
+    public Parcela(DatosParcela _datos) {
+        datosParcela = _datos;
     }
-    
-    public DatosParcela consultarDatosParcela(){
-        DatosParcela datosParcela = new DatosParcela(this.identificador,
-            this.metrosCuadrados, this.luz, this.precioDia);
-        return datosParcela;
-    }
-    
+
     /**
-    * La funcion permite actualizar una reserva con los datos que se le pasan
-    * como parámetro.
+     * La funcion permite actualizar una reserva con los datos que se le pasan
+     * como parámetro.
+     *
      * @param id
      * @param metros
      * @param luz
-     * @param precio    
-    */
-    public void actualizarParcela(int id, int metros, boolean luz, int precio) {        
+     * @param precio
+     */
+    public void actualizarParcela(int id, int metros, boolean luz, int precio) {
         this.identificador = id;
         this.metrosCuadrados = metros;
         this.luz = luz;
-        this.precioDia = precio; 
+        this.precioDia = precio;
     }
-    
-    public int getIdentificador(){
+
+    public DatosParcela consultarDatosParcela(ArrayList parcelasDisponibles) {
+        DatosParcela datosParcela = new DatosParcela(this.identificador,
+                this.metrosCuadrados, this.luz, this.precioDia);
+        return new DatosParcela(identificador,metrosCuadrados,luz,precioDia);
+    }
+
+    public int getIdentificador() {
         return identificador;
+    }
+
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
+    }
+
+    public int getMetrosCuadrados() {
+        return metrosCuadrados;
+    }
+
+    public void setMetrosCuadrados(int metrosCuadrados) {
+        this.metrosCuadrados = metrosCuadrados;
+    }
+
+    public boolean isLuz() {
+        return luz;
+    }
+
+    public void setLuz(boolean luz) {
+        this.luz = luz;
+    }
+
+    public int getPrecioDia() {
+        return precioDia;
+    }
+
+    public void setPrecioDia(int precioDia) {
+        this.precioDia = precioDia;
+    }
+
+    //si ya esta reservada
+    public boolean consultarReservas() {
+        return reserva == null;
+    }
+
+    @Override
+    public String toString() {
+        return datosParcela + "" + identificador + "" + metrosCuadrados + "" + luz + "" + precioDia + "";
     }
 }
