@@ -20,6 +20,8 @@ public class VistaCliente extends javax.swing.JFrame {
         bttEventos.setOpaque(false);                                        
         panelReservas.setVisible(true);
         panelEventos.setVisible(false);
+        panelClub.setVisible(false);
+        this.setSize(1000, 600);
     }
 
     /**
@@ -34,18 +36,30 @@ public class VistaCliente extends javax.swing.JFrame {
         bttReservas = new javax.swing.JButton();
         bttEventos = new javax.swing.JButton();
         panelEventos = new javax.swing.JPanel();
+        panelClub = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        pClubAtras = new javax.swing.JButton();
+        pCLubUnirse = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         lEventos = new javax.swing.JList<>();
         btnCanEvento = new javax.swing.JButton();
         btnPiscina = new javax.swing.JButton();
         btnFronton = new javax.swing.JButton();
         btnClubSocial = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        seleccione = new javax.swing.JLabel();
+        fondoVistaCLiente = new javax.swing.JLabel();
+        fblanco = new javax.swing.JLabel();
         panelReservas = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lMisReservas = new javax.swing.JList<>();
         btnMod = new javax.swing.JButton();
         btnNReserva = new javax.swing.JButton();
+        fondoVistaCLiente2 = new javax.swing.JLabel();
+        fblanco2 = new javax.swing.JLabel();
+        fblanco1 = new javax.swing.JLabel();
+        fondoVistaCLiente1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,7 +74,7 @@ public class VistaCliente extends javax.swing.JFrame {
                 bttReservasActionPerformed(evt);
             }
         });
-        getContentPane().add(bttReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, 30));
+        getContentPane().add(bttReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, 30));
 
         bttEventos.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         bttEventos.setText("Eventos");
@@ -72,7 +86,47 @@ public class VistaCliente extends javax.swing.JFrame {
                 bttEventosActionPerformed(evt);
             }
         });
-        getContentPane().add(bttEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, 30));
+        getContentPane().add(bttEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 30));
+
+        panelEventos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelClub.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panelClub.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(242, 242, 242));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setText("¡ Disfruta de una gran variedad de juegos de ");
+        jLabel2.setName(""); // NOI18N
+        jLabel2.setOpaque(true);
+        panelClub.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 260, 20));
+
+        jLabel3.setBackground(new java.awt.Color(242, 242, 242));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setText(" mesa junto a otros apasionados como tú !");
+        jLabel3.setOpaque(true);
+        panelClub.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 240, -1));
+
+        pClubAtras.setText("ATRAS");
+        pClubAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pClubAtrasActionPerformed(evt);
+            }
+        });
+        panelClub.add(pClubAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+
+        pCLubUnirse.setText("UNIRSE");
+        pCLubUnirse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pCLubUnirseActionPerformed(evt);
+            }
+        });
+        panelClub.add(pCLubUnirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/clubSocial.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        panelClub.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 190));
+
+        panelEventos.add(panelClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 340, 210));
 
         lEventos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Eventos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         lEventos.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -83,8 +137,11 @@ public class VistaCliente extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(lEventos);
 
+        panelEventos.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 127, 191));
+
         btnCanEvento.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btnCanEvento.setText("Cancelar Evento");
+        panelEventos.add(btnCanEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 171, -1));
 
         btnPiscina.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
         btnPiscina.setText("PISCINA");
@@ -93,64 +150,41 @@ public class VistaCliente extends javax.swing.JFrame {
                 btnPiscinaActionPerformed(evt);
             }
         });
+        panelEventos.add(btnPiscina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 175, 63));
 
         btnFronton.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
         btnFronton.setText("FRONTON");
+        btnFronton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFrontonActionPerformed(evt);
+            }
+        });
+        panelEventos.add(btnFronton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 175, 63));
 
         btnClubSocial.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
         btnClubSocial.setText("CLUB SOCIAL");
+        btnClubSocial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClubSocialActionPerformed(evt);
+            }
+        });
+        panelEventos.add(btnClubSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 175, 63));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("¡Seleccione su proxima actividad!");
+        seleccione.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        seleccione.setText("¡Seleccione su proxima actividad!");
+        panelEventos.add(seleccione, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, 53));
 
-        javax.swing.GroupLayout panelEventosLayout = new javax.swing.GroupLayout(panelEventos);
-        panelEventos.setLayout(panelEventosLayout);
-        panelEventosLayout.setHorizontalGroup(
-            panelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelEventosLayout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addGroup(panelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelEventosLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addGroup(panelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(panelEventosLayout.createSequentialGroup()
-                                    .addComponent(btnClubSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnPiscina, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEventosLayout.createSequentialGroup()
-                                    .addComponent(btnFronton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(96, 96, 96)))
-                            .addGroup(panelEventosLayout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(jLabel1))))
-                    .addComponent(btnCanEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(181, Short.MAX_VALUE))
-        );
-        panelEventosLayout.setVerticalGroup(
-            panelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEventosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelEventosLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelEventosLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                        .addGroup(panelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnClubSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnPiscina, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnFronton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(btnCanEvento)
-                .addGap(123, 123, 123))
-        );
+        fondoVistaCLiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/areaCliente.png"))); // NOI18N
+        fondoVistaCLiente.setText("jLabel2");
+        panelEventos.add(fondoVistaCLiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(-180, -200, -1, -1));
+
+        fblanco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
+        fblanco.setText("jLabel2");
+        panelEventos.add(fblanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -40, -1, -1));
 
         getContentPane().add(panelEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 730, -1));
+
+        panelReservas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lMisReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         lMisReservas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -161,43 +195,34 @@ public class VistaCliente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lMisReservas);
 
+        panelReservas.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 190, 230));
+
         btnMod.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btnMod.setText("Modificar");
         btnMod.setToolTipText("");
+        panelReservas.add(btnMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 143, -1));
 
         btnNReserva.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btnNReserva.setText("Nueva Reserva");
+        panelReservas.add(btnNReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
 
-        javax.swing.GroupLayout panelReservasLayout = new javax.swing.GroupLayout(panelReservas);
-        panelReservas.setLayout(panelReservasLayout);
-        panelReservasLayout.setHorizontalGroup(
-            panelReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelReservasLayout.createSequentialGroup()
-                .addGroup(panelReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelReservasLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnNReserva)
-                        .addGap(53, 53, 53)
-                        .addComponent(btnMod, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReservasLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)))
-                .addGap(158, 158, 158))
-        );
-        panelReservasLayout.setVerticalGroup(
-            panelReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelReservasLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(panelReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMod)
-                    .addComponent(btnNReserva))
-                .addGap(118, 118, 118))
-        );
+        fondoVistaCLiente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/areaCliente.png"))); // NOI18N
+        fondoVistaCLiente2.setText("jLabel2");
+        panelReservas.add(fondoVistaCLiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, -200, -1, -1));
+
+        fblanco2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
+        fblanco2.setText("jLabel2");
+        panelReservas.add(fblanco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, -1, -1));
 
         getContentPane().add(panelReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 660, 420));
+
+        fblanco1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
+        fblanco1.setText("jLabel2");
+        getContentPane().add(fblanco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+
+        fondoVistaCLiente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/areaCliente.png"))); // NOI18N
+        fondoVistaCLiente1.setText("jLabel2");
+        getContentPane().add(fondoVistaCLiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -70, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -215,6 +240,22 @@ public class VistaCliente extends javax.swing.JFrame {
     private void btnPiscinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiscinaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPiscinaActionPerformed
+
+    private void btnFrontonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFrontonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFrontonActionPerformed
+
+    private void pClubAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pClubAtrasActionPerformed
+        panelClub.setVisible(false);
+    }//GEN-LAST:event_pClubAtrasActionPerformed
+
+    private void pCLubUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pCLubUnirseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pCLubUnirseActionPerformed
+
+    private void btnClubSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClubSocialActionPerformed
+        panelClub.setVisible(true);
+    }//GEN-LAST:event_btnClubSocialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,12 +301,24 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnPiscina;
     private javax.swing.JButton bttEventos;
     private javax.swing.JButton bttReservas;
+    private javax.swing.JLabel fblanco;
+    private javax.swing.JLabel fblanco1;
+    private javax.swing.JLabel fblanco2;
+    private javax.swing.JLabel fondoVistaCLiente;
+    private javax.swing.JLabel fondoVistaCLiente1;
+    private javax.swing.JLabel fondoVistaCLiente2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> lEventos;
     private javax.swing.JList<String> lMisReservas;
+    private javax.swing.JButton pCLubUnirse;
+    private javax.swing.JButton pClubAtras;
+    private javax.swing.JPanel panelClub;
     private javax.swing.JPanel panelEventos;
     private javax.swing.JPanel panelReservas;
+    private javax.swing.JLabel seleccione;
     // End of variables declaration//GEN-END:variables
 }
