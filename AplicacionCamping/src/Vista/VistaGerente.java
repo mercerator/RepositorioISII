@@ -69,13 +69,6 @@ public class VistaGerente extends javax.swing.JFrame {
         btn_ganador = new javax.swing.JButton();
         lbl_iniciosesion = new javax.swing.JLabel();
         botonesLuz = new javax.swing.ButtonGroup();
-        descuento = new javax.swing.JInternalFrame();
-        eldescuentoes = new javax.swing.JLabel();
-        descuentoAct = new javax.swing.JLabel();
-        xcien = new javax.swing.JLabel();
-        atras = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         btn_administrar = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
@@ -84,6 +77,9 @@ public class VistaGerente extends javax.swing.JFrame {
         scroll_eventos = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
         btn_descuento = new javax.swing.JButton();
+        des = new javax.swing.JLabel();
+        descuentoAct = new javax.swing.JLabel();
+        xcien = new javax.swing.JLabel();
 
         eventos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         eventos.setTitle("Administrar Eventos");
@@ -153,50 +149,6 @@ public class VistaGerente extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1000, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        descuento.setTitle("Descuento");
-        descuento.setToolTipText("");
-        descuento.setVisible(false);
-        descuento.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        eldescuentoes.setFont(jLabel1.getFont());
-        eldescuentoes.setText("El descuento actual es de un");
-        descuento.getContentPane().add(eldescuentoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 220, 20));
-
-        descuentoAct.setFont(jLabel1.getFont());
-        descuentoAct.setText(" 0");
-        descuento.getContentPane().add(descuentoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 40, -1));
-
-        xcien.setFont(jLabel1.getFont());
-        xcien.setText("%.");
-        descuento.getContentPane().add(xcien, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
-
-        atras.setFont(btn_atras.getFont());
-        atras.setText("Atrás");
-        atras.setBorder(btn_atras.getBorder());
-        atras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atrasActionPerformed(evt);
-            }
-        });
-        descuento.getContentPane().add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 100, 40));
-
-        jButton1.setFont(atras.getFont());
-        jButton1.setText("Actualizar");
-        jButton1.setActionCommand("actualizarDescuento");
-        jButton1.setBorder(atras.getBorder());
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        descuento.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 100, 40));
-
-        jLabel1.setFont(eldescuentoes.getFont());
-        jLabel1.setText("¿Desea actualizar el descuento?");
-        descuento.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
-
-        getContentPane().add(descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 330, 250));
-
         btn_administrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_administrar.setText("Administrar");
         btn_administrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -205,7 +157,7 @@ public class VistaGerente extends javax.swing.JFrame {
                 btn_administrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_administrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 110, 20));
+        getContentPane().add(btn_administrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 340, 110, 30));
 
         btn_atras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_atras.setText("Atrás");
@@ -225,9 +177,9 @@ public class VistaGerente extends javax.swing.JFrame {
                 btn_modificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 90, 20));
+        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 110, 30));
 
-        listaReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parcelas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
+        listaReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         listaReservas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Reserva 1", "Reserva 2", "Reserva 3", "Reserva 4" };
             public int getSize() { return strings.length; }
@@ -236,7 +188,7 @@ public class VistaGerente extends javax.swing.JFrame {
         scroll_parcelas.setViewportView(listaReservas);
         listaReservas.getAccessibleContext().setAccessibleName("Reservas");
 
-        getContentPane().add(scroll_parcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 170, 210));
+        getContentPane().add(scroll_parcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 400, 220));
 
         jList3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Eventos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
@@ -246,17 +198,28 @@ public class VistaGerente extends javax.swing.JFrame {
         });
         scroll_eventos.setViewportView(jList3);
 
-        getContentPane().add(scroll_eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 170, 210));
+        getContentPane().add(scroll_eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 400, 220));
 
         btn_descuento.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btn_descuento.setText("Descuento");
+        btn_descuento.setText("Actualizar");
         btn_descuento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_descuento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_descuentoActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 110, 40));
+        getContentPane().add(btn_descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, 110, 40));
+
+        des.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        des.setText("El descuento aplicable es de un ");
+        getContentPane().add(des, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, 20));
+
+        descuentoAct.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        getContentPane().add(descuentoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 50, 20));
+
+        xcien.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        xcien.setText("%");
+        getContentPane().add(xcien, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 420, 50, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -304,25 +267,15 @@ public class VistaGerente extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ganadorActionPerformed
 
     private void btn_descuentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_descuentoActionPerformed
-        descuento.setVisible(true);
-    }//GEN-LAST:event_btn_descuentoActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        descuento.setVisible(false);
-        descuentoAct.setText(JOptionPane.showInputDialog(null, "Introduce el descuento que quiere aplicar: ", "Descuento", JOptionPane.QUESTION_MESSAGE));
+       descuentoAct.setText(JOptionPane.showInputDialog(null, "Introduce el descuento que quiere aplicar: ", "Descuento", JOptionPane.QUESTION_MESSAGE));
         if ("".equals(descuentoAct.getText())) {
             descuentoAct.setText(" 0");
         }
         gerente.setDescuento(Integer.parseInt(descuentoAct.getText()));
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        descuento.setVisible(false);
-    }//GEN-LAST:event_atrasActionPerformed
+    }//GEN-LAST:event_btn_descuentoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton atras;
     private javax.swing.ButtonGroup botonesLuz;
     private javax.swing.JButton btn_administrar;
     private javax.swing.JButton btn_atras;
@@ -332,12 +285,9 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JButton btn_ganador;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_sancionar;
-    private javax.swing.JInternalFrame descuento;
+    private javax.swing.JLabel des;
     private javax.swing.JLabel descuentoAct;
-    private javax.swing.JLabel eldescuentoes;
     private javax.swing.JFrame eventos;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
     private javax.swing.JScrollPane jScrollPane2;

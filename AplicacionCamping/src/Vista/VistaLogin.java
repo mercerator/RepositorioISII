@@ -155,7 +155,7 @@ public class VistaLogin extends javax.swing.JFrame {
 
         lbl_iniciosesion.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lbl_iniciosesion.setText("Inicio de Sesión");
-        getContentPane().add(lbl_iniciosesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 250, 30));
+        getContentPane().add(lbl_iniciosesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 250, 30));
 
         lbl_titulo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lbl_titulo.setText("Camping Party");
