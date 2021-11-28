@@ -6,8 +6,6 @@
 package Controlador;
 
 import Datos.DatosParcela;
-import Datos.ListaParcelas;
-import Datos.ListaReservas;
 import Model.Camping;
 import Model.Parcela;
 import Model.Reserva;
@@ -16,9 +14,21 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Cliente extends UsuarioRegistrado {
-
-    public Cliente(String usuario, String contraseña, Camping camping) {
+    
+    private String nombreApellidos;
+    private String telefono;
+    private String correo;
+    private String cp;
+    private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+    private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
+    
+    public Cliente(String usuario, String contraseña, Camping camping, String nombreApellidos, String telefono, String correo, String cp) {
         super(usuario, contraseña, camping);
+        this.nombreApellidos = nombreApellidos;
+        this.telefono = telefono;
+        this.correo = correo;
+        this.cp = cp;
+        
     }
 
     //mejor reservas
@@ -36,14 +46,18 @@ public class Cliente extends UsuarioRegistrado {
         return camping.consultarParcelas();
     }
     
-    public void reserva(String nombreApellidos, String dni, ArrayList<String> nombresTiendas,
-            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList parcelasSeleccionadas) {
-
-        camping.nuevaReserva(nombreApellidos, dni, nombresTiendas, metrosTiendas, luz,
-                fechaIni, fechaFin, (ArrayList<Parcela>) parcelasSeleccionadas, this);
+     */
+    public void realizarReserva(ArrayList<String> nombresTiendas, ArrayList<Integer> metrosTiendas, 
+            ArrayList luzParcelas, ArrayList parcelasSeleccionadas, Date fechaIni, Date fechaFin){
+        // Creamos y guardamos las tiendas de campanya
+        for(int i = 0; i < nombresTiendas.size(); i++){
+            tiendas.add(new Tienda(nombresTiendas.get(i), metrosTiendas.get(i)));
+        }
+        
+        // Creamos y guardamos la reserva en cliente
+        reservas.add(camping.realizarReserva((ArrayList<Parcela>)parcelasSeleccionadas, luzParcelas, fechaIni, fechaFin, this));
     }
     
-     */
     public Object devolverParcela(int identificador) {
         return camping.devolverParcela(identificador);
     }

@@ -1,5 +1,6 @@
 package Model;
 
+import Controlador.Cliente;
 import Datos.DatosReserva;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,9 +12,16 @@ import java.util.Date;
 public class Reserva {
 
     protected DatosReserva datosreserva;
+    private ArrayList<Parcela> parcelas;
+    private Date fechaIni;
+    private Date fechaFin;
+    private Cliente cliente;
 
-    public Reserva(DatosReserva _datos) {
-        datosreserva = _datos;
+    public Reserva(ArrayList<Parcela> parcelasSeleccionadas, ArrayList luzParcelas, Date fechaIni, Date fechaFin, Cliente cliente) {
+        this.parcelas = parcelasSeleccionadas;
+        this.fechaIni = fechaIni;
+        this.fechaFin = fechaFin;
+        this.cliente = cliente;
     }
 
     public String getNombreApellidos() {

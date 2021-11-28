@@ -6,12 +6,7 @@
 package Vista;
 
 import Controlador.Cliente;
-import Controlador.Gerente;
-import Controlador.GestoresCamping;
 import Controlador.UsuarioNoRegistrado;
-import Datos.DatosParcela;
-import Model.*;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Enumeration;
@@ -32,13 +27,13 @@ public class VistaReserva extends javax.swing.JFrame {
      * Creates new form Reserva
      */
     private Cliente cliente;
-    protected GestoresCamping gestoresCamping;
     private UsuarioNoRegistrado noRegistrado;
-    private Gerente ger;
     private JFrame vistaAnterior;
-    private ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
 
     private ArrayList<Object> parcelasSeleccionadas = new ArrayList();
+    private ArrayList<String> nombresTiendas = new ArrayList<String>();
+    private ArrayList<Integer> metrosTiendas = new ArrayList<Integer>();
+    private ArrayList luzParcelas = new ArrayList();
 
     /*
     private ArrayList parcelasSeleccionadas = new ArrayList();
@@ -64,21 +59,21 @@ public class VistaReserva extends javax.swing.JFrame {
         //Seleccion del radioButton de la 
         grupo_botones_luz.add(luzSi);
         grupo_botones_luz.add(luzNO);
-        //fEntrada.enable(reserva);               
+        fEntrada.enable(reserva);
+        btn_finalizar.setVisible(false);
 
-        /*botones = new JRadioButton[38];
-        for (int i = 0; i < botones.length; i++){       //Anyadimos los botones
-            botones[i] = new JRadioButton("Boton"+i);
-            mapaParcelas.add(botones[i]);
-        }*/
- /*
-        for(Object item: cliente.consultarParcelas()){
-            combo_parcelas.addItem(item);
-        }*/
-        //Object parcela = combo_parcelas.getSelectedItem();
-        //DatosParcela datosParcela = cliente.consultarDatosParcela(parcela);
-        //mTienda.setText(Integer.toString(datosParcela.metrosCuadrados));
-        //lbl_precioParcela.setText(Integer.toString(datosParcela.precioDia));
+        // Comprobamos que parcelas hay asignadas y desactivamos los botones correspondientes
+        // para que el usuario no pueda seleccionarlas.
+        ArrayList parcelasAsignadas = this.noRegistrado.parcelasAsignadas();
+        Enumeration botones = grupo_botonesParcela.getElements();
+        JRadioButton boton = new JRadioButton();
+        while (botones.hasMoreElements()){
+            boton = (JRadioButton)botones.nextElement();
+            for(int i = 0; i < parcelasAsignadas.size() ; i++){
+                if((int)parcelasAsignadas.get(i) == Integer.parseInt(boton.getText()))
+                    boton.setEnabled(false);
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -168,7 +163,6 @@ public class VistaReserva extends javax.swing.JFrame {
         dateChooserDialog1.setNavigateFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 6));
 
         mapaParcelas.setMinimumSize(new java.awt.Dimension(1000, 600));
-        mapaParcelas.setPreferredSize(new java.awt.Dimension(1000, 600));
         mapaParcelas.setSize(new java.awt.Dimension(1000, 600));
         mapaParcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -356,12 +350,12 @@ public class VistaReserva extends javax.swing.JFrame {
 
         grupo_botonesParcela.add(p2);
         p2.setText("2");
-        p2.setName("7"); // NOI18N
+        p2.setName(""); // NOI18N
         mapaParcelas.getContentPane().add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 20, -1));
 
         grupo_botonesParcela.add(p1);
-        p1.setText("Parcela 1");
-        p1.setName("6"); // NOI18N
+        p1.setText("1");
+        p1.setName(""); // NOI18N
         p1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 p1ActionPerformed(evt);
@@ -374,7 +368,6 @@ public class VistaReserva extends javax.swing.JFrame {
         lbl_mcuadrados.setText("Metros cuadrados:");
         mapaParcelas.getContentPane().add(lbl_mcuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 160, 30));
 
-        mTienda.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         mTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         mTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -388,7 +381,6 @@ public class VistaReserva extends javax.swing.JFrame {
         lbl_nombre.setText("Nombre:");
         mapaParcelas.getContentPane().add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 80, 30));
 
-        tipoTienda.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tipoTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         mapaParcelas.getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 90, 30));
 
@@ -496,6 +488,7 @@ public class VistaReserva extends javax.swing.JFrame {
 
         listaParcelas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis parcelas reservadas:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
         listaParcelas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        listaParcelas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(listaParcelas);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 360, 150));
@@ -529,7 +522,6 @@ public class VistaReserva extends javax.swing.JFrame {
         lbl_correo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_correo.setText("Correo: ");
         getContentPane().add(lbl_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 100, 30));
-        lbl_correo.getAccessibleContext().setAccessibleName("Correo: ");
 
         txt_correo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_correo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -573,61 +565,27 @@ public class VistaReserva extends javax.swing.JFrame {
 
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         this.setVisible(false);
-        VistaPrincipal prin = new VistaPrincipal();
-        prin.setVisible(true);
+        vistaAnterior.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_finalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finalizarActionPerformed
         try {
+            // Damos de alta el cliente en caso de que no este dado de alta
             if (this.cliente == null) {
-                cliente = noRegistrado.altaCliente(txt_dni.getText(), String.valueOf(txt_contra.getPassword()));
+                cliente = noRegistrado.altaCliente(txt_dni.getText(), String.valueOf(txt_contra.getPassword()), 
+                        nombreyApellidos.getText(), txt_tel.getText(), txt_correo.getText(), txt_cp.getText());
             }
-            /*
-            String par1 = p1.getText();
-            //guardar parcela seleccionada
-            boolean encontrado = false;
-            Enumeration botones = grupo_botonesParcela.getElements();
-
-            p2 = new JRadioButton(Integer.toString(2));
-            while (botones.hasMoreElements() && !encontrado) {
-                p1 = (JRadioButton) botones.nextElement();
-                if (p1.isSelected()) {
-                    encontrado = true;
-                }
-            }
-
-            for (int i = 0; i < listaParcelas.getModel().getSize(); i++) {
-                if (listaParcelas.getModel().getElementAt(i).equals(par1)) {
-                    JOptionPane.showMessageDialog(null, "PARCELA YA RESERVADA", "Atención", JOptionPane.WARNING_MESSAGE);
-                    return;
-                } else {
-                    Object parcela = cliente.devolverParcela(Integer.parseInt(par1));
-                    parcelasSeleccionadas.add(parcela);
-                    lParcelas.addElement(parcela);
-                    listaParcelas.updateUI();
-                }
-            }*/
-
-            int metrosTienda = Integer.parseInt(mTienda.getText());
-
-            boolean luz = false;
-            if (luzSi.isSelected()) {
-                luz = true;
-            }
-
-            /*
-        for (Object item : ger.devolverParcela()) {
-            lParcelas.addElement(item);
-        }*/
+            
+            // Nos guardamos las fechas de entrada y salida del cliente
             Date fechaIni = fEntrada.getSelectedDate().getTime();
             Date fechaFin = fSalida.getSelectedDate().getTime();
-
-            ger.reserva(tipoTienda.getText(), txt_dni.getText(), tipoTienda.getText(), metrosTienda, luz,
-                    fechaIni, fechaFin, parcelasSeleccionadas);
-
+            
+            // Hacemos la reserva
+            cliente.realizarReserva(nombresTiendas, metrosTiendas, luzParcelas, parcelasSeleccionadas, fechaIni, fechaFin);
+            
             this.setVisible(false);
-            VistaPrincipal prin = new VistaPrincipal();
-            prin.setVisible(true);
+            vistaAnterior.setVisible(true);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error en alguno de los campos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -645,16 +603,15 @@ public class VistaReserva extends javax.swing.JFrame {
     private void btn_seleccParcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seleccParcelasActionPerformed
         this.setVisible(false);
         mapaParcelas.setVisible(true);
-
-        /*
-        for (Object item : ger.consultarParcelas()) {
-            lParcelas.addElement(item);
-        }*/
     }//GEN-LAST:event_btn_seleccParcelasActionPerformed
 
     private void btn_cancelarMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarMapaActionPerformed
         this.setVisible(true);
         mapaParcelas.setVisible(false);
+        tipoTienda.setText("");
+        mTienda.setText("");
+        grupo_botonesParcela.clearSelection();
+        grupo_botones_luz.clearSelection();
     }//GEN-LAST:event_btn_cancelarMapaActionPerformed
 
     public void parcelas() {
@@ -895,11 +852,60 @@ public class VistaReserva extends javax.swing.JFrame {
 
     }
     private void btn_guardarParcelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarParcelaActionPerformed
-        if (evt.getSource() == btn_guardarParcela) {
-            parcelas();
+        try{
+
+            boolean encontrado = false;
+            Enumeration botones = grupo_botonesParcela.getElements();
+            JRadioButton botonSeleccionado = new JRadioButton();
+            while (botones.hasMoreElements() && !encontrado){
+                botonSeleccionado = (JRadioButton)botones.nextElement();
+                if(botonSeleccionado.isSelected()){
+                    encontrado = true;
+                }
+            }
+            Object parcela = noRegistrado.devolverParcela(Integer.parseInt(botonSeleccionado.getText()));
+            if(noRegistrado.tamanyoCorrecto(parcela, Integer.parseInt(mTienda.getText()))){
+                // Guardamos la parcela en un arraylist de parcelas seleccionadas
+                parcelasSeleccionadas.add(parcela);
+                lParcelas.addElement(parcela);
+                listaParcelas.updateUI();
+                
+                // Guardamos los datos de la tienda de campaña seleccionada
+                nombresTiendas.add(tipoTienda.getText());
+                metrosTiendas.add(Integer.parseInt(mTienda.getText()));
+                
+                //Comprobamos si quiere luz en esa parcela o no
+                if (luzSi.isSelected()) {
+                    luzParcelas.add(true);
+                }else{
+                    luzParcelas.add(false);
+                }
+                
+                // Dejamos la vista en un estado para que se pueda seleccionar otra parcela
+                // Borramos el contenido de los text field
+                tipoTienda.setText("");
+                mTienda.setText("");
+                
+                // Hacemos que no se pueda volver a seleccionar la tienda actual y
+                // quitamos la seleccion de todos los grupos de botones
+                botonSeleccionado.setEnabled(false);
+                grupo_botonesParcela.clearSelection();
+                grupo_botones_luz.clearSelection();
+                
+                // Ocultamos la ventana para seleccionar parcelas
+                this.setVisible(true);
+                mapaParcelas.setVisible(false);
+                btn_finalizar.setVisible(true);   
+            } else{
+                JOptionPane.showMessageDialog(this, "El tamanyo de la tienda es mayor al de la parcela seleccionada.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+                 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error en alguno de los campos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        this.setVisible(true);
-        mapaParcelas.setVisible(false);
+        
+        
     }//GEN-LAST:event_btn_guardarParcelaActionPerformed
 
     private void p31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p31ActionPerformed

@@ -37,8 +37,8 @@ public class VistaGerente extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        gerente = gerente;
-        vistaAnterior = vistaAnterior;
+        this.gerente = gerente;
+        this.vistaAnterior = vistaAnterior;
         this.setTitle("Administración Gerente");
         
         lReservas = new DefaultListModel();
@@ -233,8 +233,7 @@ public class VistaGerente extends javax.swing.JFrame {
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         this.setVisible(false);
         gestoresCamping = new GestoresCamping();
-        VistaLogin vl = new VistaLogin(gestoresCamping);
-        vl.setVisible(true);
+        vistaAnterior.setVisible(true);
     }//GEN-LAST:event_btn_atrasActionPerformed
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed

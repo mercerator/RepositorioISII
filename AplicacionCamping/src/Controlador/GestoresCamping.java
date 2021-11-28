@@ -56,7 +56,7 @@ public class GestoresCamping {
         return gerente;
     }
     public Cliente iniciarCliente() {
-        Cliente cliente = new Cliente("", "", this.camping);
+        Cliente cliente = new Cliente("", "", this.camping, "", "", "", "");
         camping.cargarDatos();
         return cliente;
     }

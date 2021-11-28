@@ -23,12 +23,6 @@ public class Gerente extends UsuarioRegistrado {
         super(usuario, contrasenya, camping);
     }
 
-    public void reserva(String nombreApellidos, String dni, String nombresTiendas,
-            int metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList parcelasSeleccionadas) {
-
-        camping.nuevaReserva(nombreApellidos, dni, nombresTiendas, metrosTiendas, luz,
-                fechaIni, fechaFin, parcelasSeleccionadas);
-    }
 
     public void setDescuento(int descuento) {
         camping.setDescuento(descuento);

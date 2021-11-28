@@ -13,6 +13,7 @@ import Controlador.UsuarioNoRegistrado;
 import Controlador.UsuarioRegistrado;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,7 @@ import javax.swing.JOptionPane;
  */
 public class VistaLogin extends javax.swing.JFrame {
 
+    private JFrame vistaAnterior;
     protected Gerente gerente;
     protected GestoresCamping gestoresCamping;
     protected UsuarioNoRegistrado noRegistrado;
@@ -32,12 +34,13 @@ public class VistaLogin extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public VistaLogin(GestoresCamping gestoresCamping) {
+    public VistaLogin(GestoresCamping gestoresCamping, JFrame vistaAnterior) {
         super("Login");
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Inicio de Sesión");
         this.gestoresCamping = gestoresCamping;
+        this.vistaAnterior = vistaAnterior;
 
         try {
             gestoresCamping = new GestoresCamping();
@@ -168,8 +171,7 @@ public class VistaLogin extends javax.swing.JFrame {
 
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         this.setVisible(false);
-        VistaPrincipal pri = new VistaPrincipal();
-        pri.setVisible(true);
+        vistaAnterior.setVisible(true);
     }//GEN-LAST:event_btn_atrasActionPerformed
 
     private void txt_campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_campoActionPerformed
@@ -198,7 +200,8 @@ public class VistaLogin extends javax.swing.JFrame {
                 cli.setVisible(true);
             }
             this.setVisible(false);
-            this.dispose();
+            txt_campo.setText("");
+            txt_passwd.setText("");
         } else {
             JOptionPane.showMessageDialog(this, "Usuario Invalido. Vuelva a intentarlo");
         }

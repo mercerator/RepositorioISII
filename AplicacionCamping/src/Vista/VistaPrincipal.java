@@ -122,7 +122,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void btn_ini_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ini_sesionActionPerformed
         this.setVisible(false);
-        VistaLogin log = new VistaLogin(gestoresCamping);
+        VistaLogin log = new VistaLogin(gestoresCamping, this);
         log.setVisible(true);
     }//GEN-LAST:event_btn_ini_sesionActionPerformed
 

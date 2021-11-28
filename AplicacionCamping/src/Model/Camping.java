@@ -50,7 +50,7 @@ public class Camping {
     public static final int SEGUIR = 0;
 
     public Camping() {
-        cargarDatos();
+        this.cargarDatos();
     }
 
     public void cargarDatos() {
@@ -66,8 +66,13 @@ public class Camping {
         Gerente per4 = new Gerente("Jacques", "123", this);
         usuarios.add(per4);
         
-        Cliente cli = new Cliente("Pepe", "123", this);
+        Cliente cli = new Cliente("Pepe", "123", this, "", "", "", "");
         usuarios.add(cli);
+        
+        //Generacion de parcelas
+        Parcela p1 = new Parcela(37, 15, true, 10);
+        parcelasSinAsignacion.add(p1);
+        parcelas.add(p1);
     }
 
     public UsuarioRegistrado login(String nombre, String contrasenya) {
@@ -109,31 +114,6 @@ public class Camping {
         return new ListaReservas(reservas);
     }
 
-    public void nuevaReserva(String nombreApellidos, String dni, String nombresTiendas,
-            int metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas) {
-        Reserva r = new Reserva(datosReserva);
-        reservas.add(r);
-
-        for (Parcela par : parcelasSeleccionadas) {
-            parcelas.add(par);
-        }
-    }
-
-    /*
-    public void nuevaReserva(String nombreApellidos, String dni, String nombresTiendas,
-            ArrayList<Integer> metrosTiendas, boolean luz, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas, Gerente gerente) {
-
-        for (Parcela parcela : parcelasSeleccionadas) {
-            parcelas.add(parcela);
-        }
-        Reserva reserva = new Reserva(fechaIni, fechaFin, parcelasSeleccionadas, gerente);
-        reservas.add(reserva);
-
-        for (int i = 0; i < nombresTiendas.size(); i++) {
-            Tienda tienda = new Tienda(nombresTiendas.get(i), metrosTiendas.get(i));
-            tiendas.add(tienda);
-        }
-    }*/
     public void setDescuento(int descuento) {
         this.descuento = descuento;
     }
@@ -152,4 +132,29 @@ public class Camping {
         return res;
     }
 
+    public ArrayList parcelasAsignadas(){
+        ArrayList parcelasAsignadas = new ArrayList();
+        
+        for(Parcela parcela: parcelasConAsignacion){
+            parcelasAsignadas.add(parcela.getIdentificador());
+        }
+        
+        return parcelasAsignadas;
+    }
+    
+    public Cliente altaCliente(String usuario, String contraseña, String nombreApellidos, String telefono, String correo, String cp){
+        Cliente cliente = new Cliente(usuario, contraseña, this, nombreApellidos, telefono, correo, cp);
+        usuarios.add(cliente);
+        return cliente;
+    }
+    
+    public Reserva realizarReserva(ArrayList<Parcela> parcelasSeleccionadas, ArrayList luzParcelas, Date fechaIni, Date fechaFin, Cliente cliente){
+        Reserva reserva = new Reserva(parcelasSeleccionadas, luzParcelas, fechaIni, fechaFin, cliente);
+        reservas.add(reserva);
+        for(Parcela p: parcelasSeleccionadas){
+            parcelasSinAsignacion.remove(p);
+            parcelasConAsignacion.add(p);
+        }
+        return reserva;
+    }
 }

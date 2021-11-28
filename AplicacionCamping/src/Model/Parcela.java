@@ -9,17 +9,18 @@ import java.util.ArrayList;
  */
 public class Parcela {
 
-    public Reserva reserva;
+    private int identificador;
+    private int metrosCuadrados;
+    private boolean luz;
+    private int precioDia;
+    private Reserva reserva;
+    
 
-    protected DatosParcela datosParcela;
-
-    public int identificador;
-    public int metrosCuadrados;
-    public boolean luz;
-    public int precioDia;
-
-    public Parcela(DatosParcela _datos) {
-        datosParcela = _datos;
+    public Parcela(int identificador, int metrosCuadrados, boolean luz, int precioDia) {
+        this.identificador = identificador;
+        this.metrosCuadrados = metrosCuadrados;
+        this.luz = luz;
+        this.precioDia = precioDia;
     }
 
     /**
@@ -39,8 +40,6 @@ public class Parcela {
     }
 
     public DatosParcela consultarDatosParcela(ArrayList parcelasDisponibles) {
-        DatosParcela datosParcela = new DatosParcela(this.identificador,
-                this.metrosCuadrados, this.luz, this.precioDia);
         return new DatosParcela(identificador,metrosCuadrados,luz,precioDia);
     }
 
@@ -80,9 +79,13 @@ public class Parcela {
     public boolean consultarReservas() {
         return reserva == null;
     }
+    
+    public boolean tamanyoCorrecto(int tamanyo){
+        return (tamanyo <= metrosCuadrados);
+    }
 
     @Override
     public String toString() {
-        return datosParcela + "" + identificador + "" + metrosCuadrados + "" + luz + "" + precioDia + "";
+        return String.valueOf(identificador);
     }
 }
