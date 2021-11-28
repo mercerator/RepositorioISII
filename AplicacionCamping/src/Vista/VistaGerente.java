@@ -47,6 +47,8 @@ public class VistaGerente extends javax.swing.JFrame {
         for (Object item : this.gerente.consultarReserva()) {
             lReservas.addElement(item);
         }
+        
+        descuentoAct.setText(String.valueOf(this.gerente.getDescuento()));
     }
 
     /**

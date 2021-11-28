@@ -27,6 +27,10 @@ public class Gerente extends UsuarioRegistrado {
     public void setDescuento(int descuento) {
         camping.setDescuento(descuento);
     }
+    
+    public int getDescuento(){
+        return camping.getDescuento();
+    }
 
     
     public Object devolverParcelas() {

@@ -54,6 +54,7 @@ public class Camping {
     }
 
     public void cargarDatos() {
+        // Generacion de usuarios
         Gerente per1 = new Gerente("Anthony", "123", this);
         usuarios.add(per1);
 
@@ -69,7 +70,7 @@ public class Camping {
         Cliente cli = new Cliente("Pepe", "123", this, "", "", "", "");
         usuarios.add(cli);
         
-        //Generacion de parcelas
+        // Generacion de parcelas
         int tamanyo = 0;
         for(int i = 1; i <= 37; i++){
             if((i >= 1) && (i <= 9)){
@@ -85,6 +86,9 @@ public class Camping {
             parcelasSinAsignacion.add(p);
             parcelas.add(p);
         }
+        
+        // Descuento
+        descuento = 10;
     }
 
     public UsuarioRegistrado login(String nombre, String contrasenya) {
@@ -161,7 +165,7 @@ public class Camping {
     }
     
     public Reserva realizarReserva(ArrayList<Parcela> parcelasSeleccionadas, ArrayList luzParcelas, Date fechaIni, Date fechaFin, Cliente cliente){
-        Reserva reserva = new Reserva(parcelasSeleccionadas, luzParcelas, fechaIni, fechaFin, cliente);
+        Reserva reserva = new Reserva(reservas.size(), parcelasSeleccionadas, luzParcelas, fechaIni, fechaFin, cliente);
         reservas.add(reserva);
         for(Parcela p: parcelasSeleccionadas){
             parcelasSinAsignacion.remove(p);

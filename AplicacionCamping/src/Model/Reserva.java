@@ -12,12 +12,14 @@ import java.util.Date;
 public class Reserva {
 
     protected DatosReserva datosreserva;
+    private int id;
     private ArrayList<Parcela> parcelas;
     private Date fechaIni;
     private Date fechaFin;
     private Cliente cliente;
 
-    public Reserva(ArrayList<Parcela> parcelasSeleccionadas, ArrayList luzParcelas, Date fechaIni, Date fechaFin, Cliente cliente) {
+    public Reserva(int id, ArrayList<Parcela> parcelasSeleccionadas, ArrayList luzParcelas, Date fechaIni, Date fechaFin, Cliente cliente) {
+        this.id = id;
         this.parcelas = parcelasSeleccionadas;
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
@@ -92,7 +94,10 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "Patata";
+        String res = "Id: " + id + "   Parcelas: " + parcelas.size() + "   Fecha Llegada: " +
+                fechaIni.getDate() + "/" + (fechaIni.getMonth()+1) + "/" + (fechaIni.getYear()+1900) +
+                "   Fecha Salida: " + fechaFin.getDate() + "/" + (fechaFin.getMonth()+1) + "/" + (fechaFin.getYear()+1900);
+        return res;
     }
 
 }
