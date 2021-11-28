@@ -27,6 +27,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Menú Principal");
+        this.setSize(1000,600);
 
         try {
             gestoresCamping = new GestoresCamping();
@@ -49,8 +50,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_reserva = new javax.swing.JButton();
         btn_ini_sesion = new javax.swing.JButton();
         btn_sinreserva = new javax.swing.JButton();
-        lbl_titulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lbl_titulo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -86,13 +89,21 @@ public class VistaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btn_sinreserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 270, 80));
 
-        lbl_titulo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        lbl_titulo.setText("Camping Party");
-        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 340, 140));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("¿Cuándo desea iniciar su estancia?");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 570, 120));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/camping.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
+
+        lbl_titulo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        lbl_titulo.setText("Camping Party");
+        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 340, 140));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondocamping.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -120,6 +131,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn_reserva;
     private javax.swing.JButton btn_sinreserva;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lbl_titulo;
     // End of variables declaration//GEN-END:variables
 }
