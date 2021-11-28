@@ -26,7 +26,7 @@ public class VistaReserva extends javax.swing.JFrame {
     /**
      * Creates new form Reserva
      */
-    private Cliente cliente;
+    private Cliente cliente = null;
     private UsuarioNoRegistrado noRegistrado;
     private JFrame vistaAnterior;
 

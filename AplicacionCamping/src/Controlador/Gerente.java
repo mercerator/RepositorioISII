@@ -37,7 +37,7 @@ public class Gerente extends UsuarioRegistrado {
         return camping.consultarParcelas();
     }
 
-    public ListaReservas consultarReserva() {
+    public ArrayList consultarReserva() {
         return camping.consultarReserva();
     }
 

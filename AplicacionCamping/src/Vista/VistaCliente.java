@@ -8,6 +8,7 @@ package Vista;
 import Controlador.Cliente;
 import Controlador.Gerente;
 import Model.Camping;
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 
 /**
@@ -18,6 +19,8 @@ public class VistaCliente extends javax.swing.JFrame {
 
     private JFrame vistaAnterior;
     private Cliente cliente;
+    private DefaultListModel lReservas;
+    private DefaultListModel lEventos;
     /**
      * Creates new form VistaCliente
      */
@@ -35,6 +38,23 @@ public class VistaCliente extends javax.swing.JFrame {
         panelClub.setVisible(false);
         panelPiscina.setVisible(false);
         panelFronton.setVisible(false);
+        
+        // Inicializamos la lista de reservas
+        lReservas = new DefaultListModel();
+        lMisReservas.setModel(lReservas);
+        
+        for(Object reserva: this.cliente.getReservas()){
+            lReservas.addElement(reserva);
+        }
+        
+        lEventos = new DefaultListModel();
+        lMisEventos.setModel(lEventos);
+        
+        for(Object evento: this.cliente.getEventos()){
+            lEventos.addElement(evento);
+        }
+        
+        
     }
     public void actionOff(){
         bttReservas.setEnabled(false);
@@ -43,7 +63,7 @@ public class VistaCliente extends javax.swing.JFrame {
         btnFronton.setEnabled(false);
         btnPiscina.setEnabled(false);
         btnClubSocial.setEnabled(false);
-        lEventos.setEnabled(false);
+        lMisEventos.setEnabled(false);
         btnCanEvento.setEnabled(false);
     }
     public void actionOn(){
@@ -53,7 +73,7 @@ public class VistaCliente extends javax.swing.JFrame {
         btnFronton.setEnabled(true);
         btnPiscina.setEnabled(true);
         btnClubSocial.setEnabled(true);
-        lEventos.setEnabled(true);
+        lMisEventos.setEnabled(true);
         btnCanEvento.setEnabled(true);
     }
 
@@ -88,7 +108,7 @@ public class VistaCliente extends javax.swing.JFrame {
         pCLubUnirse = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        lEventos = new javax.swing.JList<>();
+        lMisEventos = new javax.swing.JList<>();
         btnCanEvento = new javax.swing.JButton();
         btnPiscina = new javax.swing.JButton();
         btnFronton = new javax.swing.JButton();
@@ -254,14 +274,13 @@ public class VistaCliente extends javax.swing.JFrame {
 
         panelEventos.add(panelClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 340, 210));
 
-        lEventos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Eventos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
-        lEventos.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lEventos.setModel(new javax.swing.AbstractListModel<String>() {
+        lMisEventos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Eventos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
+        lMisEventos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(lEventos);
+        jScrollPane2.setViewportView(lMisEventos);
 
         panelEventos.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 127, 191));
 
@@ -314,11 +333,7 @@ public class VistaCliente extends javax.swing.JFrame {
 
         lMisReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         lMisReservas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lMisReservas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        lMisReservas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(lMisReservas);
 
         panelReservas.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 190, 230));
@@ -447,8 +462,8 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JList<String> lEventos;
-    private javax.swing.JList<String> lMisReservas;
+    private javax.swing.JList<String> lMisEventos;
+    private javax.swing.JList<Object> lMisReservas;
     private javax.swing.JButton pCLubUnirse;
     private javax.swing.JButton pClubAtras;
     private javax.swing.JButton pFrontonAtras;

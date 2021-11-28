@@ -44,11 +44,9 @@ public class VistaGerente extends javax.swing.JFrame {
         lReservas = new DefaultListModel();
         listaReservas.setModel(lReservas);
 
-        ListaReservas lr = gerente.consultarReserva();
-
-        /*for (Object item : lr.ArrayReservas) {
+        for (Object item : this.gerente.consultarReserva()) {
             lReservas.addElement(item);
-        }*/
+        }
     }
 
     /**

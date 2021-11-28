@@ -7,6 +7,7 @@ package Controlador;
 
 import Datos.DatosParcela;
 import Model.Camping;
+import Model.Evento;
 import Model.Parcela;
 import Model.Reserva;
 import Model.Tienda;
@@ -21,6 +22,7 @@ public class Cliente extends UsuarioRegistrado {
     private String cp;
     private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
     private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
+    private ArrayList<Evento> eventos = new ArrayList<Evento>();
     
     public Cliente(String usuario, String contraseña, Camping camping, String nombreApellidos, String telefono, String correo, String cp) {
         super(usuario, contraseña, camping);
@@ -60,5 +62,13 @@ public class Cliente extends UsuarioRegistrado {
     
     public Object devolverParcela(int identificador) {
         return camping.devolverParcela(identificador);
+    }
+    
+    public ArrayList getReservas(){
+        return reservas;
+    }
+    
+    public ArrayList getEventos(){
+        return eventos;
     }
 }

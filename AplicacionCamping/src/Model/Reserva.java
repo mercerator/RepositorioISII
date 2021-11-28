@@ -92,7 +92,7 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "" + datosreserva.dni;
+        return "Patata";
     }
 
 }

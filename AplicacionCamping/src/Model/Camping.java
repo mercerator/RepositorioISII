@@ -70,9 +70,21 @@ public class Camping {
         usuarios.add(cli);
         
         //Generacion de parcelas
-        Parcela p1 = new Parcela(37, 15, true, 10);
-        parcelasSinAsignacion.add(p1);
-        parcelas.add(p1);
+        int tamanyo = 0;
+        for(int i = 1; i <= 37; i++){
+            if((i >= 1) && (i <= 9)){
+                tamanyo = 15;
+            }else if((i >= 10) && (i <= 17)){
+                tamanyo = 20;
+            }else if((i >= 18) && (i <= 28)){
+                tamanyo = 30;
+            }if((i >= 29) && (i <= 37)){
+                tamanyo = 50;
+            }
+            Parcela p = new Parcela(i, tamanyo, true, 10);
+            parcelasSinAsignacion.add(p);
+            parcelas.add(p);
+        }
     }
 
     public UsuarioRegistrado login(String nombre, String contrasenya) {
@@ -110,8 +122,8 @@ public class Camping {
         return parcelasDisponibles;
     }
 
-    public ListaReservas consultarReserva() {
-        return new ListaReservas(reservas);
+    public ArrayList consultarReserva() {
+        return reservas;
     }
 
     public void setDescuento(int descuento) {

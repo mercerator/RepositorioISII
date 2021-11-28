@@ -42,12 +42,6 @@ public class VistaLogin extends javax.swing.JFrame {
         this.gestoresCamping = gestoresCamping;
         this.vistaAnterior = vistaAnterior;
 
-        try {
-            gestoresCamping = new GestoresCamping();
-            gerente = gestoresCamping.iniciarGerente();
-        } catch (Exception e) {
-            Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, e);
-        }
     }
 
     /**
@@ -192,11 +186,11 @@ public class VistaLogin extends javax.swing.JFrame {
             Class tipoUsuario = usuario.getClass();
 
             if (tipoUsuario == Gerente.class) {
-                VistaGerente ger = new VistaGerente(this, gerente);
+                VistaGerente ger = new VistaGerente(this, (Gerente)usuario);
                 ger.setVisible(true);
             }
             if (tipoUsuario == Cliente.class) {
-                VistaCliente cli = new VistaCliente(this, cliente);
+                VistaCliente cli = new VistaCliente(this, (Cliente)usuario);
                 cli.setVisible(true);
             }
             this.setVisible(false);
