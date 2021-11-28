@@ -65,6 +65,9 @@ public class Camping {
 
         Gerente per4 = new Gerente("Jacques", "123", this);
         usuarios.add(per4);
+        
+        Cliente cli = new Cliente("Pepe", "123", this);
+        usuarios.add(cli);
     }
 
     public UsuarioRegistrado login(String nombre, String contrasenya) {

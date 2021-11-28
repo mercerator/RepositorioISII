@@ -284,9 +284,6 @@
               </StringArray>
             </Property>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Reservas"/>
-          </AccessibilityProperties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -370,7 +367,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="840" y="420" width="50" height="20"/>
+          <AbsoluteConstraints x="850" y="420" width="30" height="20"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -383,7 +380,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="890" y="420" width="50" height="20"/>
+          <AbsoluteConstraints x="870" y="420" width="30" height="20"/>
         </Constraint>
       </Constraints>
     </Component>

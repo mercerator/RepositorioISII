@@ -5,23 +5,56 @@
  */
 package Vista;
 
+import Controlador.Cliente;
+import Controlador.Gerente;
+import Model.Camping;
+import javax.swing.JFrame;
+
 /**
  *
  * @author anita
  */
 public class VistaCliente extends javax.swing.JFrame {
 
+    private JFrame vistaAnterior;
+    private Cliente cliente;
     /**
      * Creates new form VistaCliente
      */
-    public VistaCliente() {
+    VistaCliente(VistaLogin vistaAnterior, Cliente cliente) {
+        
         initComponents();
+        this.cliente = cliente;
+        this.vistaAnterior = vistaAnterior;
+        this.setSize(1000, 600);
+        this.setTitle("Area Cliente");
         bttReservas.setOpaque(false);
         bttEventos.setOpaque(false);                                        
         panelReservas.setVisible(true);
         panelEventos.setVisible(false);
         panelClub.setVisible(false);
-        this.setSize(1000, 600);
+        panelPiscina.setVisible(false);
+        panelFronton.setVisible(false);
+    }
+    public void actionOff(){
+        bttReservas.setEnabled(false);
+        bttEventos.setEnabled(false);
+        btnPrincipalAtras.setEnabled(false);
+        btnFronton.setEnabled(false);
+        btnPiscina.setEnabled(false);
+        btnClubSocial.setEnabled(false);
+        lEventos.setEnabled(false);
+        btnCanEvento.setEnabled(false);
+    }
+    public void actionOn(){
+        bttReservas.setEnabled(true);
+        bttEventos.setEnabled(true);
+        btnPrincipalAtras.setEnabled(true);
+        btnFronton.setEnabled(true);
+        btnPiscina.setEnabled(true);
+        btnClubSocial.setEnabled(true);
+        lEventos.setEnabled(true);
+        btnCanEvento.setEnabled(true);
     }
 
     /**
@@ -36,6 +69,18 @@ public class VistaCliente extends javax.swing.JFrame {
         bttReservas = new javax.swing.JButton();
         bttEventos = new javax.swing.JButton();
         panelEventos = new javax.swing.JPanel();
+        panelFronton = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        pFrontonAtras = new javax.swing.JButton();
+        pFrontonUnirse = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        panelPiscina = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        pPiscinaAtras = new javax.swing.JButton();
+        pPiscinaUnirse = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         panelClub = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -58,8 +103,9 @@ public class VistaCliente extends javax.swing.JFrame {
         btnNReserva = new javax.swing.JButton();
         fondoVistaCLiente2 = new javax.swing.JLabel();
         fblanco2 = new javax.swing.JLabel();
-        fblanco1 = new javax.swing.JLabel();
         fondoVistaCLiente1 = new javax.swing.JLabel();
+        btnPrincipalAtras = new javax.swing.JButton();
+        fblanco1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,6 +135,86 @@ public class VistaCliente extends javax.swing.JFrame {
         getContentPane().add(bttEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 30));
 
         panelEventos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelFronton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panelFronton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setBackground(new java.awt.Color(242, 242, 242));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setText("Está diseñado para jugadores y entrenadores que ");
+        jLabel7.setToolTipText("");
+        jLabel7.setName(""); // NOI18N
+        jLabel7.setOpaque(true);
+        panelFronton.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 280, 20));
+
+        jLabel8.setBackground(new java.awt.Color(242, 242, 242));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setText("  quieran aprender jugadas o perfeccionar su técnica.");
+        jLabel8.setToolTipText("");
+        jLabel8.setOpaque(true);
+        panelFronton.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 300, -1));
+
+        pFrontonAtras.setText("ATRAS");
+        pFrontonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pFrontonAtrasActionPerformed(evt);
+            }
+        });
+        panelFronton.add(pFrontonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+
+        pFrontonUnirse.setText("UNIRSE");
+        pFrontonUnirse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pFrontonUnirseActionPerformed(evt);
+            }
+        });
+        panelFronton.add(pFrontonUnirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fronton.png"))); // NOI18N
+        jLabel9.setText("jLabel1");
+        panelFronton.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 190));
+
+        panelEventos.add(panelFronton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 340, 210));
+
+        panelPiscina.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panelPiscina.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setBackground(new java.awt.Color(242, 242, 242));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setText("Practicar un ejercicio acuático, no solo te ayuda a");
+        jLabel4.setToolTipText("");
+        jLabel4.setName(""); // NOI18N
+        jLabel4.setOpaque(true);
+        panelPiscina.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 280, 20));
+
+        jLabel5.setBackground(new java.awt.Color(242, 242, 242));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setText("estar en forma, sino que previene lesiones.");
+        jLabel5.setToolTipText("");
+        jLabel5.setOpaque(true);
+        panelPiscina.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 240, -1));
+
+        pPiscinaAtras.setText("ATRAS");
+        pPiscinaAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pPiscinaAtrasActionPerformed(evt);
+            }
+        });
+        panelPiscina.add(pPiscinaAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+
+        pPiscinaUnirse.setText("UNIRSE");
+        pPiscinaUnirse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pPiscinaUnirseActionPerformed(evt);
+            }
+        });
+        panelPiscina.add(pPiscinaUnirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/piscina.png"))); // NOI18N
+        jLabel6.setText("jLabel1");
+        panelPiscina.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 190));
+
+        panelEventos.add(panelPiscina, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 340, 210));
 
         panelClub.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelClub.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -216,13 +342,22 @@ public class VistaCliente extends javax.swing.JFrame {
 
         getContentPane().add(panelReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 660, 420));
 
-        fblanco1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
-        fblanco1.setText("jLabel2");
-        getContentPane().add(fblanco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
-
         fondoVistaCLiente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/areaCliente.png"))); // NOI18N
         fondoVistaCLiente1.setText("jLabel2");
         getContentPane().add(fondoVistaCLiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -70, -1, -1));
+
+        btnPrincipalAtras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnPrincipalAtras.setText("Atras");
+        btnPrincipalAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrincipalAtrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPrincipalAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 130, 40));
+
+        fblanco1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
+        fblanco1.setText("jLabel2");
+        getContentPane().add(fblanco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -238,59 +373,52 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_bttEventosActionPerformed
 
     private void btnPiscinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiscinaActionPerformed
-        // TODO add your handling code here:
+        panelPiscina.setVisible(true);
+        actionOff();
     }//GEN-LAST:event_btnPiscinaActionPerformed
 
     private void btnFrontonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFrontonActionPerformed
-        // TODO add your handling code here:
+        panelFronton.setVisible(true);
+        actionOff();
     }//GEN-LAST:event_btnFrontonActionPerformed
 
-    private void pClubAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pClubAtrasActionPerformed
-        panelClub.setVisible(false);
-    }//GEN-LAST:event_pClubAtrasActionPerformed
+    private void btnClubSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClubSocialActionPerformed
+        panelClub.setVisible(true);
+        actionOff();
+    }//GEN-LAST:event_btnClubSocialActionPerformed
+
+    private void btnPrincipalAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrincipalAtrasActionPerformed
+       vistaAnterior.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_btnPrincipalAtrasActionPerformed
+
+    private void pPiscinaAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pPiscinaAtrasActionPerformed
+        panelPiscina.setVisible(false);
+        actionOn();
+    }//GEN-LAST:event_pPiscinaAtrasActionPerformed
+
+    private void pPiscinaUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pPiscinaUnirseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pPiscinaUnirseActionPerformed
+
+    private void pFrontonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pFrontonAtrasActionPerformed
+        panelFronton.setVisible(false);
+        actionOn();
+    }//GEN-LAST:event_pFrontonAtrasActionPerformed
+
+    private void pFrontonUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pFrontonUnirseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pFrontonUnirseActionPerformed
 
     private void pCLubUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pCLubUnirseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pCLubUnirseActionPerformed
 
-    private void btnClubSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClubSocialActionPerformed
-        panelClub.setVisible(true);
-    }//GEN-LAST:event_btnClubSocialActionPerformed
+    private void pClubAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pClubAtrasActionPerformed
+        panelClub.setVisible(false);
+        actionOn();
+    }//GEN-LAST:event_pClubAtrasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaCliente().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCanEvento;
@@ -299,6 +427,7 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnMod;
     private javax.swing.JButton btnNReserva;
     private javax.swing.JButton btnPiscina;
+    private javax.swing.JButton btnPrincipalAtras;
     private javax.swing.JButton bttEventos;
     private javax.swing.JButton bttReservas;
     private javax.swing.JLabel fblanco;
@@ -310,14 +439,26 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> lEventos;
     private javax.swing.JList<String> lMisReservas;
     private javax.swing.JButton pCLubUnirse;
     private javax.swing.JButton pClubAtras;
+    private javax.swing.JButton pFrontonAtras;
+    private javax.swing.JButton pFrontonUnirse;
+    private javax.swing.JButton pPiscinaAtras;
+    private javax.swing.JButton pPiscinaUnirse;
     private javax.swing.JPanel panelClub;
     private javax.swing.JPanel panelEventos;
+    private javax.swing.JPanel panelFronton;
+    private javax.swing.JPanel panelPiscina;
     private javax.swing.JPanel panelReservas;
     private javax.swing.JLabel seleccione;
     // End of variables declaration//GEN-END:variables

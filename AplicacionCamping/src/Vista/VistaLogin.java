@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Cliente;
 import Model.Camping;
 import Controlador.GestoresCamping;
 import Controlador.Gerente;
@@ -21,11 +22,12 @@ import javax.swing.JOptionPane;
  */
 public class VistaLogin extends javax.swing.JFrame {
 
-    protected Gerente personal;
+    protected Gerente gerente;
     protected GestoresCamping gestoresCamping;
     protected UsuarioNoRegistrado noRegistrado;
     protected UsuarioRegistrado ur;
     protected Camping camping;
+    protected Cliente cliente;
 
     /**
      * Creates new form Login
@@ -39,7 +41,7 @@ public class VistaLogin extends javax.swing.JFrame {
 
         try {
             gestoresCamping = new GestoresCamping();
-            personal = gestoresCamping.iniciarPersonal();
+            gerente = gestoresCamping.iniciarGerente();
         } catch (Exception e) {
             Logger.getLogger(VistaPrincipal.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -188,8 +190,12 @@ public class VistaLogin extends javax.swing.JFrame {
             Class tipoUsuario = usuario.getClass();
 
             if (tipoUsuario == Gerente.class) {
-                VistaGerente ger = new VistaGerente(this, personal);
+                VistaGerente ger = new VistaGerente(this, gerente);
                 ger.setVisible(true);
+            }
+            if (tipoUsuario == Cliente.class) {
+                VistaCliente cli = new VistaCliente(this, cliente);
+                cli.setVisible(true);
             }
             this.setVisible(false);
             this.dispose();

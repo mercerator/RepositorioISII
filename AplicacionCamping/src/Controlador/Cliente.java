@@ -15,17 +15,13 @@ import Model.Tienda;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- *
- * @author Alexandra
- */
 public class Cliente extends UsuarioRegistrado {
 
-    public Cliente(String usuario, Camping camping) {
-        super(usuario, null, camping);
+    public Cliente(String usuario, String contraseña, Camping camping) {
+        super(usuario, contraseña, camping);
     }
 
-    
+    //mejor reservas
     public DatosParcela consultarDatosParcela(Object parcela) {
         Parcela par = (Parcela) parcela;
         return par.consultarDatosParcela((ArrayList) parcela);

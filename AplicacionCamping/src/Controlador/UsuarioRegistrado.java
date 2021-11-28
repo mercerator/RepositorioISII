@@ -50,11 +50,13 @@ public class UsuarioRegistrado {
         return resultado;
     }
 
-    public boolean validarCliente(String nombre) {
-        boolean resultado = false;
+    public int validarCliente(String nombre, String contrasenya) {
+        int resultado = SEGUIR;
 
-        if (nombre.equals(this.nombre)) {
-            resultado = true;
+        if (nombre.equals(this.nombre) && contrasenya.equals(this.contrasenya)) {
+            resultado = ENCONTRADO;
+        } else if (nombre.equals(this.nombre)) {
+            resultado = ERROR;
         }
 
         return resultado;

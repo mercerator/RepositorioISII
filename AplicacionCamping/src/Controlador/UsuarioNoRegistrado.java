@@ -18,7 +18,7 @@ public class UsuarioNoRegistrado {
         this.camping = camping;
     }
     
-    public Cliente altaCliente(String nombre){
-        return new Cliente(nombre, camping);
+    public Cliente altaCliente(String usuario, String contraseña){
+        return new Cliente(usuario, contraseña, camping);
     }
 }

@@ -40,7 +40,7 @@ public class VistaGerente extends javax.swing.JFrame {
         gerente = gerente;
         vistaAnterior = vistaAnterior;
         this.setTitle("Administración Gerente");
-
+        
         lReservas = new DefaultListModel();
         listaReservas.setModel(lReservas);
 
@@ -186,7 +186,6 @@ public class VistaGerente extends javax.swing.JFrame {
             public String getElementAt(int i) { return strings[i]; }
         });
         scroll_parcelas.setViewportView(listaReservas);
-        listaReservas.getAccessibleContext().setAccessibleName("Reservas");
 
         getContentPane().add(scroll_parcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 400, 220));
 
@@ -215,11 +214,11 @@ public class VistaGerente extends javax.swing.JFrame {
         getContentPane().add(des, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, 20));
 
         descuentoAct.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        getContentPane().add(descuentoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 50, 20));
+        getContentPane().add(descuentoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 420, 30, 20));
 
         xcien.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         xcien.setText("%");
-        getContentPane().add(xcien, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 420, 50, 20));
+        getContentPane().add(xcien, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 420, 30, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

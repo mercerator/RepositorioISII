@@ -580,7 +580,7 @@ public class VistaReserva extends javax.swing.JFrame {
     private void btn_finalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finalizarActionPerformed
         try {
             if (this.cliente == null) {
-                cliente = noRegistrado.altaCliente(nombreyApellidos.getText());
+                cliente = noRegistrado.altaCliente(txt_dni.getText(), String.valueOf(txt_contra.getPassword()));
             }
             /*
             String par1 = p1.getText();

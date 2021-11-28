@@ -50,10 +50,15 @@ public class GestoresCamping {
          */
     }
 
-    public Gerente iniciarPersonal() {
-        Gerente personal = new Gerente("", "", this.camping);
+    public Gerente iniciarGerente() {
+        Gerente gerente = new Gerente("", "", this.camping);
         camping.cargarDatos();
-        return personal;
+        return gerente;
+    }
+    public Cliente iniciarCliente() {
+        Cliente cliente = new Cliente("", "", this.camping);
+        camping.cargarDatos();
+        return cliente;
     }
 
     public UsuarioNoRegistrado iniciarNoRegistrado() {
