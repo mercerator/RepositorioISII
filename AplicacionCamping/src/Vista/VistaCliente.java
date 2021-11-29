@@ -100,17 +100,6 @@ public class VistaCliente extends javax.swing.JFrame {
         panelEventos = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         lMisEventos = new javax.swing.JList<>();
-        btnCanEvento = new javax.swing.JButton();
-        fondobotones4 = new javax.swing.JLabel();
-        btnPiscina = new javax.swing.JButton();
-        fondobotones5 = new javax.swing.JLabel();
-        btnFronton = new javax.swing.JButton();
-        fondobotones3 = new javax.swing.JLabel();
-        btnClubSocial = new javax.swing.JButton();
-        fondobotones2 = new javax.swing.JLabel();
-        seleccione = new javax.swing.JLabel();
-        fondoVistaCLiente = new javax.swing.JLabel();
-        fblanco = new javax.swing.JLabel();
         panelFronton = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -129,6 +118,17 @@ public class VistaCliente extends javax.swing.JFrame {
         pClubAtras = new javax.swing.JButton();
         pCLubUnirse = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnCanEvento = new javax.swing.JButton();
+        fondobotones4 = new javax.swing.JLabel();
+        btnPiscina = new javax.swing.JButton();
+        fondobotones5 = new javax.swing.JLabel();
+        btnFronton = new javax.swing.JButton();
+        fondobotones3 = new javax.swing.JLabel();
+        btnClubSocial = new javax.swing.JButton();
+        fondobotones2 = new javax.swing.JLabel();
+        seleccione = new javax.swing.JLabel();
+        fondoVistaCLiente = new javax.swing.JLabel();
+        fblanco = new javax.swing.JLabel();
         fondoVistaCLiente1 = new javax.swing.JLabel();
         btnPrincipalAtras = new javax.swing.JButton();
         fondobotones = new javax.swing.JLabel();
@@ -213,73 +213,6 @@ public class VistaCliente extends javax.swing.JFrame {
         jScrollPane2.setViewportView(lMisEventos);
 
         panelEventos.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 150, 120));
-
-        btnCanEvento.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnCanEvento.setText("Cancelar Evento");
-        btnCanEvento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnCanEvento.setContentAreaFilled(false);
-        panelEventos.add(btnCanEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 171, -1));
-
-        fondobotones4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
-        fondobotones4.setText("jLabel2");
-        panelEventos.add(fondobotones4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 170, 20));
-
-        btnPiscina.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
-        btnPiscina.setText("PISCINA");
-        btnPiscina.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnPiscina.setContentAreaFilled(false);
-        btnPiscina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPiscinaActionPerformed(evt);
-            }
-        });
-        panelEventos.add(btnPiscina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 170, 63));
-
-        fondobotones5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
-        fondobotones5.setText("jLabel2");
-        panelEventos.add(fondobotones5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 170, 60));
-
-        btnFronton.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
-        btnFronton.setText("FRONTON");
-        btnFronton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnFronton.setContentAreaFilled(false);
-        btnFronton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFrontonActionPerformed(evt);
-            }
-        });
-        panelEventos.add(btnFronton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 170, 63));
-
-        fondobotones3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
-        fondobotones3.setText("jLabel2");
-        panelEventos.add(fondobotones3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 170, 60));
-
-        btnClubSocial.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
-        btnClubSocial.setText("CLUB SOCIAL");
-        btnClubSocial.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnClubSocial.setContentAreaFilled(false);
-        btnClubSocial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClubSocialActionPerformed(evt);
-            }
-        });
-        panelEventos.add(btnClubSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 170, 63));
-
-        fondobotones2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
-        fondobotones2.setText("jLabel2");
-        panelEventos.add(fondobotones2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 170, 60));
-
-        seleccione.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        seleccione.setText("¡Seleccione su proxima actividad!");
-        panelEventos.add(seleccione, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, 53));
-
-        fondoVistaCLiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/areaCliente.png"))); // NOI18N
-        fondoVistaCLiente.setText("jLabel2");
-        panelEventos.add(fondoVistaCLiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(-180, -200, -1, -1));
-
-        fblanco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
-        fblanco.setText("jLabel2");
-        panelEventos.add(fblanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -40, -1, -1));
 
         panelFronton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelFronton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -398,6 +331,73 @@ public class VistaCliente extends javax.swing.JFrame {
         panelClub.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 190));
 
         panelEventos.add(panelClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 340, 210));
+
+        btnCanEvento.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnCanEvento.setText("Cancelar Evento");
+        btnCanEvento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCanEvento.setContentAreaFilled(false);
+        panelEventos.add(btnCanEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 171, -1));
+
+        fondobotones4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones4.setText("jLabel2");
+        panelEventos.add(fondobotones4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 170, 20));
+
+        btnPiscina.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
+        btnPiscina.setText("PISCINA");
+        btnPiscina.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnPiscina.setContentAreaFilled(false);
+        btnPiscina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPiscinaActionPerformed(evt);
+            }
+        });
+        panelEventos.add(btnPiscina, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 170, 63));
+
+        fondobotones5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones5.setText("jLabel2");
+        panelEventos.add(fondobotones5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 170, 60));
+
+        btnFronton.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
+        btnFronton.setText("FRONTON");
+        btnFronton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnFronton.setContentAreaFilled(false);
+        btnFronton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFrontonActionPerformed(evt);
+            }
+        });
+        panelEventos.add(btnFronton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 170, 63));
+
+        fondobotones3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones3.setText("jLabel2");
+        panelEventos.add(fondobotones3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 170, 60));
+
+        btnClubSocial.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
+        btnClubSocial.setText("CLUB SOCIAL");
+        btnClubSocial.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnClubSocial.setContentAreaFilled(false);
+        btnClubSocial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClubSocialActionPerformed(evt);
+            }
+        });
+        panelEventos.add(btnClubSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 170, 63));
+
+        fondobotones2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones2.setText("jLabel2");
+        panelEventos.add(fondobotones2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 170, 60));
+
+        seleccione.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        seleccione.setText("¡Seleccione su proxima actividad!");
+        panelEventos.add(seleccione, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, 53));
+
+        fondoVistaCLiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/areaCliente.png"))); // NOI18N
+        fondoVistaCLiente.setText("jLabel2");
+        panelEventos.add(fondoVistaCLiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(-180, -200, -1, -1));
+
+        fblanco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
+        fblanco.setText("jLabel2");
+        panelEventos.add(fblanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -40, -1, -1));
 
         getContentPane().add(panelEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 730, -1));
 

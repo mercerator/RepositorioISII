@@ -76,7 +76,7 @@ public class VistaLogin extends javax.swing.JFrame {
 
         btn_aceptar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_aceptar.setText("Aceptar");
-        btn_aceptar.setBorder(btn_atras.getBorder());
+        btn_aceptar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_aceptar.setContentAreaFilled(false);
         btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
