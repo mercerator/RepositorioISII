@@ -61,6 +61,7 @@ public class VistaReserva extends javax.swing.JFrame {
         grupo_botones_luz.add(luzNO);
         fEntrada.enable(reserva);
         btn_finalizar.setVisible(false);
+        fondobotones7.setVisible(false);
 
         // Comprobamos que parcelas hay asignadas y desactivamos los botones correspondientes
         // para que el usuario no pueda seleccionarlas.
@@ -930,7 +931,8 @@ public class VistaReserva extends javax.swing.JFrame {
                 // Ocultamos la ventana para seleccionar parcelas
                 this.setVisible(true);
                 mapaParcelas.setVisible(false);
-                btn_finalizar.setVisible(true);   
+                btn_finalizar.setVisible(true);  
+                fondobotones7.setVisible(true);
             } else{
                 JOptionPane.showMessageDialog(this, "El tamanyo de la tienda es mayor al de la parcela seleccionada.", "Error", JOptionPane.ERROR_MESSAGE);
             }
