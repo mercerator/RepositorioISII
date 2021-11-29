@@ -40,6 +40,9 @@ public class VistaGerente extends javax.swing.JFrame {
         this.gerente = gerente;
         this.vistaAnterior = vistaAnterior;
         this.setTitle("Administración Gerente");
+        btnPiscina.setOpaque(false);
+        btnFronton.setOpaque(false);
+        btnClubSocial.setOpaque(false);
         
         lReservas = new DefaultListModel();
         listaReservas.setModel(lReservas);
@@ -61,14 +64,38 @@ public class VistaGerente extends javax.swing.JFrame {
     private void initComponents() {
 
         eventos = new javax.swing.JFrame();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
         btn_atras2 = new javax.swing.JButton();
         btn_sancionar = new javax.swing.JButton();
         btn_emparejar = new javax.swing.JButton();
         btn_ganador = new javax.swing.JButton();
         lbl_iniciosesion = new javax.swing.JLabel();
+        btnPiscina = new javax.swing.JButton();
+        btnFronton = new javax.swing.JButton();
+        btnClubSocial = new javax.swing.JButton();
         botonesLuz = new javax.swing.ButtonGroup();
+        reservas = new javax.swing.JFrame();
+        lbl_nomape = new javax.swing.JLabel();
+        nombreyApellidos = new javax.swing.JTextField();
+        lbl_dni = new javax.swing.JLabel();
+        txt_dni = new javax.swing.JTextField();
+        lbl_fechentrada = new javax.swing.JLabel();
+        fEntrada = new datechooser.beans.DateChooserCombo();
+        fSalida = new datechooser.beans.DateChooserCombo();
+        jlabeldatosreserva = new javax.swing.JLabel();
+        lbl_fechasalida = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaParcelas = new javax.swing.JList<>();
+        jLabel11 = new javax.swing.JLabel();
+        lbl_tel = new javax.swing.JLabel();
+        txt_tel = new javax.swing.JTextField();
+        lbl_correo = new javax.swing.JLabel();
+        txt_correo = new javax.swing.JTextField();
+        txt_cp = new javax.swing.JTextField();
+        lbl_cp = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        idReserva = new javax.swing.JLabel();
         btn_administrar = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
@@ -80,24 +107,13 @@ public class VistaGerente extends javax.swing.JFrame {
         des = new javax.swing.JLabel();
         descuentoAct = new javax.swing.JLabel();
         xcien = new javax.swing.JLabel();
+        btn_modificar1 = new javax.swing.JButton();
 
         eventos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         eventos.setTitle("Administrar Eventos");
         eventos.setLocation(new java.awt.Point(265, 112));
         eventos.setMinimumSize(new java.awt.Dimension(1000, 600));
-        eventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jList2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre Evento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
-        jList2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "DNI1", "DNI2", "DNI3", "DNI4" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(jList2);
-
-        eventos.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 220, 270));
+        eventos.setPreferredSize(new java.awt.Dimension(1000, 600));
 
         btn_atras2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_atras2.setText("Atrás");
@@ -107,7 +123,6 @@ public class VistaGerente extends javax.swing.JFrame {
                 btn_atras2ActionPerformed(evt);
             }
         });
-        eventos.getContentPane().add(btn_atras2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 140, 40));
 
         btn_sancionar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_sancionar.setText("Sancionar");
@@ -117,7 +132,6 @@ public class VistaGerente extends javax.swing.JFrame {
                 btn_sancionarActionPerformed(evt);
             }
         });
-        eventos.getContentPane().add(btn_sancionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, 140, 40));
 
         btn_emparejar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_emparejar.setText("Emparejar");
@@ -127,7 +141,6 @@ public class VistaGerente extends javax.swing.JFrame {
                 btn_emparejarActionPerformed(evt);
             }
         });
-        eventos.getContentPane().add(btn_emparejar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 140, 40));
 
         btn_ganador.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_ganador.setText("Ganador");
@@ -137,11 +150,303 @@ public class VistaGerente extends javax.swing.JFrame {
                 btn_ganadorActionPerformed(evt);
             }
         });
-        eventos.getContentPane().add(btn_ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 140, 40));
 
         lbl_iniciosesion.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lbl_iniciosesion.setText("Seleccione un evento");
-        eventos.getContentPane().add(lbl_iniciosesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 350, 30));
+
+        btnPiscina.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
+        btnPiscina.setText("PISCINA");
+        btnPiscina.setBorder(null);
+        btnPiscina.setBorderPainted(false);
+        btnPiscina.setContentAreaFilled(false);
+        btnPiscina.setOpaque(false);
+        btnPiscina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPiscinaActionPerformed(evt);
+            }
+        });
+
+        btnFronton.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
+        btnFronton.setText("FRONTON");
+        btnFronton.setBorder(null);
+        btnFronton.setBorderPainted(false);
+        btnFronton.setContentAreaFilled(false);
+        btnFronton.setOpaque(false);
+        btnFronton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFrontonActionPerformed(evt);
+            }
+        });
+
+        btnClubSocial.setFont(new java.awt.Font("Engravers MT", 1, 14)); // NOI18N
+        btnClubSocial.setText("CLUB SOCIAL");
+        btnClubSocial.setBorder(null);
+        btnClubSocial.setBorderPainted(false);
+        btnClubSocial.setContentAreaFilled(false);
+        btnClubSocial.setOpaque(false);
+        btnClubSocial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClubSocialActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout eventosLayout = new javax.swing.GroupLayout(eventos.getContentPane());
+        eventos.getContentPane().setLayout(eventosLayout);
+        eventosLayout.setHorizontalGroup(
+            eventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(eventosLayout.createSequentialGroup()
+                .addGroup(eventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(eventosLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(btn_atras2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(eventosLayout.createSequentialGroup()
+                        .addGap(290, 290, 290)
+                        .addComponent(btn_sancionar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(btn_emparejar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(btn_ganador, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(eventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eventosLayout.createSequentialGroup()
+                            .addGap(335, 335, 335)
+                            .addComponent(lbl_iniciosesion, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(eventosLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(eventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnClubSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnPiscina, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(525, 525, 525)))
+                    .addGroup(eventosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnFronton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(187, Short.MAX_VALUE))
+        );
+        eventosLayout.setVerticalGroup(
+            eventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(eventosLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(lbl_iniciosesion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(btnClubSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btnPiscina, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(btnFronton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addGroup(eventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_sancionar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_emparejar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ganador, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(btn_atras2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        lbl_nomape.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_nomape.setText("Nombre y Apellidos:");
+
+        nombreyApellidos.setEditable(false);
+        nombreyApellidos.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
+        nombreyApellidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        nombreyApellidos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        lbl_dni.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_dni.setText("DNI:");
+
+        txt_dni.setEditable(false);
+        txt_dni.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_dni.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        lbl_fechentrada.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_fechentrada.setText("Fecha de entrada:");
+
+        fEntrada.setCalendarPreferredSize(new java.awt.Dimension(317, 321));
+
+        jlabeldatosreserva.setFont(new java.awt.Font("Georgia", 0, 36)); // NOI18N
+        jlabeldatosreserva.setText("Datos de la Reserva");
+
+        lbl_fechasalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_fechasalida.setText("Fecha de salida:");
+
+        listaParcelas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parcelas reservadas:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        listaParcelas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        listaParcelas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(listaParcelas);
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        lbl_tel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_tel.setText("Telefono: ");
+
+        txt_tel.setEditable(false);
+        txt_tel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_tel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_tel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_telActionPerformed(evt);
+            }
+        });
+
+        lbl_correo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_correo.setText("Correo: ");
+
+        txt_correo.setEditable(false);
+        txt_correo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_correo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_correo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_correoActionPerformed(evt);
+            }
+        });
+
+        txt_cp.setEditable(false);
+        txt_cp.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_cp.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_cp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_cpActionPerformed(evt);
+            }
+        });
+
+        lbl_cp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_cp.setText("Codigo Postal: ");
+
+        jButton1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jButton1.setText("Atras");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jButton2.setText("Guardar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jButton3.setText("Tramitar el pago");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        idReserva.setFont(new java.awt.Font("Georgia", 0, 36)); // NOI18N
+
+        javax.swing.GroupLayout reservasLayout = new javax.swing.GroupLayout(reservas.getContentPane());
+        reservas.getContentPane().setLayout(reservasLayout);
+        reservasLayout.setHorizontalGroup(
+            reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(reservasLayout.createSequentialGroup()
+                .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(reservasLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(lbl_nomape, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(nombreyApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120)
+                        .addComponent(lbl_fechentrada, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(fEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(reservasLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(lbl_dni, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(txt_dni, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addComponent(lbl_fechasalida, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(fSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(reservasLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(reservasLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(lbl_tel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(reservasLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(lbl_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbl_cp, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_tel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_cp, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(140, 140, 140)
+                        .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(reservasLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(reservasLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jlabeldatosreserva, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(idReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(reservasLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(200, 200, 200)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79))
+        );
+        reservasLayout.setVerticalGroup(
+            reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(reservasLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlabeldatosreserva, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_fechentrada, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(reservasLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_nomape, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombreyApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(10, 10, 10)
+                .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_dni, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_dni, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(reservasLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_fechasalida, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(30, 30, 30)
+                .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(reservasLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(reservasLayout.createSequentialGroup()
+                                .addComponent(lbl_tel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(lbl_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(lbl_cp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(reservasLayout.createSequentialGroup()
+                                .addComponent(txt_tel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(txt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(txt_cp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(130, 130, 130)
+                .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administración");
@@ -170,7 +475,8 @@ public class VistaGerente extends javax.swing.JFrame {
         getContentPane().add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 140, 40));
 
         btn_modificar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btn_modificar.setText("Modificar");
+        btn_modificar.setText("Administrar");
+        btn_modificar.setActionCommand("Administrar");
         btn_modificar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btn_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +525,16 @@ public class VistaGerente extends javax.swing.JFrame {
         xcien.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         xcien.setText("%");
         getContentPane().add(xcien, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 420, 30, 20));
+
+        btn_modificar1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btn_modificar1.setText("Administrar");
+        btn_modificar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_modificar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modificar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 110, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,9 +588,52 @@ public class VistaGerente extends javax.swing.JFrame {
         gerente.setDescuento(Integer.parseInt(descuentoAct.getText()));
     }//GEN-LAST:event_btn_descuentoActionPerformed
 
+    private void btn_modificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_modificar1ActionPerformed
+
+    private void txt_telActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_telActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_telActionPerformed
+
+    private void txt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_correoActionPerformed
+
+    private void txt_cpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_cpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_cpActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnPiscinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiscinaActionPerformed
+        //panelPiscina.setVisible(true);
+    }//GEN-LAST:event_btnPiscinaActionPerformed
+
+    private void btnFrontonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFrontonActionPerformed
+        //panelFronton.setVisible(true);
+    }//GEN-LAST:event_btnFrontonActionPerformed
+
+    private void btnClubSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClubSocialActionPerformed
+        //panelClub.setVisible(true);
+    }//GEN-LAST:event_btnClubSocialActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botonesLuz;
+    private javax.swing.JButton btnClubSocial;
+    private javax.swing.JButton btnFronton;
+    private javax.swing.JButton btnPiscina;
     private javax.swing.JButton btn_administrar;
     private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_atras2;
@@ -282,17 +641,39 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JButton btn_emparejar;
     private javax.swing.JButton btn_ganador;
     private javax.swing.JButton btn_modificar;
+    private javax.swing.JButton btn_modificar1;
     private javax.swing.JButton btn_sancionar;
     private javax.swing.JLabel des;
     private javax.swing.JLabel descuentoAct;
     private javax.swing.JFrame eventos;
-    private javax.swing.JList<String> jList2;
+    private datechooser.beans.DateChooserCombo fEntrada;
+    private datechooser.beans.DateChooserCombo fSalida;
+    private javax.swing.JLabel idReserva;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JList<String> jList3;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jlabeldatosreserva;
+    private javax.swing.JLabel lbl_correo;
+    private javax.swing.JLabel lbl_cp;
+    private javax.swing.JLabel lbl_dni;
+    private javax.swing.JLabel lbl_fechasalida;
+    private javax.swing.JLabel lbl_fechentrada;
     private javax.swing.JLabel lbl_iniciosesion;
+    private javax.swing.JLabel lbl_nomape;
+    private javax.swing.JLabel lbl_tel;
+    private javax.swing.JList<Object> listaParcelas;
     private javax.swing.JList<String> listaReservas;
+    private javax.swing.JTextField nombreyApellidos;
+    private javax.swing.JFrame reservas;
     private javax.swing.JScrollPane scroll_eventos;
     private javax.swing.JScrollPane scroll_parcelas;
+    private javax.swing.JTextField txt_correo;
+    private javax.swing.JTextField txt_cp;
+    private javax.swing.JTextField txt_dni;
+    private javax.swing.JTextField txt_tel;
     private javax.swing.JLabel xcien;
     // End of variables declaration//GEN-END:variables
 }
