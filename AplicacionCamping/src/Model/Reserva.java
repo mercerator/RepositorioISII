@@ -100,4 +100,8 @@ public class Reserva {
         return res;
     }
 
+    public int getId() {
+        return id;
+    }
+
 }

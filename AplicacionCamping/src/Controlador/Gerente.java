@@ -50,4 +50,13 @@ public class Gerente extends UsuarioRegistrado {
         ArrayList<Parcela> parcelasDisponibles = camping.consultarParcelasDisponibles();
         return reservaAct.consultarDatosParcela(parcelasDisponibles);
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getContrasenya() {
+        return contrasenya;
+    }
+    
 }

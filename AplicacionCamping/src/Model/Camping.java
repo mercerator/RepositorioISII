@@ -7,9 +7,10 @@ import Datos.DatosParcela;
 import Datos.DatosReserva;
 import Datos.ListaParcelas;
 import Datos.ListaReservas;
-
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  *
@@ -48,6 +49,8 @@ public class Camping {
     public static final int ERROR = -1;
     public static final int ENCONTRADO = 1;
     public static final int SEGUIR = 0;
+    
+    private Connection conex;
 
     public Camping() {
         this.cargarDatos();
@@ -172,5 +175,34 @@ public class Camping {
             parcelasConAsignacion.add(p);
         }
         return reserva;
+    }
+    
+    public boolean conectarBaseDatos (){
+        boolean ok = true;
+
+        String baseDatos = "jdbc:mysql://localhost:3306/mydb?serverTimezone=" + TimeZone.getDefault().getID();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conex = DriverManager.getConnection(baseDatos, "root", "123456");
+        } catch (Exception e) {
+            System.out.println("Error en la conexion a la BD");
+            ok = false;
+        }
+
+        return ok;
+    }
+    
+    public ArrayList<Tienda> crearTiendas(ArrayList<String> nombresTiendas, ArrayList<Integer> metrosTiendas){
+        
+        ArrayList<Tienda> tiendaux = new ArrayList<Tienda>();
+        Tienda tienda;
+        
+        for(int i = 0; i < nombresTiendas.size(); i++){
+            tienda = new Tienda(tiendas.size(),nombresTiendas.get(i), metrosTiendas.get(i));
+            tiendas.add(tienda);
+            tiendaux.add(tienda);
+        }
+        
+        return tiendaux;
     }
 }

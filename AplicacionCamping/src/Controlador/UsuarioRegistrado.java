@@ -16,8 +16,8 @@ import static Model.Camping.SEGUIR;
  */
 public class UsuarioRegistrado {
 
-    private String nombre;
-    private String contrasenya;
+    protected String nombre;
+    protected String contrasenya;
     protected Camping camping;
 
     public UsuarioRegistrado(String nombre, String contrasenya, Camping camping) {

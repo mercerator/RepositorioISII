@@ -52,9 +52,7 @@ public class Cliente extends UsuarioRegistrado {
     public void realizarReserva(ArrayList<String> nombresTiendas, ArrayList<Integer> metrosTiendas, 
             ArrayList luzParcelas, ArrayList parcelasSeleccionadas, Date fechaIni, Date fechaFin){
         // Creamos y guardamos las tiendas de campanya
-        for(int i = 0; i < nombresTiendas.size(); i++){
-            tiendas.add(new Tienda(nombresTiendas.get(i), metrosTiendas.get(i)));
-        }
+        tiendas = camping.crearTiendas(nombresTiendas, metrosTiendas);
         
         // Creamos y guardamos la reserva en cliente
         reservas.add(camping.realizarReserva((ArrayList<Parcela>)parcelasSeleccionadas, luzParcelas, fechaIni, fechaFin, this));
@@ -71,4 +69,30 @@ public class Cliente extends UsuarioRegistrado {
     public ArrayList getEventos(){
         return eventos;
     }
+
+    public String getNombreApellidos() {
+        return nombreApellidos;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getCp() {
+        return cp;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getContrasenya() {
+        return contrasenya;
+    }
+    
+    
 }

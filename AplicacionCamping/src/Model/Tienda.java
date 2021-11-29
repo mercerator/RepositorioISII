@@ -10,10 +10,13 @@ package Model;
  * @author Alex
  */
 public class Tienda {
+    
+    private int id_tienda;
     private String nombre;
     private int metrosCuadrados;
     
-    public Tienda(String nombre, int metrosCuadrados){
+    public Tienda(int id, String nombre, int metrosCuadrados){
+        this.id_tienda = id;
         this.nombre = nombre;
         this.metrosCuadrados = metrosCuadrados;
     }
@@ -38,6 +41,9 @@ public class Tienda {
     public String toString() {
         return "" + nombre + "" + metrosCuadrados;
     }
-    
+
+    public int getId_tienda() {
+        return id_tienda;
+    }
     
 }
