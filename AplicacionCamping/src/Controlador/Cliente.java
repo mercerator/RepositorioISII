@@ -55,7 +55,7 @@ public class Cliente extends UsuarioRegistrado {
         tiendas = camping.crearTiendas(nombresTiendas, metrosTiendas);
         
         // Creamos y guardamos la reserva en cliente
-        reservas.add(camping.realizarReserva((ArrayList<Parcela>)parcelasSeleccionadas, luzParcelas, fechaIni, fechaFin, this));
+        reservas.add(camping.realizarReserva((ArrayList<Parcela>)parcelasSeleccionadas, fechaIni, fechaFin, this));
     }
     
     public Object devolverParcela(int identificador) {

@@ -18,7 +18,7 @@ public class Reserva {
     private Date fechaFin;
     private Cliente cliente;
 
-    public Reserva(int id, ArrayList<Parcela> parcelasSeleccionadas, ArrayList luzParcelas, Date fechaIni, Date fechaFin, Cliente cliente) {
+    public Reserva(int id, ArrayList<Parcela> parcelasSeleccionadas, Date fechaIni, Date fechaFin, Cliente cliente) {
         this.id = id;
         this.parcelas = parcelasSeleccionadas;
         this.fechaIni = fechaIni;

@@ -14,13 +14,15 @@ public class Parcela {
     private boolean luz;
     private int precioDia;
     private Reserva reserva;
+    private int id_reserv;
     
 
-    public Parcela(int identificador, int metrosCuadrados, boolean luz, int precioDia) {
+    public Parcela(int identificador, int metrosCuadrados, boolean luz, int precioDia, int id_reserva) {
         this.identificador = identificador;
         this.metrosCuadrados = metrosCuadrados;
         this.luz = luz;
         this.precioDia = precioDia;
+        this.id_reserv = id_reserva;
     }
 
     /**
@@ -87,6 +89,10 @@ public class Parcela {
     @Override
     public String toString() {
         return String.valueOf(identificador);
+    }
+
+    public int getId_reserv() {
+        return id_reserv;
     }
     
 }

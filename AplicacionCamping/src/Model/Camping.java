@@ -28,6 +28,7 @@ public class Camping {
 
     protected ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
     protected ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+    protected ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
     protected ArrayList<DatosReserva> reserva = new ArrayList<DatosReserva>();
 
@@ -85,7 +86,7 @@ public class Camping {
             }if((i >= 29) && (i <= 37)){
                 tamanyo = 50;
             }
-            Parcela p = new Parcela(i, tamanyo, true, 10);
+            Parcela p = new Parcela(i, tamanyo, true, 10, 0);
             parcelasSinAsignacion.add(p);
             parcelas.add(p);
         }
@@ -167,8 +168,8 @@ public class Camping {
         return cliente;
     }
     
-    public Reserva realizarReserva(ArrayList<Parcela> parcelasSeleccionadas, ArrayList luzParcelas, Date fechaIni, Date fechaFin, Cliente cliente){
-        Reserva reserva = new Reserva(reservas.size(), parcelasSeleccionadas, luzParcelas, fechaIni, fechaFin, cliente);
+    public Reserva realizarReserva(ArrayList<Parcela> parcelasSeleccionadas, Date fechaIni, Date fechaFin, Cliente cliente){
+        Reserva reserva = new Reserva(reservas.size(), parcelasSeleccionadas, fechaIni, fechaFin, cliente);
         reservas.add(reserva);
         for(Parcela p: parcelasSeleccionadas){
             parcelasSinAsignacion.remove(p);
@@ -204,5 +205,77 @@ public class Camping {
         }
         
         return tiendaux;
+    }
+    
+    private void cargaDeDatos(){
+        Statement sentencia;
+        ResultSet result;
+        
+        try{
+            sentencia = conex.createStatement();
+            result = sentencia.executeQuery("SELECT *FROM GERENTE");
+                while(result.next()){
+                    Gerente ge = new Gerente(result.getString("id_gerente"), result.getString("contraseña"),this);
+                    usuarios.add(ge);
+                }
+        }catch(SQLException ex){
+            System.out.println("Error cargando los datos de los gerentes");
+        }
+        
+        try{
+            sentencia = conex.createStatement();
+            result = sentencia.executeQuery("SELECT * FROM CLIENTES");
+            while(result.next()){
+                Cliente cli= new Cliente(result.getString("dni"), result.getString("nombre"), this, result.getString("contraseña"), result.getString("telefono"), result.getString("codigopostal"), result.getString("correo"));
+                usuarios.add(cli);
+                clientes.add(cli);
+            }
+        }catch(SQLException ex){
+            System.out.println("Error cargando los datos de los clientes");
+        }
+        
+        try{
+            sentencia = conex.createStatement();
+            result = sentencia.executeQuery("SELECT * FROM PARCELAS");
+            while(result.next()){
+                Parcela pa = new Parcela(result.getInt("id_parcela"), result.getInt("metroscuadrados"), result.getBoolean("luz"), result.getInt("preciodia"), result.getInt("id_reserva"));
+                parcelas.add(pa);
+            }
+        }catch(SQLException ex){
+            System.out.println("Error cargando los datos de las parcelas");
+        }
+        
+        try{
+            sentencia = conex.createStatement();
+            result = sentencia.executeQuery("SELECT * FROM RESERVAS");
+            ArrayList<Parcela> parcelaux = new ArrayList<Parcela>();
+            Cliente cli = null;
+            while(result.next()){
+                for(int i = 0; i < parcelas.size(); i++){
+                    if(parcelas.get(i).getId_reserv() == result.getInt("id_reserva"))
+                        parcelaux.add(parcelas.get(i));
+                }
+                        
+                for(int i = 0; i < clientes.size(); i++){
+                    if(clientes.get(i).getNombre() == result.getString("dni_cliente"))
+                       cli = clientes.get(i);
+                }
+                Reserva re = new Reserva(result.getInt("id_reserva"), parcelaux, result.getDate("fecha_ini"), result.getDate("fecha_fin"), cli);
+                reservas.add(re);
+            }
+        }catch(SQLException ex){
+            System.out.println("Error cargando los datos de las reservas");
+        }
+        
+        try{
+            sentencia = conex.createStatement();
+            result = sentencia.executeQuery("SELECT * FROM TIENDAS");
+            while(result.next()){
+                Tienda ti = new Tienda(result.getInt("id_tiendads"), result.getString("nombre"), result.getInt("metroscuadrados"));
+                tiendas.add(ti);
+            }
+        }catch(SQLException ex){
+            System.out.println("Error cargando los datos de las tiendas");
+        }
     }
 }
