@@ -51,17 +51,22 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_ini_sesion = new javax.swing.JButton();
         btn_sinreserva = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        fondobotones2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        lbl_titulo = new javax.swing.JLabel();
+        fondobotones = new javax.swing.JLabel();
+        fondobotones1 = new javax.swing.JLabel();
+        btn_sinreserva1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_reserva.setBackground(new java.awt.Color(255, 255, 255));
         btn_reserva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_reserva.setText("Más adelante");
         btn_reserva.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_reserva.setContentAreaFilled(false);
         btn_reserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_reservaActionPerformed(evt);
@@ -72,6 +77,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_ini_sesion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_ini_sesion.setText("Iniciar Sesión");
         btn_ini_sesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_ini_sesion.setContentAreaFilled(false);
         btn_ini_sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ini_sesionActionPerformed(evt);
@@ -79,9 +85,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btn_ini_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 20, 170, 50));
 
+        btn_sinreserva.setBackground(new java.awt.Color(255, 255, 255));
         btn_sinreserva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_sinreserva.setText("¡Ahora mismo!");
         btn_sinreserva.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_sinreserva.setContentAreaFilled(false);
         btn_sinreserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_sinreservaActionPerformed(evt);
@@ -89,23 +97,43 @@ public class VistaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btn_sinreserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 270, 80));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia Pro", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 51));
         jLabel1.setText("¿Cuándo desea iniciar su estancia?");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 570, 120));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 570, 120));
+
+        fondobotones2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/boton.png"))); // NOI18N
+        fondobotones2.setText("jLabel2");
+        getContentPane().add(fondobotones2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 20, 170, 50));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/camping.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
 
-        lbl_titulo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        lbl_titulo.setText("Camping Party");
-        getContentPane().add(lbl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 340, 140));
+        fondobotones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/boton.png"))); // NOI18N
+        fondobotones.setText("jLabel2");
+        getContentPane().add(fondobotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 270, 80));
+
+        fondobotones1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/boton.png"))); // NOI18N
+        fondobotones1.setText("jLabel2");
+        getContentPane().add(fondobotones1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, 270, 80));
+
+        btn_sinreserva1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_sinreserva1.setText("¡Ahora mismo!");
+        btn_sinreserva1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_sinreserva1.setContentAreaFilled(false);
+        btn_sinreserva1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sinreserva1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_sinreserva1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 270, 80));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondocamping.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_sinreservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sinreservaActionPerformed
@@ -126,13 +154,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
         log.setVisible(true);
     }//GEN-LAST:event_btn_ini_sesionActionPerformed
 
+    private void btn_sinreserva1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sinreserva1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_sinreserva1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_ini_sesion;
     private javax.swing.JButton btn_reserva;
     private javax.swing.JButton btn_sinreserva;
+    private javax.swing.JButton btn_sinreserva1;
+    private javax.swing.JLabel fondobotones;
+    private javax.swing.JLabel fondobotones1;
+    private javax.swing.JLabel fondobotones2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel lbl_titulo;
     // End of variables declaration//GEN-END:variables
 }

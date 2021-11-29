@@ -96,6 +96,7 @@ public class VistaGerente extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         idReserva = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         btn_administrar = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
@@ -108,6 +109,7 @@ public class VistaGerente extends javax.swing.JFrame {
         descuentoAct = new javax.swing.JLabel();
         xcien = new javax.swing.JLabel();
         btn_modificar1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         eventos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         eventos.setTitle("Administrar Eventos");
@@ -219,7 +221,7 @@ public class VistaGerente extends javax.swing.JFrame {
                     .addGroup(eventosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnFronton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         eventosLayout.setVerticalGroup(
             eventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +241,7 @@ public class VistaGerente extends javax.swing.JFrame {
                     .addComponent(btn_ganador, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addComponent(btn_atras2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lbl_nomape.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -454,6 +456,9 @@ public class VistaGerente extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1000, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logo.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         btn_administrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btn_administrar.setText("Administrar");
         btn_administrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -536,7 +541,11 @@ public class VistaGerente extends javax.swing.JFrame {
         });
         getContentPane().add(btn_modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 110, 30));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoazul.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_administrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_administrarActionPerformed
@@ -652,7 +661,9 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jlabeldatosreserva;

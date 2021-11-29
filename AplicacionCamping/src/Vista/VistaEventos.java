@@ -210,6 +210,7 @@ public class VistaEventos extends javax.swing.JFrame {
         getContentPane().add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 260, 40));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dniActionPerformed

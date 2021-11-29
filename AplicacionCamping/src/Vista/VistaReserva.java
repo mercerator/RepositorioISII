@@ -85,7 +85,9 @@ public class VistaReserva extends javax.swing.JFrame {
         grupo_botones_luz = new javax.swing.ButtonGroup();
         mapaParcelas = new javax.swing.JFrame();
         btn_cancelarMapa = new javax.swing.JButton();
+        fondobotones10 = new javax.swing.JLabel();
         btn_guardarParcela = new javax.swing.JButton();
+        fondobotones9 = new javax.swing.JLabel();
         p37 = new javax.swing.JRadioButton();
         p36 = new javax.swing.JRadioButton();
         p35 = new javax.swing.JRadioButton();
@@ -145,12 +147,15 @@ public class VistaReserva extends javax.swing.JFrame {
         fSalida = new datechooser.beans.DateChooserCombo();
         datoscliente = new javax.swing.JLabel();
         btn_cancelar = new javax.swing.JButton();
+        fondobotones8 = new javax.swing.JLabel();
         btn_finalizar = new javax.swing.JButton();
+        fondobotones7 = new javax.swing.JLabel();
         lbl_fechasalida = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaParcelas = new javax.swing.JList<>();
         jLabel11 = new javax.swing.JLabel();
         btn_seleccParcelas = new javax.swing.JButton();
+        fondobotones6 = new javax.swing.JLabel();
         lbl_tel = new javax.swing.JLabel();
         txt_tel = new javax.swing.JTextField();
         lbl_correo = new javax.swing.JLabel();
@@ -159,6 +164,7 @@ public class VistaReserva extends javax.swing.JFrame {
         lbl_cp = new javax.swing.JLabel();
         lbl_contra = new javax.swing.JLabel();
         txt_contra = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
 
         dateChooserDialog1.setNavigateFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 6));
 
@@ -169,6 +175,7 @@ public class VistaReserva extends javax.swing.JFrame {
         btn_cancelarMapa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_cancelarMapa.setText("Cancelar");
         btn_cancelarMapa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_cancelarMapa.setContentAreaFilled(false);
         btn_cancelarMapa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarMapaActionPerformed(evt);
@@ -176,15 +183,24 @@ public class VistaReserva extends javax.swing.JFrame {
         });
         mapaParcelas.getContentPane().add(btn_cancelarMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 200, 40));
 
+        fondobotones10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones10.setText("jLabel2");
+        mapaParcelas.getContentPane().add(fondobotones10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 200, 40));
+
         btn_guardarParcela.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_guardarParcela.setText("Guardar Parcela");
         btn_guardarParcela.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_guardarParcela.setContentAreaFilled(false);
         btn_guardarParcela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_guardarParcelaActionPerformed(evt);
             }
         });
         mapaParcelas.getContentPane().add(btn_guardarParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 200, 40));
+
+        fondobotones9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones9.setText("jLabel2");
+        mapaParcelas.getContentPane().add(fondobotones9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 200, 40));
 
         grupo_botonesParcela.add(p37);
         p37.setText("37");
@@ -465,6 +481,7 @@ public class VistaReserva extends javax.swing.JFrame {
         btn_cancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_cancelar.setText("Cancelar");
         btn_cancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, null));
+        btn_cancelar.setContentAreaFilled(false);
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarActionPerformed(evt);
@@ -472,15 +489,24 @@ public class VistaReserva extends javax.swing.JFrame {
         });
         getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 140, 40));
 
+        fondobotones8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones8.setText("jLabel2");
+        getContentPane().add(fondobotones8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 140, 40));
+
         btn_finalizar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_finalizar.setText("Finalizar");
         btn_finalizar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_finalizar.setContentAreaFilled(false);
         btn_finalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_finalizarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_finalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 510, 140, 40));
+        getContentPane().add(btn_finalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, 140, 40));
+
+        fondobotones7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones7.setText("jLabel2");
+        getContentPane().add(fondobotones7, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, 140, 40));
 
         lbl_fechasalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_fechasalida.setText("Fecha de salida:");
@@ -491,7 +517,7 @@ public class VistaReserva extends javax.swing.JFrame {
         listaParcelas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(listaParcelas);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 360, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 360, 150));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 410, 20));
@@ -499,12 +525,17 @@ public class VistaReserva extends javax.swing.JFrame {
         btn_seleccParcelas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_seleccParcelas.setText("Seleccionar Parcela");
         btn_seleccParcelas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btn_seleccParcelas.setContentAreaFilled(false);
         btn_seleccParcelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_seleccParcelasActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_seleccParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 200, 40));
+        getContentPane().add(btn_seleccParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 200, 40));
+
+        fondobotones6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones6.setText("jLabel2");
+        getContentPane().add(fondobotones6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 200, 40));
 
         lbl_tel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_tel.setText("Telefono: ");
@@ -556,7 +587,11 @@ public class VistaReserva extends javax.swing.JFrame {
         });
         getContentPane().add(txt_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 180, 30));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoazulconcamping.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void luzNOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luzNOActionPerformed
@@ -955,10 +990,16 @@ public class VistaReserva extends javax.swing.JFrame {
     private javax.swing.JLabel fondoVerde;
     private javax.swing.JLabel fondoVerde1;
     private javax.swing.JLabel fondoVerde2;
+    private javax.swing.JLabel fondobotones10;
+    private javax.swing.JLabel fondobotones6;
+    private javax.swing.JLabel fondobotones7;
+    private javax.swing.JLabel fondobotones8;
+    private javax.swing.JLabel fondobotones9;
     private javax.swing.ButtonGroup grupo_botonesParcela;
     private javax.swing.ButtonGroup grupo_botones_luz;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_contra;
     private javax.swing.JLabel lbl_correo;
