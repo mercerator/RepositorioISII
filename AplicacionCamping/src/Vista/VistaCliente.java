@@ -38,6 +38,7 @@ public class VistaCliente extends javax.swing.JFrame {
         panelClub.setVisible(false);
         panelPiscina.setVisible(false);
         panelFronton.setVisible(false);
+        panelModReserva.setVisible(false);
         
         // Inicializamos la lista de reservas
         lReservas = new DefaultListModel();
@@ -65,6 +66,8 @@ public class VistaCliente extends javax.swing.JFrame {
         btnClubSocial.setEnabled(false);
         lMisEventos.setEnabled(false);
         btnCanEvento.setEnabled(false);
+        btnNReserva.setEnabled(false);
+        btnMod.setEnabled(false);
     }
     public void actionOn(){
         bttReservas.setEnabled(true);
@@ -75,6 +78,8 @@ public class VistaCliente extends javax.swing.JFrame {
         btnClubSocial.setEnabled(true);
         lMisEventos.setEnabled(true);
         btnCanEvento.setEnabled(true);
+        btnNReserva.setEnabled(true);
+        btnMod.setEnabled(true);
     }
 
     /**
@@ -89,6 +94,19 @@ public class VistaCliente extends javax.swing.JFrame {
         bttReservas = new javax.swing.JButton();
         bttEventos = new javax.swing.JButton();
         panelReservas = new javax.swing.JPanel();
+        panelModReserva = new javax.swing.JPanel();
+        lbl_fechentrada = new javax.swing.JLabel();
+        fEntrada = new datechooser.beans.DateChooserCombo();
+        lbl_fechasalida = new javax.swing.JLabel();
+        fSalida = new datechooser.beans.DateChooserCombo();
+        datoscliente = new javax.swing.JLabel();
+        modReservaCancelar = new javax.swing.JButton();
+        fondobotones11 = new javax.swing.JLabel();
+        modReservaGuardar = new javax.swing.JButton();
+        fondobotones12 = new javax.swing.JLabel();
+        modReservaAtras = new javax.swing.JButton();
+        fondobotones10 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lMisReservas = new javax.swing.JList<>();
         btnMod = new javax.swing.JButton();
@@ -98,8 +116,6 @@ public class VistaCliente extends javax.swing.JFrame {
         fondoVistaCLiente2 = new javax.swing.JLabel();
         fblanco2 = new javax.swing.JLabel();
         panelEventos = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        lMisEventos = new javax.swing.JList<>();
         panelFronton = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -118,6 +134,8 @@ public class VistaCliente extends javax.swing.JFrame {
         pClubAtras = new javax.swing.JButton();
         pCLubUnirse = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lMisEventos = new javax.swing.JList<>();
         btnCanEvento = new javax.swing.JButton();
         fondobotones4 = new javax.swing.JLabel();
         btnPiscina = new javax.swing.JButton();
@@ -164,6 +182,65 @@ public class VistaCliente extends javax.swing.JFrame {
 
         panelReservas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        panelModReserva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_fechentrada.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_fechentrada.setText("Fecha de entrada:");
+        panelModReserva.add(lbl_fechentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 150, 40));
+
+        fEntrada.setCalendarPreferredSize(new java.awt.Dimension(317, 321));
+        panelModReserva.add(fEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 190, 40));
+
+        lbl_fechasalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbl_fechasalida.setText("Fecha de salida:");
+        panelModReserva.add(lbl_fechasalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 140, 40));
+        panelModReserva.add(fSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 190, 40));
+
+        datoscliente.setFont(new java.awt.Font("Georgia Pro", 0, 24)); // NOI18N
+        datoscliente.setText("Modificar Reserva");
+        panelModReserva.add(datoscliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 210, 40));
+
+        modReservaCancelar.setFont(new java.awt.Font("Georgia Pro", 0, 14)); // NOI18N
+        modReservaCancelar.setText("Cancelar Reserva");
+        modReservaCancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        modReservaCancelar.setContentAreaFilled(false);
+        panelModReserva.add(modReservaCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 120, 30));
+
+        fondobotones11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones11.setText("jLabel2");
+        panelModReserva.add(fondobotones11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 120, 30));
+
+        modReservaGuardar.setFont(new java.awt.Font("Georgia Pro", 0, 14)); // NOI18N
+        modReservaGuardar.setText("Guardar");
+        modReservaGuardar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        modReservaGuardar.setContentAreaFilled(false);
+        panelModReserva.add(modReservaGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 120, 30));
+
+        fondobotones12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones12.setText("jLabel2");
+        panelModReserva.add(fondobotones12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 120, 30));
+
+        modReservaAtras.setFont(new java.awt.Font("Georgia Pro", 0, 14)); // NOI18N
+        modReservaAtras.setText("Atras");
+        modReservaAtras.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        modReservaAtras.setContentAreaFilled(false);
+        modReservaAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modReservaAtrasActionPerformed(evt);
+            }
+        });
+        panelModReserva.add(modReservaAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 120, 30));
+
+        fondobotones10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones10.setText("jLabel2");
+        panelModReserva.add(fondobotones10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 120, 30));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoazul.png"))); // NOI18N
+        fondo.setPreferredSize(new java.awt.Dimension(240, 260));
+        panelModReserva.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 290));
+
+        panelReservas.add(panelModReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 520, 310));
+
         lMisReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
         lMisReservas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lMisReservas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -176,6 +253,11 @@ public class VistaCliente extends javax.swing.JFrame {
         btnMod.setToolTipText("");
         btnMod.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnMod.setContentAreaFilled(false);
+        btnMod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModActionPerformed(evt);
+            }
+        });
         panelReservas.add(btnMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 150, 30));
 
         fondobotones6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
@@ -186,6 +268,11 @@ public class VistaCliente extends javax.swing.JFrame {
         btnNReserva.setText("Nueva Reserva");
         btnNReserva.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnNReserva.setContentAreaFilled(false);
+        btnNReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNReservaActionPerformed(evt);
+            }
+        });
         panelReservas.add(btnNReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 150, 30));
 
         fondobotones7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
@@ -200,19 +287,9 @@ public class VistaCliente extends javax.swing.JFrame {
         fblanco2.setText("jLabel2");
         panelReservas.add(fblanco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, -1, -1));
 
-        getContentPane().add(panelReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 660, 420));
+        getContentPane().add(panelReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 660, 490));
 
         panelEventos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lMisEventos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Eventos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
-        lMisEventos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(lMisEventos);
-
-        panelEventos.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 150, 120));
 
         panelFronton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelFronton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -331,6 +408,16 @@ public class VistaCliente extends javax.swing.JFrame {
         panelClub.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 190));
 
         panelEventos.add(panelClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 340, 210));
+
+        lMisEventos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Eventos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
+        lMisEventos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(lMisEventos);
+
+        panelEventos.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 150, 120));
 
         btnCanEvento.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btnCanEvento.setText("Cancelar Evento");
@@ -487,6 +574,21 @@ public class VistaCliente extends javax.swing.JFrame {
         actionOn();
     }//GEN-LAST:event_pClubAtrasActionPerformed
 
+    private void btnModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModActionPerformed
+        panelModReserva.setVisible(true);
+        actionOff();
+    }//GEN-LAST:event_btnModActionPerformed
+
+    private void modReservaAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modReservaAtrasActionPerformed
+        panelModReserva.setVisible(false);
+        actionOn();
+    }//GEN-LAST:event_modReservaAtrasActionPerformed
+
+    private void btnNReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNReservaActionPerformed
+        VistaClienteNuevaReserva v = new VistaClienteNuevaReserva(this.cliente, this);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnNReservaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCanEvento;
@@ -498,14 +600,21 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnPrincipalAtras;
     private javax.swing.JButton bttEventos;
     private javax.swing.JButton bttReservas;
+    private javax.swing.JLabel datoscliente;
+    private datechooser.beans.DateChooserCombo fEntrada;
+    private datechooser.beans.DateChooserCombo fSalida;
     private javax.swing.JLabel fblanco;
     private javax.swing.JLabel fblanco1;
     private javax.swing.JLabel fblanco2;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel fondoVistaCLiente;
     private javax.swing.JLabel fondoVistaCLiente1;
     private javax.swing.JLabel fondoVistaCLiente2;
     private javax.swing.JLabel fondobotones;
     private javax.swing.JLabel fondobotones1;
+    private javax.swing.JLabel fondobotones10;
+    private javax.swing.JLabel fondobotones11;
+    private javax.swing.JLabel fondobotones12;
     private javax.swing.JLabel fondobotones2;
     private javax.swing.JLabel fondobotones3;
     private javax.swing.JLabel fondobotones4;
@@ -525,6 +634,11 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> lMisEventos;
     private javax.swing.JList<Object> lMisReservas;
+    private javax.swing.JLabel lbl_fechasalida;
+    private javax.swing.JLabel lbl_fechentrada;
+    private javax.swing.JButton modReservaAtras;
+    private javax.swing.JButton modReservaCancelar;
+    private javax.swing.JButton modReservaGuardar;
     private javax.swing.JButton pCLubUnirse;
     private javax.swing.JButton pClubAtras;
     private javax.swing.JButton pFrontonAtras;
@@ -534,6 +648,7 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JPanel panelClub;
     private javax.swing.JPanel panelEventos;
     private javax.swing.JPanel panelFronton;
+    private javax.swing.JPanel panelModReserva;
     private javax.swing.JPanel panelPiscina;
     private javax.swing.JPanel panelReservas;
     private javax.swing.JLabel seleccione;
