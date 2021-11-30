@@ -68,6 +68,7 @@ public class VistaCliente extends javax.swing.JFrame {
         btnCanEvento.setEnabled(false);
         btnNReserva.setEnabled(false);
         btnMod.setEnabled(false);
+        lMisReservas.setEnabled(false);
     }
     public void actionOn(){
         bttReservas.setEnabled(true);
@@ -80,6 +81,7 @@ public class VistaCliente extends javax.swing.JFrame {
         btnCanEvento.setEnabled(true);
         btnNReserva.setEnabled(true);
         btnMod.setEnabled(true);
+        lMisReservas.setEnabled(true);
     }
 
     /**
