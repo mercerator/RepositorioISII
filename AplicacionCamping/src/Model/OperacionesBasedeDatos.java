@@ -14,7 +14,7 @@ public class OperacionesBasedeDatos {
 
     public void añadirCliente(Cliente cli) {
         try {
-            String codigo = "INSERT INTO CLIENTES VALUES " + "(?,?,?,?,?)";
+            String codigo = "INSERT INTO CLIENTES VALUES " + "(?,?,?,?,?, ?)";
             PreparedStatement ps = conex.prepareStatement(codigo);
             ps.setString(1, cli.getNombre());
             ps.setString(2, cli.getNombreApellidos());
@@ -22,6 +22,7 @@ public class OperacionesBasedeDatos {
             ps.setString(4, cli.getTelefono());
             ps.setString(5, cli.getCp());
             ps.setString(6, cli.getCorreo());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error en la adicción de un cliente");
         }
@@ -33,6 +34,7 @@ public class OperacionesBasedeDatos {
             PreparedStatement ps = conex.prepareStatement(codigo);
             ps.setString(1, ge.getNombre());
             ps.setString(2, ge.getContrasenya());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error en la adicción de un gerente");
         }
@@ -46,6 +48,7 @@ public class OperacionesBasedeDatos {
             ps.setString(2, ti.getNombre());
             ps.setInt(3, ti.getMetrosCuadrados());
             ps.setString(4, cli.getNombre());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error en la adicción de una tienda");
         }
@@ -60,6 +63,7 @@ public class OperacionesBasedeDatos {
             ps.setBoolean(3, par.isLuz());
             ps.setInt(4, par.getPrecioDia());
             ps.setInt(5, re.getId());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error en la adicción de una parcela");
         }
@@ -73,6 +77,7 @@ public class OperacionesBasedeDatos {
             ps.setDate(2, new java.sql.Date(re.getFechaIni().getTime()));
             ps.setDate(3, new java.sql.Date(re.getFechaFin().getTime()));
             ps.setString(4, cli.getNombre());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error en la adicción de una reserva");
         }
@@ -85,6 +90,7 @@ public class OperacionesBasedeDatos {
             ps.setDate(1, new java.sql.Date(re.getFechaIni().getTime()));
             ps.setDate(2, new java.sql.Date(re.getFechaFin().getTime()));
             ps.setString(3, cli.getNombre());
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error en la modificacion de una reserva");
         }

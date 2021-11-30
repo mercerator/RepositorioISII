@@ -49,6 +49,9 @@ public class Cliente extends UsuarioRegistrado {
     }
     
      */
+    public void guardarClienteBD(){
+        camping.guardarClienteBD(this);
+    }
     public void realizarReserva(ArrayList<String> nombresTiendas, ArrayList<Integer> metrosTiendas, 
             ArrayList luzParcelas, ArrayList parcelasSeleccionadas, Date fechaIni, Date fechaFin){
         // Creamos y guardamos las tiendas de campanya

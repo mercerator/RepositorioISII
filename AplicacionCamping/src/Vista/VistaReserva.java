@@ -169,6 +169,8 @@ public class VistaReserva extends javax.swing.JFrame {
 
         dateChooserDialog1.setNavigateFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 6));
 
+        mapaParcelas.setLocation(new java.awt.Point(0, 0));
+        mapaParcelas.setLocationByPlatform(true);
         mapaParcelas.setMinimumSize(new java.awt.Dimension(1000, 600));
         mapaParcelas.setSize(new java.awt.Dimension(1000, 600));
         mapaParcelas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -611,6 +613,7 @@ public class VistaReserva extends javax.swing.JFrame {
             if (this.cliente == null) {
                 cliente = noRegistrado.altaCliente(txt_dni.getText(), String.valueOf(txt_contra.getPassword()), 
                         nombreyApellidos.getText(), txt_tel.getText(), txt_correo.getText(), txt_cp.getText());
+                cliente.guardarClienteBD();
             }
             
             // Nos guardamos las fechas de entrada y salida del cliente

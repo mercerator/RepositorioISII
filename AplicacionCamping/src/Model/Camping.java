@@ -46,15 +46,18 @@ public class Camping {
     protected Date fechaFin;
     public String ubicacion;
     public String url;
+    private Connection conex;
+    public OperacionesBasedeDatos bd;
 
     public static final int ERROR = -1;
     public static final int ENCONTRADO = 1;
     public static final int SEGUIR = 0;
     
-    private Connection conex;
 
     public Camping() {
         this.cargarDatos();
+        this.conectarBaseDatos();
+        bd = new OperacionesBasedeDatos(conex);
     }
 
     public void cargarDatos() {
@@ -151,6 +154,10 @@ public class Camping {
         }
         return res;
     }
+    
+    public void guardarClienteBD(Cliente cli){
+        bd.añadirCliente(cli);
+    }
 
     public ArrayList parcelasAsignadas(){
         ArrayList parcelasAsignadas = new ArrayList();
@@ -184,7 +191,7 @@ public class Camping {
         String baseDatos = "jdbc:mysql://localhost:3306/mydb?serverTimezone=" + TimeZone.getDefault().getID();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conex = DriverManager.getConnection(baseDatos, "root", "123456");
+            conex = DriverManager.getConnection(baseDatos, "root", "root");
         } catch (Exception e) {
             System.out.println("Error en la conexion a la BD");
             ok = false;
