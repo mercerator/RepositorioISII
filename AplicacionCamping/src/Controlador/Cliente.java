@@ -97,5 +97,8 @@ public class Cliente extends UsuarioRegistrado {
         return contrasenya;
     }
     
-    
+    public boolean tamanyoCorrecto(Object parcela, int tamanyo){
+        Parcela p = (Parcela)parcela;
+        return p.tamanyoCorrecto(tamanyo);
+    }
 }

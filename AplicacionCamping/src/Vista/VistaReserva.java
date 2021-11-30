@@ -207,6 +207,7 @@ public class VistaReserva extends javax.swing.JFrame {
 
         grupo_botonesParcela.add(p37);
         p37.setText("37");
+        p37.setToolTipText("");
         mapaParcelas.getContentPane().add(p37, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 20, -1));
 
         grupo_botonesParcela.add(p36);

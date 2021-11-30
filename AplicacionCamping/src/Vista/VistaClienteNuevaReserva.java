@@ -22,8 +22,15 @@ import javax.swing.JRadioButton;
  */
 public class VistaClienteNuevaReserva extends javax.swing.JFrame {
     
-    private JFrame vistaAnterior;
+    private VistaCliente vistaAnterior;
     private Cliente cliente;
+    private ArrayList<Object> parcelasSeleccionadas = new ArrayList();
+    private ArrayList<String> nombresTiendas = new ArrayList<String>();
+    private ArrayList<Integer> metrosTiendas = new ArrayList<Integer>();
+    private ArrayList luzParcelas = new ArrayList();
+    DefaultListModel lParcelas;
+    
+    
     /**
      * Creates new form VistaNuevaReserva
      */
@@ -31,6 +38,13 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
         initComponents();
         this.vistaAnterior = v;
         this.cliente = cliente;
+        
+        lParcelas = new DefaultListModel();
+        listaParcelas.setModel(lParcelas);
+
+        //Seleccion del radioButton de la 
+        grupo_botones_luz.add(luzSi);
+        grupo_botones_luz.add(luzNO);
     }
 
     /**
@@ -147,24 +161,36 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
         fondobotones9.setText("jLabel2");
         mapaParcelas.getContentPane().add(fondobotones9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 200, 40));
 
+        grupo_botonesParcela.add(p37);
         p37.setText("37");
         mapaParcelas.getContentPane().add(p37, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 20, -1));
 
+        grupo_botonesParcela.add(p36);
         p36.setText("36");
         mapaParcelas.getContentPane().add(p36, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 150, 20, -1));
 
+        grupo_botonesParcela.add(p35);
         p35.setText("35");
         mapaParcelas.getContentPane().add(p35, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 20, -1));
 
+        grupo_botonesParcela.add(p34);
         p34.setText("34");
         mapaParcelas.getContentPane().add(p34, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 20, -1));
 
+        grupo_botonesParcela.add(p33);
         p33.setText("33");
         mapaParcelas.getContentPane().add(p33, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 100, 20, -1));
 
+        grupo_botonesParcela.add(p32);
         p32.setText("32");
+        p32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p32ActionPerformed(evt);
+            }
+        });
         mapaParcelas.getContentPane().add(p32, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 20, -1));
 
+        grupo_botonesParcela.add(p31);
         p31.setText("31");
         p31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,28 +199,36 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
         });
         mapaParcelas.getContentPane().add(p31, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 20, -1));
 
+        grupo_botonesParcela.add(p30);
         p30.setText("30");
         mapaParcelas.getContentPane().add(p30, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 20, -1));
 
+        grupo_botonesParcela.add(p29);
         p29.setText("29");
         mapaParcelas.getContentPane().add(p29, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 20, -1));
 
+        grupo_botonesParcela.add(p28);
         p28.setText("28");
         mapaParcelas.getContentPane().add(p28, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 20, -1));
 
+        grupo_botonesParcela.add(p27);
         p27.setText("27");
         mapaParcelas.getContentPane().add(p27, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 20, -1));
 
+        grupo_botonesParcela.add(p26);
         p26.setText("26");
         p26.setName(""); // NOI18N
         mapaParcelas.getContentPane().add(p26, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 20, -1));
 
+        grupo_botonesParcela.add(p25);
         p25.setText("25");
         mapaParcelas.getContentPane().add(p25, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 20, -1));
 
+        grupo_botonesParcela.add(p24);
         p24.setText("24");
         mapaParcelas.getContentPane().add(p24, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, 20, -1));
 
+        grupo_botonesParcela.add(p23);
         p23.setText("23");
         p23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,60 +237,77 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
         });
         mapaParcelas.getContentPane().add(p23, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 20, -1));
 
+        grupo_botonesParcela.add(p22);
         p22.setText("22");
         mapaParcelas.getContentPane().add(p22, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 20, -1));
 
+        grupo_botonesParcela.add(p21);
         p21.setText("21");
         mapaParcelas.getContentPane().add(p21, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 20, -1));
 
+        grupo_botonesParcela.add(p20);
         p20.setText("20");
         mapaParcelas.getContentPane().add(p20, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 20, -1));
 
+        grupo_botonesParcela.add(p19);
         p19.setText("19");
         mapaParcelas.getContentPane().add(p19, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 20, -1));
 
+        grupo_botonesParcela.add(p18);
         p18.setText("18");
         p18.setName("5"); // NOI18N
         mapaParcelas.getContentPane().add(p18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, 20, -1));
 
+        grupo_botonesParcela.add(p17);
         p17.setText("17");
         p17.setName("2"); // NOI18N
         mapaParcelas.getContentPane().add(p17, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 290, 20, -1));
 
+        grupo_botonesParcela.add(p16);
         p16.setText("16");
         p16.setName("4"); // NOI18N
         mapaParcelas.getContentPane().add(p16, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 330, 20, -1));
 
+        grupo_botonesParcela.add(p15);
         p15.setText("15");
         p15.setName("1"); // NOI18N
         mapaParcelas.getContentPane().add(p15, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 300, 20, -1));
 
+        grupo_botonesParcela.add(p14);
         p14.setText("14");
         p14.setName("3"); // NOI18N
         mapaParcelas.getContentPane().add(p14, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 360, 20, -1));
 
+        grupo_botonesParcela.add(p13);
         p13.setText("13");
         p13.setName("0"); // NOI18N
         mapaParcelas.getContentPane().add(p13, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 460, 20, -1));
 
+        grupo_botonesParcela.add(p12);
         p12.setText("12");
         mapaParcelas.getContentPane().add(p12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 20, -1));
 
+        grupo_botonesParcela.add(p11);
         p11.setText("11");
         mapaParcelas.getContentPane().add(p11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 20, -1));
 
+        grupo_botonesParcela.add(p10);
         p10.setText("10");
         mapaParcelas.getContentPane().add(p10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 20, -1));
 
+        grupo_botonesParcela.add(p9);
         p9.setText("9");
         mapaParcelas.getContentPane().add(p9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 20, -1));
 
+        grupo_botonesParcela.add(p8);
         p8.setText("8");
         mapaParcelas.getContentPane().add(p8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 20, -1));
 
+        grupo_botonesParcela.add(p7);
         p7.setText("7");
         mapaParcelas.getContentPane().add(p7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 20, -1));
 
+        grupo_botonesParcela.add(p6);
         p6.setText("6");
         p6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,19 +316,24 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
         });
         mapaParcelas.getContentPane().add(p6, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 20, -1));
 
+        grupo_botonesParcela.add(p5);
         p5.setText("5");
         mapaParcelas.getContentPane().add(p5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 20, -1));
 
+        grupo_botonesParcela.add(p4);
         p4.setText("4");
         mapaParcelas.getContentPane().add(p4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 20, -1));
 
+        grupo_botonesParcela.add(p3);
         p3.setText("3");
         mapaParcelas.getContentPane().add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 20, -1));
 
+        grupo_botonesParcela.add(p2);
         p2.setText("2");
         p2.setName(""); // NOI18N
         mapaParcelas.getContentPane().add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 20, -1));
 
+        grupo_botonesParcela.add(p1);
         p1.setText("1");
         p1.setName(""); // NOI18N
         p1.addActionListener(new java.awt.event.ActionListener() {
@@ -308,6 +364,7 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
         tipoTienda.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         mapaParcelas.getContentPane().add(tipoTienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 90, 30));
 
+        grupo_botones_luz.add(luzSi);
         luzSi.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         luzSi.setForeground(new java.awt.Color(255, 255, 255));
         luzSi.setText("Si");
@@ -318,6 +375,7 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
         });
         mapaParcelas.getContentPane().add(luzSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 80, 30));
 
+        grupo_botones_luz.add(luzNO);
         luzNO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         luzNO.setForeground(new java.awt.Color(255, 255, 255));
         luzNO.setText("No");
@@ -455,8 +513,8 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
                     encontrado = true;
                 }
             }
-            /*Object parcela = cli.devolverParcela(Integer.parseInt(botonSeleccionado.getText()));
-            if(cli.tamanyoCorrecto(parcela, Integer.parseInt(mTienda.getText()))){
+            Object parcela = cliente.devolverParcela(Integer.parseInt(botonSeleccionado.getText()));
+            if(cliente.tamanyoCorrecto(parcela, Integer.parseInt(mTienda.getText()))){
                 // Guardamos la parcela en un arraylist de parcelas seleccionadas
                 parcelasSeleccionadas.add(parcela);
                 lParcelas.addElement(parcela);
@@ -488,10 +546,10 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
                 this.setVisible(true);
                 mapaParcelas.setVisible(false);
                 btn_finalizar.setVisible(true);
-                fondobotones7.setVisible(true);
+                fondobotones1.setVisible(true);
             } else{
                 JOptionPane.showMessageDialog(this, "El tamanyo de la tienda es mayor al de la parcela seleccionada.", "Error", JOptionPane.ERROR_MESSAGE);
-            }*/
+            }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error en alguno de los campos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -534,12 +592,6 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
 
     private void btn_finalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finalizarActionPerformed
         try {
-            // Damos de alta el cliente en caso de que no este dado de alta
-            /*if (this.cliente == null) {
-                cliente = noRegistrado.altaCliente(txt_dni.getText(), String.valueOf(txt_contra.getPassword()),
-                    nombreyApellidos.getText(), txt_tel.getText(), txt_correo.getText(), txt_cp.getText());
-            }
-
             // Nos guardamos las fechas de entrada y salida del cliente
             Date fechaIni = fEntrada.getSelectedDate().getTime();
             Date fechaFin = fSalida.getSelectedDate().getTime();
@@ -547,13 +599,18 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
             // Hacemos la reserva
             cliente.realizarReserva(nombresTiendas, metrosTiendas, luzParcelas, parcelasSeleccionadas, fechaIni, fechaFin);
             
+            vistaAnterior.actualizarLista();
             vistaAnterior.setVisible(true);
-            this.setVisible(false);*/
+            this.setVisible(false);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error en alguno de los campos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_finalizarActionPerformed
+
+    private void p32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p32ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p32ActionPerformed
 
     /**
      * @param args the command line arguments

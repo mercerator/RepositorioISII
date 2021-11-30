@@ -84,6 +84,15 @@ public class VistaCliente extends javax.swing.JFrame {
         lMisReservas.setEnabled(true);
     }
 
+    public void actualizarLista(){
+        lReservas = new DefaultListModel();
+        lMisReservas.setModel(lReservas);
+        
+        for(Object reserva: this.cliente.getReservas()){
+            lReservas.addElement(reserva);
+        }
+        lMisReservas.updateUI();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
