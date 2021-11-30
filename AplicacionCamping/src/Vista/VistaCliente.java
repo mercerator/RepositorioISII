@@ -587,6 +587,7 @@ public class VistaCliente extends javax.swing.JFrame {
     private void btnNReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNReservaActionPerformed
         VistaClienteNuevaReserva v = new VistaClienteNuevaReserva(this.cliente, this);
         this.setVisible(false);
+        v.setVisible(true);
     }//GEN-LAST:event_btnNReservaActionPerformed
 
 
