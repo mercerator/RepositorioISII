@@ -6,6 +6,7 @@
 package Controlador;
 
 import Datos.DatosParcela;
+import Datos.DatosReserva;
 import Model.Camping;
 import Model.Evento;
 import Model.Parcela;
@@ -23,6 +24,7 @@ public class Cliente extends UsuarioRegistrado {
     private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
     private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
     private ArrayList<Evento> eventos = new ArrayList<Evento>();
+    private Reserva reservaAct;
     
     public Cliente(String usuario, String contraseña, Camping camping, String nombreApellidos, String telefono, String correo, String cp) {
         super(usuario, contraseña, camping);
@@ -100,5 +102,54 @@ public class Cliente extends UsuarioRegistrado {
     public boolean tamanyoCorrecto(Object parcela, int tamanyo){
         Parcela p = (Parcela)parcela;
         return p.tamanyoCorrecto(tamanyo);
+    }
+    
+    public void actualizarFechaReserva(Date fechaEntrada, Date fechaSalida){
+        for(Reserva aux: reservas){
+            if(aux.getId() == reservaAct.getId()){
+                aux.setFechaIni(fechaEntrada);
+                aux.setFechaFin(fechaSalida);
+                camping.actualizarFechaReserva(reservaAct, fechaEntrada, fechaSalida);
+            }
+        }
+    }
+    
+    public DatosReserva getDatosReserva(Object reserva){
+        reservaAct = (Reserva)reserva;
+        return reservaAct.getDatosReserva();
+    }
+    
+    public void eliminarReserva(){
+        camping.eliminarReserva(reservaAct);
+        reservas.remove(reservaAct);
+        reservaAct = null;
+    }
+    
+    public ArrayList parcelasAsignadas(){
+        return camping.parcelasAsignadas();
+    }
+    
+    public void unirseFronton(){
+        camping.unirseFronton(this);
+    }
+    
+    public void unirsePiscina(){
+        camping.unirsePiscina(this);
+    }
+    
+    public void unirseClub(){
+        camping.unirseClub(this);
+    }
+    
+    public void eliminarPiscina(){
+        camping.eliminarPiscina(this);
+    }
+    
+    public void eliminarFronton(){
+        camping.eliminarFronton(this);
+    }
+        
+    public void eliminarClub(){
+        camping.eliminarClub(this);
     }
 }

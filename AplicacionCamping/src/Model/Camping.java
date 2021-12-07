@@ -7,6 +7,7 @@ import Datos.DatosParcela;
 import Datos.DatosReserva;
 import Datos.ListaParcelas;
 import Datos.ListaReservas;
+import Datos.ListasEventos;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,6 +37,10 @@ public class Camping {
     protected ArrayList<Parcela> parcelasSinAsignacion = new ArrayList<Parcela>();
 
     protected ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
+    
+    protected ArrayList<Cliente> eventoFronton = new ArrayList<Cliente>();
+    protected ArrayList<Cliente> eventoPiscina = new ArrayList<Cliente>();
+    protected ArrayList<Cliente> eventoClub = new ArrayList<Cliente>();
 
     /*public static final String gerente2 = "Alex";
     public static final String gerente3 = "Ana";
@@ -284,5 +289,46 @@ public class Camping {
         }catch(SQLException ex){
             System.out.println("Error cargando los datos de las tiendas");
         }
+    }
+    
+    public void actualizarFechaReserva(Reserva reserva, Date fechaEntrada, Date fechaSalida){
+        for(Reserva aux: reservas){
+            if(aux.getId() == reserva.getId()){
+                aux.setFechaIni(fechaEntrada);
+                aux.setFechaFin(fechaSalida);
+            }
+        }
+    }
+    
+    public void eliminarReserva(Reserva reserva){
+        reservas.remove(reserva);
+    }
+    
+    public void unirseFronton(Cliente cliente){
+        eventoFronton.add(cliente);
+    }
+    
+    public void unirsePiscina(Cliente cliente){
+        eventoPiscina.add(cliente);
+    }
+    
+    public void unirseClub(Cliente cliente){
+        eventoClub.add(cliente);
+    }
+    
+    public void eliminarClub(Cliente cliente){
+        eventoClub.remove(cliente);
+    }
+    
+    public void eliminarFronton(Cliente cliente){
+        eventoFronton.remove(cliente);
+    }
+    
+    public void eliminarPiscina(Cliente cliente){
+        eventoPiscina.remove(cliente);
+    }
+    
+    public ListasEventos listasEventos(){
+        return new ListasEventos(eventoPiscina, eventoFronton, eventoClub);
     }
 }

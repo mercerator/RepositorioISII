@@ -7,7 +7,10 @@ package Vista;
 
 import Controlador.Cliente;
 import Controlador.Gerente;
+import Datos.DatosReserva;
 import Model.Camping;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 
@@ -215,6 +218,11 @@ public class VistaCliente extends javax.swing.JFrame {
         modReservaCancelar.setText("Cancelar Reserva");
         modReservaCancelar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         modReservaCancelar.setContentAreaFilled(false);
+        modReservaCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modReservaCancelarActionPerformed(evt);
+            }
+        });
         panelModReserva.add(modReservaCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 120, 30));
 
         fondobotones11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
@@ -225,6 +233,11 @@ public class VistaCliente extends javax.swing.JFrame {
         modReservaGuardar.setText("Guardar");
         modReservaGuardar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         modReservaGuardar.setContentAreaFilled(false);
+        modReservaGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modReservaGuardarActionPerformed(evt);
+            }
+        });
         panelModReserva.add(modReservaGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 120, 30));
 
         fondobotones12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
@@ -434,6 +447,11 @@ public class VistaCliente extends javax.swing.JFrame {
         btnCanEvento.setText("Cancelar Evento");
         btnCanEvento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnCanEvento.setContentAreaFilled(false);
+        btnCanEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCanEventoActionPerformed(evt);
+            }
+        });
         panelEventos.add(btnCanEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 171, -1));
 
         fondobotones4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
@@ -564,7 +582,11 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_pPiscinaAtrasActionPerformed
 
     private void pPiscinaUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pPiscinaUnirseActionPerformed
-        // TODO add your handling code here:
+        cliente.unirsePiscina();
+        lEventos.addElement("Piscina");
+        lMisEventos.updateUI();
+        panelPiscina.setVisible(false);
+        actionOn();
     }//GEN-LAST:event_pPiscinaUnirseActionPerformed
 
     private void pFrontonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pFrontonAtrasActionPerformed
@@ -573,11 +595,19 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_pFrontonAtrasActionPerformed
 
     private void pFrontonUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pFrontonUnirseActionPerformed
-        // TODO add your handling code here:
+        cliente.unirseFronton();
+        lEventos.addElement("Fronton");
+        lMisEventos.updateUI();
+        panelFronton.setVisible(false);
+        actionOn();
     }//GEN-LAST:event_pFrontonUnirseActionPerformed
 
     private void pCLubUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pCLubUnirseActionPerformed
-        // TODO add your handling code here:
+        cliente.unirseClub();
+        lEventos.addElement("Club Social");
+        lMisEventos.updateUI();
+        panelClub.setVisible(false);
+        actionOn();
     }//GEN-LAST:event_pCLubUnirseActionPerformed
 
     private void pClubAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pClubAtrasActionPerformed
@@ -586,6 +616,26 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_pClubAtrasActionPerformed
 
     private void btnModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModActionPerformed
+        DatosReserva datosReserva = cliente.getDatosReserva(lMisReservas.getSelectedValue());
+        
+        // Actualizamos la fecha de entrada en la vista
+        Date fecha = datosReserva.fechaIni;
+        fecha.setHours(0);
+        fecha.setMinutes(0);
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(fecha);
+        fEntrada.setSelectedDate(cal);
+        fEntrada.updateUI();
+        
+        // Actualizamos la fecha de salida en la vista
+        fecha = datosReserva.fechaFin;
+        fecha.setHours(0);
+        fecha.setMinutes(0);
+        cal = Calendar.getInstance();
+        cal.setTime(fecha);
+        fSalida.setSelectedDate(cal);
+        fSalida.updateUI();
+        
         panelModReserva.setVisible(true);
         actionOff();
     }//GEN-LAST:event_btnModActionPerformed
@@ -600,6 +650,53 @@ public class VistaCliente extends javax.swing.JFrame {
         this.setVisible(false);
         v.setVisible(true);
     }//GEN-LAST:event_btnNReservaActionPerformed
+
+    private void modReservaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modReservaGuardarActionPerformed
+        cliente.actualizarFechaReserva(fEntrada.getSelectedDate().getTime(), fSalida.getSelectedDate().getTime());
+        lReservas = new DefaultListModel();
+        lMisReservas.setModel(lReservas);
+        
+        for(Object reserva: this.cliente.getReservas()){
+            lReservas.addElement(reserva);
+        }
+        lMisReservas.updateUI();
+        panelModReserva.setVisible(false);
+        
+        actionOn();
+    }//GEN-LAST:event_modReservaGuardarActionPerformed
+
+    private void modReservaCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modReservaCancelarActionPerformed
+        cliente.eliminarReserva();
+        lReservas = new DefaultListModel();
+        lMisReservas.setModel(lReservas);
+        
+        for(Object reserva: this.cliente.getReservas()){
+            lReservas.addElement(reserva);
+        }
+        lMisReservas.updateUI();
+        panelModReserva.setVisible(false);
+        actionOn();
+    }//GEN-LAST:event_modReservaCancelarActionPerformed
+
+    private void btnCanEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanEventoActionPerformed
+        String evento = lMisEventos.getSelectedValue();
+        
+        if(evento.equals("Piscina")){
+            lEventos.removeElement("Piscina");
+            lMisEventos.updateUI();
+            cliente.eliminarPiscina();
+        }
+        else if(evento.equals("Fronton")){
+            lEventos.removeElement("Fronton");
+            lMisEventos.updateUI();
+            cliente.eliminarFronton();
+        }
+        else if(evento.equals("Club Social")){
+            lEventos.removeElement("Club Social");
+            lMisEventos.updateUI();
+            cliente.eliminarClub();
+        }
+    }//GEN-LAST:event_btnCanEventoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

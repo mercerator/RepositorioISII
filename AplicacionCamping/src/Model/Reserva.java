@@ -27,70 +27,48 @@ public class Reserva {
     }
 
     public String getNombreApellidos() {
-        return datosreserva.nombreApellidos;
-    }
-
-    public void setNombreApellidos(DatosReserva _nombre) {
-        datosreserva = _nombre;
+        return cliente.getNombreApellidos();
     }
 
     public String getDni() {
-        return datosreserva.dni;
+        return cliente.getNombre();
     }
 
-    public void setDni(DatosReserva _dni) {
-        datosreserva = _dni;
-    }
-
-    public String getNombreTiendas() {
-        return datosreserva.nombreTiendas;
-    }
-
-    public void setNombreTiendas(DatosReserva _nombreTiendas) {
-        datosreserva = _nombreTiendas;
-    }
-
-    public int getMetrosTienda() {
-        return datosreserva.metrosTienda;
-    }
-
-    public void setMetrosTienda(DatosReserva _metrosTienda) {
-        datosreserva = _metrosTienda;
-    }
-
-    public Boolean getLuz() {
+    /*public Boolean getLuz() {
         return datosreserva.luz;
     }
 
     public void setLuz(DatosReserva _luz) {
         datosreserva = _luz;
     }
-
+    */
     public Date getFechaIni() {
-        return datosreserva.fechaIni;
+        return this.fechaIni;
     }
 
-    public void setFechaIni(DatosReserva _fechaIni) {
-        datosreserva = _fechaIni;
+    public void setFechaIni(Date fechaIni) {
+        this.fechaIni = fechaIni;
     }
 
     public Date getFechaFin() {
-        return datosreserva.fechaFin;
+        return fechaFin;
     }
 
-    public void setFechaFin(DatosReserva _fechaFin) {
-        datosreserva = _fechaFin;
+    public void setFechaFin(Date fechaFin) {
+        this.fechaFin = fechaFin;
     }
 
     public ArrayList<Parcela> getParcelasSeleccionadas() {
-        return datosreserva.parcelasSeleccionadas;
+        return parcelas;
     }
 
-    public void setParcelasSeleccionadas(DatosReserva _parcelasSeleccionadas) {
-        datosreserva = _parcelasSeleccionadas;
+    public void setParcelasSeleccionadas(ArrayList parcelasSeleccionadas) {
+        this.parcelas = parcelasSeleccionadas;
     }
     
-   
+    public DatosReserva getDatosReserva(){
+        return new DatosReserva(id, fechaIni, fechaFin, parcelas);
+    }
 
     @Override
     public String toString() {

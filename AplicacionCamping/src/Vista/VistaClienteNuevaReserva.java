@@ -41,6 +41,19 @@ public class VistaClienteNuevaReserva extends javax.swing.JFrame {
         
         lParcelas = new DefaultListModel();
         listaParcelas.setModel(lParcelas);
+        
+        // Comprobamos que parcelas hay asignadas y desactivamos los botones correspondientes
+        // para que el usuario no pueda seleccionarlas.
+        ArrayList parcelasAsignadas = this.cliente.parcelasAsignadas();
+        Enumeration botones = grupo_botonesParcela.getElements();
+        JRadioButton boton = new JRadioButton();
+        while (botones.hasMoreElements()){
+            boton = (JRadioButton)botones.nextElement();
+            for(int i = 0; i < parcelasAsignadas.size() ; i++){
+                if((int)parcelasAsignadas.get(i) == Integer.parseInt(boton.getText()))
+                    boton.setEnabled(false);
+            }
+        }
 
         //Seleccion del radioButton de la 
         grupo_botones_luz.add(luzSi);

@@ -4,6 +4,7 @@ import Datos.DatosParcela;
 import Datos.DatosReserva;
 import Datos.ListaParcelas;
 import Datos.ListaReservas;
+import Datos.ListasEventos;
 import Model.Camping;
 import Model.Parcela;
 import Model.Reserva;
@@ -59,4 +60,7 @@ public class Gerente extends UsuarioRegistrado {
         return contrasenya;
     }
     
+    public ListasEventos listasEventos(){
+        return camping.listasEventos();
+    }
 }

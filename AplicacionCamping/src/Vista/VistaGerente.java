@@ -10,6 +10,7 @@ import Controlador.GestoresCamping;
 import Datos.DatosParcela;
 import Datos.ListaParcelas;
 import Datos.ListaReservas;
+import Datos.ListasEventos;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -25,6 +26,9 @@ public class VistaGerente extends javax.swing.JFrame {
     private GestoresCamping gestoresCamping;
     private String parejaAct;
     DefaultListModel lReservas;
+    DefaultListModel lPiscina;
+    DefaultListModel lFronton;
+    DefaultListModel lClub;
 
     /**
      * Creates new form Gerente
@@ -44,11 +48,23 @@ public class VistaGerente extends javax.swing.JFrame {
         btnFronton.setOpaque(false);
         btnClubSocial.setOpaque(false);
         parejaAct = "";
+        
+        // Actualizamos la lista de reservas
         lReservas = new DefaultListModel();
         listaReservas.setModel(lReservas);
 
         for (Object item : this.gerente.consultarReserva()) {
             lReservas.addElement(item);
+        }
+        
+        // Pedimos las listas de los usuarios suscritos a eventos
+        ListasEventos le = this.gerente.listasEventos();
+        
+        // Actualizamos la lista del evento PISCINA
+        lPiscina = new DefaultListModel();
+        lUsuariosPiscina.setModel(lPiscina);
+        for(Object item: le.listaPiscina){
+            lPiscina.addElement(item);
         }
         
         descuentoAct.setText(String.valueOf(this.gerente.getDescuento()));
@@ -72,11 +88,11 @@ public class VistaGerente extends javax.swing.JFrame {
         btn_ganadorFronton = new javax.swing.JButton();
         fondobotones13 = new javax.swing.JLabel();
         jScrollPane8Fronton = new javax.swing.JScrollPane();
-        jList8 = new javax.swing.JList<>();
+        lUsuariosFronton = new javax.swing.JList<>();
         jScrollPane9Fronton = new javax.swing.JScrollPane();
-        jList9 = new javax.swing.JList<>();
+        lParejasFronton = new javax.swing.JList<>();
         jScrollPane10Fronton = new javax.swing.JScrollPane();
-        jList10 = new javax.swing.JList<>();
+        lGanadoresFronton = new javax.swing.JList<>();
         titulo = new javax.swing.JLabel();
         fondo4 = new javax.swing.JLabel();
         panelPiscina = new javax.swing.JPanel();
@@ -87,11 +103,11 @@ public class VistaGerente extends javax.swing.JFrame {
         btn_ganadorPiscina = new javax.swing.JButton();
         fondobotones10 = new javax.swing.JLabel();
         jScrollPane5Piscina = new javax.swing.JScrollPane();
-        jList5 = new javax.swing.JList<>();
+        lUsuariosPiscina = new javax.swing.JList<>();
         jScrollPane6Piscina = new javax.swing.JScrollPane();
-        jList6 = new javax.swing.JList<>();
+        lParejasPiscina = new javax.swing.JList<>();
         jScrollPane7Piscina = new javax.swing.JScrollPane();
-        jList7 = new javax.swing.JList<>();
+        lGanadoresPiscina = new javax.swing.JList<>();
         titulo1 = new javax.swing.JLabel();
         fondo3 = new javax.swing.JLabel();
         panelClubSocial = new javax.swing.JPanel();
@@ -102,11 +118,11 @@ public class VistaGerente extends javax.swing.JFrame {
         btn_ganador = new javax.swing.JButton();
         fondobotones7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lUsuariosClub = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        lParejasClub = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jList4 = new javax.swing.JList<>();
+        lGanadoresClub = new javax.swing.JList<>();
         titulo2 = new javax.swing.JLabel();
         fondo2 = new javax.swing.JLabel();
         btn_atras2 = new javax.swing.JButton();
@@ -213,36 +229,36 @@ public class VistaGerente extends javax.swing.JFrame {
         fondobotones13.setText("jLabel2");
         panelFronton.add(fondobotones13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 140, 40));
 
-        jList8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList8.setModel(new javax.swing.AbstractListModel<String>() {
+        lUsuariosFronton.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lUsuariosFronton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lUsuariosFronton.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane8Fronton.setViewportView(jList8);
+        jScrollPane8Fronton.setViewportView(lUsuariosFronton);
 
         panelFronton.add(jScrollPane8Fronton, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 77, 140, 184));
 
-        jList9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parejas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList9.setModel(new javax.swing.AbstractListModel<String>() {
+        lParejasFronton.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parejas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lParejasFronton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lParejasFronton.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane9Fronton.setViewportView(jList9);
+        jScrollPane9Fronton.setViewportView(lParejasFronton);
 
         panelFronton.add(jScrollPane9Fronton, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 77, 140, 184));
 
-        jList10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ganador/es", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList10.setModel(new javax.swing.AbstractListModel<String>() {
+        lGanadoresFronton.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ganador/es", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lGanadoresFronton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lGanadoresFronton.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane10Fronton.setViewportView(jList10);
+        jScrollPane10Fronton.setViewportView(lGanadoresFronton);
 
         panelFronton.add(jScrollPane10Fronton, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 77, 139, 93));
 
@@ -303,36 +319,36 @@ public class VistaGerente extends javax.swing.JFrame {
         fondobotones10.setText("jLabel2");
         panelPiscina.add(fondobotones10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 140, 40));
 
-        jList5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList5.setModel(new javax.swing.AbstractListModel<String>() {
+        lUsuariosPiscina.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lUsuariosPiscina.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lUsuariosPiscina.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane5Piscina.setViewportView(jList5);
+        jScrollPane5Piscina.setViewportView(lUsuariosPiscina);
 
         panelPiscina.add(jScrollPane5Piscina, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 77, 140, 184));
 
-        jList6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parejas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList6.setModel(new javax.swing.AbstractListModel<String>() {
+        lParejasPiscina.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parejas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lParejasPiscina.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lParejasPiscina.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane6Piscina.setViewportView(jList6);
+        jScrollPane6Piscina.setViewportView(lParejasPiscina);
 
         panelPiscina.add(jScrollPane6Piscina, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 77, 140, 184));
 
-        jList7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ganador/es", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList7.setModel(new javax.swing.AbstractListModel<String>() {
+        lGanadoresPiscina.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ganador/es", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lGanadoresPiscina.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lGanadoresPiscina.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane7Piscina.setViewportView(jList7);
+        jScrollPane7Piscina.setViewportView(lGanadoresPiscina);
 
         panelPiscina.add(jScrollPane7Piscina, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 77, 139, 93));
 
@@ -393,36 +409,36 @@ public class VistaGerente extends javax.swing.JFrame {
         fondobotones7.setText("jLabel2");
         panelClubSocial.add(fondobotones7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 140, 40));
 
-        jList1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        lUsuariosClub.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lUsuariosClub.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lUsuariosClub.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(lUsuariosClub);
 
         panelClubSocial.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 77, 140, 184));
 
-        jList2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parejas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        lParejasClub.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parejas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lParejasClub.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lParejasClub.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane3.setViewportView(jList2);
+        jScrollPane3.setViewportView(lParejasClub);
 
         panelClubSocial.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 77, 140, 184));
 
-        jList4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ganador/es", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
-        jList4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jList4.setModel(new javax.swing.AbstractListModel<String>() {
+        lGanadoresClub.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ganador/es", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia Pro", 0, 14))); // NOI18N
+        lGanadoresClub.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lGanadoresClub.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane4.setViewportView(jList4);
+        jScrollPane4.setViewportView(lGanadoresClub);
 
         panelClubSocial.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 77, 139, 93));
 
@@ -1009,16 +1025,7 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList10;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
-    private javax.swing.JList<String> jList4;
-    private javax.swing.JList<String> jList5;
-    private javax.swing.JList<String> jList6;
-    private javax.swing.JList<String> jList7;
-    private javax.swing.JList<String> jList8;
-    private javax.swing.JList<String> jList9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10Fronton;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1030,6 +1037,15 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8Fronton;
     private javax.swing.JScrollPane jScrollPane9Fronton;
     private javax.swing.JLabel jlabeldatosreserva;
+    private javax.swing.JList<String> lGanadoresClub;
+    private javax.swing.JList<String> lGanadoresFronton;
+    private javax.swing.JList<String> lGanadoresPiscina;
+    private javax.swing.JList<String> lParejasClub;
+    private javax.swing.JList<String> lParejasFronton;
+    private javax.swing.JList<String> lParejasPiscina;
+    private javax.swing.JList<String> lUsuariosClub;
+    private javax.swing.JList<String> lUsuariosFronton;
+    private javax.swing.JList<String> lUsuariosPiscina;
     private javax.swing.JLabel lbl_correo;
     private javax.swing.JLabel lbl_cp;
     private javax.swing.JLabel lbl_dni;
