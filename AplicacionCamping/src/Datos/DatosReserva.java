@@ -15,21 +15,26 @@ import java.util.Date;
  * @author Epic
  */
 public class DatosReserva {
-    
-    /*public String nombreApellidos;
+    // Datos cliente
+    public String nombreApellidos;
     public String dni;
-    public String nombreTiendas;
-    public int metrosTienda;*/
+    public String telefono;
+    public String correo;
+    public String cp;
+    
+    // Datos reserva
     public int id;
     public Date fechaIni;
     public Date fechaFin;
     public ArrayList parcelasSeleccionadas = new ArrayList<>();
 
-    public DatosReserva(int id, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas) {
-        /*this.nombreApellidos = nombreApellidos;
+    public DatosReserva(int id, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas, 
+            String nombreApellidos, String dni, String telefono, String correo, String cp) {
+        this.nombreApellidos = nombreApellidos;
         this.dni = dni;
-        this.nombreTiendas = nombreTiendas;
-        this.metrosTienda = metrosTienda;*/
+        this.telefono = telefono;
+        this.correo = correo;
+        this.cp = cp;
         this.id = id;
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
@@ -38,6 +43,6 @@ public class DatosReserva {
     }
 
     public DatosReserva consultarDatosParcela(ArrayList<Parcela> parcelasDisponibles) {
-        return new DatosReserva(id, fechaIni, fechaFin, parcelasDisponibles);
+        return new DatosReserva(id, fechaIni, fechaFin, parcelasDisponibles, nombreApellidos, dni, telefono, correo, cp);
     }
 }

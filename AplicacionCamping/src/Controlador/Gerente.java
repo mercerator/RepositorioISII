@@ -17,7 +17,7 @@ import java.util.Date;
  */
 public class Gerente extends UsuarioRegistrado {
 
-    protected DatosReserva reservaAct;
+    protected Reserva reservaAct;
     protected int i;
 
     public Gerente(String usuario, String contrasenya, Camping camping) {
@@ -46,12 +46,6 @@ public class Gerente extends UsuarioRegistrado {
         return camping.consultarReserva();
     }
 
-    public DatosReserva consultarDetallesReserva(Object reserva) {
-        reservaAct = (DatosReserva) reserva;
-        ArrayList<Parcela> parcelasDisponibles = camping.consultarParcelasDisponibles();
-        return reservaAct.consultarDatosParcela(parcelasDisponibles);
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -62,5 +56,16 @@ public class Gerente extends UsuarioRegistrado {
     
     public ListasEventos listasEventos(){
         return camping.listasEventos();
+    }
+    
+    public DatosReserva datosReserva(Object reserva){
+        reservaAct = (Reserva)reserva;
+        return reservaAct.getDatosReserva();
+    }
+    
+    public void actualizarFechaReserva(Date fechaEntrada, Date fechaSalida){
+        reservaAct.setFechaIni(fechaEntrada);
+        reservaAct.setFechaFin(fechaSalida);
+        camping.actualizarFechaReserva(reservaAct, fechaEntrada, fechaSalida);
     }
 }

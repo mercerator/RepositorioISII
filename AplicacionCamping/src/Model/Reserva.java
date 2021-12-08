@@ -67,7 +67,8 @@ public class Reserva {
     }
     
     public DatosReserva getDatosReserva(){
-        return new DatosReserva(id, fechaIni, fechaFin, parcelas);
+        return new DatosReserva(id, fechaIni, fechaFin, parcelas, cliente.getNombreApellidos(),
+            cliente.getNombre(), cliente.getTelefono(), cliente.getCorreo(), cliente.getCp());
     }
 
     @Override
@@ -81,5 +82,4 @@ public class Reserva {
     public int getId() {
         return id;
     }
-
 }

@@ -8,9 +8,14 @@ package Vista;
 import Controlador.Gerente;
 import Controlador.GestoresCamping;
 import Datos.DatosParcela;
+import Datos.DatosReserva;
 import Datos.ListaParcelas;
 import Datos.ListaReservas;
 import Datos.ListasEventos;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -29,6 +34,7 @@ public class VistaGerente extends javax.swing.JFrame {
     DefaultListModel lPiscina;
     DefaultListModel lFronton;
     DefaultListModel lClub;
+    DefaultListModel lParcelas;
 
     /**
      * Creates new form Gerente
@@ -152,10 +158,11 @@ public class VistaGerente extends javax.swing.JFrame {
         txt_correo = new javax.swing.JTextField();
         txt_cp = new javax.swing.JTextField();
         lbl_cp = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botonAtrasReserva = new javax.swing.JButton();
+        botonTramitar = new javax.swing.JButton();
+        botonGuardarReserva = new javax.swing.JButton();
         idReserva = new javax.swing.JLabel();
+        jFrame1 = new javax.swing.JFrame();
         jLabel2 = new javax.swing.JLabel();
         btn_administrar = new javax.swing.JButton();
         fondobotones2 = new javax.swing.JLabel();
@@ -179,7 +186,6 @@ public class VistaGerente extends javax.swing.JFrame {
         eventos.setTitle("Administrar Eventos");
         eventos.setLocation(new java.awt.Point(265, 112));
         eventos.setMinimumSize(new java.awt.Dimension(1000, 600));
-        eventos.setPreferredSize(new java.awt.Dimension(1000, 600));
         eventos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelFronton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -579,27 +585,27 @@ public class VistaGerente extends javax.swing.JFrame {
         lbl_cp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_cp.setText("Codigo Postal: ");
 
-        jButton1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jButton1.setText("Atras");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonAtrasReserva.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        botonAtrasReserva.setText("Atras");
+        botonAtrasReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonAtrasReservaActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jButton2.setText("Guardar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonTramitar.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        botonTramitar.setText("Guardar");
+        botonTramitar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonTramitarActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jButton3.setText("Tramitar el pago");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botonGuardarReserva.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        botonGuardarReserva.setText("Tramitar el pago");
+        botonGuardarReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botonGuardarReservaActionPerformed(evt);
             }
         });
 
@@ -657,11 +663,11 @@ public class VistaGerente extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(reservasLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonAtrasReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(200, 200, 200)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonGuardarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonTramitar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79))
         );
         reservasLayout.setVerticalGroup(
@@ -710,10 +716,21 @@ public class VistaGerente extends javax.swing.JFrame {
                                 .addComponent(txt_cp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(130, 130, 130)
                 .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonAtrasReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(reservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(botonGuardarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonTramitar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -771,10 +788,10 @@ public class VistaGerente extends javax.swing.JFrame {
         getContentPane().add(fondobotones1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 110, 30));
 
         listaReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
-        listaReservas.setModel(new javax.swing.AbstractListModel<String>() {
+        listaReservas.setModel(new javax.swing.AbstractListModel<Object>() {
             String[] strings = { "Reserva 1", "Reserva 2", "Reserva 3", "Reserva 4" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         scroll_parcelas.setViewportView(listaReservas);
 
@@ -849,9 +866,42 @@ public class VistaGerente extends javax.swing.JFrame {
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
         if (listaReservas.getSelectedValue() != null) {
+            // Ponemos los datos de la reserva en vista
+            DatosReserva dr = gerente.datosReserva(listaReservas.getSelectedValue());
+            nombreyApellidos.setText(dr.nombreApellidos);
+            txt_dni.setText(dr.dni);
+            txt_tel.setText(dr.telefono);
+            txt_correo.setText(dr.correo);
+            txt_cp.setText(dr.cp);
+            
+            Date fecha = dr.fechaIni;
+            fecha.setHours(0);
+            fecha.setMinutes(0);
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(fecha);
+            fEntrada.setSelectedDate(cal);
+            
+            fecha = dr.fechaFin;
+            fecha.setHours(0);
+            fecha.setMinutes(0);
+            cal = Calendar.getInstance();
+            cal.setTime(fecha);
+            fSalida.setSelectedDate(cal);
+            
+            lParcelas = new DefaultListModel();
+            listaParcelas.setModel(lParcelas);
+            for(Object parcela: dr.parcelasSeleccionadas){
+                lParcelas.addElement(parcela);
+            }
+            
+            // Cambiamos de frame a reserva
+            reservas.setSize(1000, 600);
+            Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+            int x = (int) ((dimension.getWidth() - reservas.getWidth()) / 2);
+            int y = (int) ((dimension.getHeight() - reservas.getHeight()) / 2);
+            reservas.setLocation(x, y);
+            reservas.setVisible(true);
             this.setVisible(false);
-            VistaActualizarReserva vap = new VistaActualizarReserva(gerente, vistaAnterior, listaReservas.getSelectedValue());
-            vap.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Seleccione una reserva.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -902,17 +952,27 @@ public class VistaGerente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_cpActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void botonAtrasReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasReservaActionPerformed
+        this.setVisible(true);
+        reservas.setVisible(false);
+    }//GEN-LAST:event_botonAtrasReservaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void botonTramitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTramitarActionPerformed
+        gerente.actualizarFechaReserva(fEntrada.getSelectedDate().getTime(), fSalida.getSelectedDate().getTime());
+        lReservas = new DefaultListModel();
+        listaReservas.setModel(lReservas);
+        
+        for(Object reserva: gerente.consultarReserva()){
+            lReservas.addElement(reserva);
+        }
+        listaReservas.updateUI();
+        this.setVisible(true);
+        reservas.setVisible(false);
+    }//GEN-LAST:event_botonTramitarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botonGuardarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarReservaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botonGuardarReservaActionPerformed
 
     private void btnPiscinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiscinaActionPerformed
         panelClubSocial.setVisible(false);
@@ -976,6 +1036,9 @@ public class VistaGerente extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonAtrasReserva;
+    private javax.swing.JButton botonGuardarReserva;
+    private javax.swing.JButton botonTramitar;
     private javax.swing.ButtonGroup botonesLuz;
     private javax.swing.JButton btnClubSocial;
     private javax.swing.JButton btnFronton;
@@ -1020,9 +1083,7 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JLabel fondobotones8;
     private javax.swing.JLabel fondobotones9;
     private javax.swing.JLabel idReserva;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList3;
@@ -1055,7 +1116,7 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_nomape;
     private javax.swing.JLabel lbl_tel;
     private javax.swing.JList<Object> listaParcelas;
-    private javax.swing.JList<String> listaReservas;
+    private javax.swing.JList<Object> listaReservas;
     private javax.swing.JTextField nombreyApellidos;
     private javax.swing.JPanel panelClubSocial;
     private javax.swing.JPanel panelFronton;
