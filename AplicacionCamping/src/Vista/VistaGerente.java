@@ -133,6 +133,7 @@ public class VistaGerente extends javax.swing.JFrame {
         botonGuardarReserva.setText("Guardar");
         botonGuardarReserva.updateUI();
         botonTramitar.setVisible(true);
+        fondobotones15.setVisible(true);
         botonTramitar.enable(true);
         
     }
@@ -210,7 +211,6 @@ public class VistaGerente extends javax.swing.JFrame {
         btnFronton = new javax.swing.JButton();
         btnClubSocial = new javax.swing.JButton();
         fondo1 = new javax.swing.JLabel();
-        botonesLuz = new javax.swing.ButtonGroup();
         reservas = new javax.swing.JFrame();
         panelPago = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -223,6 +223,7 @@ public class VistaGerente extends javax.swing.JFrame {
         lbparcelas1 = new javax.swing.JLabel();
         lbdias1 = new javax.swing.JLabel();
         lbtotal1 = new javax.swing.JLabel();
+        fondo6 = new javax.swing.JLabel();
         lbl_nomape = new javax.swing.JLabel();
         nombreyApellidos = new javax.swing.JTextField();
         lbl_dni = new javax.swing.JLabel();
@@ -242,9 +243,13 @@ public class VistaGerente extends javax.swing.JFrame {
         txt_cp = new javax.swing.JTextField();
         lbl_cp = new javax.swing.JLabel();
         botonAtrasReserva = new javax.swing.JButton();
+        fondobotones14 = new javax.swing.JLabel();
         botonGuardarReserva = new javax.swing.JButton();
+        fondobotones16 = new javax.swing.JLabel();
         botonTramitar = new javax.swing.JButton();
+        fondobotones15 = new javax.swing.JLabel();
         idReserva = new javax.swing.JLabel();
+        fondo5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btn_administrar = new javax.swing.JButton();
         fondobotones2 = new javax.swing.JLabel();
@@ -600,6 +605,8 @@ public class VistaGerente extends javax.swing.JFrame {
 
         reservas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        panelPago.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         tablaparcelas.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tablaparcelas.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         tablaparcelas.setModel(new javax.swing.table.DefaultTableModel(
@@ -631,88 +638,40 @@ public class VistaGerente extends javax.swing.JFrame {
         tablaparcelas.setShowHorizontalLines(false);
         jScrollPane5.setViewportView(tablaparcelas);
 
+        panelPago.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 435, 93));
+
         lbtotal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbtotal.setText("TOTAL");
+        panelPago.add(lbtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 236, 71, -1));
 
         lbparcelas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbparcelas.setText(" Parcelas");
+        panelPago.add(lbparcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 143, 80, -1));
 
         lbdias.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbdias.setText("Días");
+        panelPago.add(lbdias, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 179, 48, -1));
 
         lbrallitas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbrallitas.setText("------------------------");
+        panelPago.add(lbrallitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 205, 202, -1));
 
         lbdescuento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbdescuento.setText("DESCUENTO     ");
+        panelPago.add(lbdescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 160, 170, -1));
 
         lbparcelas1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelPago.add(lbparcelas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 143, 63, -1));
 
         lbdias1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelPago.add(lbdias1, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 179, 63, 25));
 
         lbtotal1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelPago.add(lbtotal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 236, -1, 25));
 
-        javax.swing.GroupLayout panelPagoLayout = new javax.swing.GroupLayout(panelPago);
-        panelPago.setLayout(panelPagoLayout);
-        panelPagoLayout.setHorizontalGroup(
-            panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPagoLayout.createSequentialGroup()
-                .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPagoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelPagoLayout.createSequentialGroup()
-                                .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lbparcelas, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(panelPagoLayout.createSequentialGroup()
-                                        .addGap(32, 32, 32)
-                                        .addComponent(lbdias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(35, 35, 35)
-                                .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lbparcelas1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbdias1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbdescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(panelPagoLayout.createSequentialGroup()
-                        .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPagoLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lbrallitas, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelPagoLayout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(lbtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lbtotal1)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        panelPagoLayout.setVerticalGroup(
-            panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPagoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPagoLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbparcelas)
-                            .addComponent(lbparcelas1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbdias, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbdias1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelPagoLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(lbdescuento)))
-                .addGap(1, 1, 1)
-                .addComponent(lbrallitas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbtotal1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(179, Short.MAX_VALUE))
-        );
+        fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoazul.png"))); // NOI18N
+        fondo6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelPago.add(fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-450, -50, -1, -1));
 
         reservas.getContentPane().add(panelPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 460, 440));
 
@@ -804,6 +763,8 @@ public class VistaGerente extends javax.swing.JFrame {
 
         botonAtrasReserva.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         botonAtrasReserva.setText("Atras");
+        botonAtrasReserva.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        botonAtrasReserva.setContentAreaFilled(false);
         botonAtrasReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasReservaActionPerformed(evt);
@@ -811,8 +772,14 @@ public class VistaGerente extends javax.swing.JFrame {
         });
         reservas.getContentPane().add(botonAtrasReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 120, 40));
 
+        fondobotones14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones14.setText("jLabel2");
+        reservas.getContentPane().add(fondobotones14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 120, 40));
+
         botonGuardarReserva.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         botonGuardarReserva.setText("Guardar");
+        botonGuardarReserva.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        botonGuardarReserva.setContentAreaFilled(false);
         botonGuardarReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarReservaActionPerformed(evt);
@@ -820,8 +787,14 @@ public class VistaGerente extends javax.swing.JFrame {
         });
         reservas.getContentPane().add(botonGuardarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 520, 120, 40));
 
+        fondobotones16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones16.setText("jLabel2");
+        reservas.getContentPane().add(fondobotones16, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 520, 120, 40));
+
         botonTramitar.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         botonTramitar.setText("Tramitar el pago");
+        botonTramitar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        botonTramitar.setContentAreaFilled(false);
         botonTramitar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonTramitarActionPerformed(evt);
@@ -829,8 +802,16 @@ public class VistaGerente extends javax.swing.JFrame {
         });
         reservas.getContentPane().add(botonTramitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, 220, 40));
 
+        fondobotones15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones15.setText("jLabel2");
+        reservas.getContentPane().add(fondobotones15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, 220, 40));
+
         idReserva.setFont(new java.awt.Font("Georgia", 0, 36)); // NOI18N
         reservas.getContentPane().add(idReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 30, 44, 40));
+
+        fondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoazul.png"))); // NOI18N
+        fondo5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        reservas.getContentPane().add(fondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administración");
@@ -1076,6 +1057,7 @@ public class VistaGerente extends javax.swing.JFrame {
         botonGuardarReserva.setText("Finalizar");
         botonGuardarReserva.updateUI();
         botonTramitar.setVisible(false);
+        fondobotones15.setVisible(false);
         botonTramitar.enable(false);
         
         // Guardamos las parcelas y sus precios en una tabla
@@ -1182,7 +1164,6 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JButton botonAtrasReserva;
     private javax.swing.JButton botonGuardarReserva;
     private javax.swing.JButton botonTramitar;
-    private javax.swing.ButtonGroup botonesLuz;
     private javax.swing.JButton btnClubSocial;
     private javax.swing.JButton btnFronton;
     private javax.swing.JButton btnPiscina;
@@ -1210,12 +1191,17 @@ public class VistaGerente extends javax.swing.JFrame {
     private javax.swing.JLabel fondo2;
     private javax.swing.JLabel fondo3;
     private javax.swing.JLabel fondo4;
+    private javax.swing.JLabel fondo5;
+    private javax.swing.JLabel fondo6;
     private javax.swing.JLabel fondobotones;
     private javax.swing.JLabel fondobotones1;
     private javax.swing.JLabel fondobotones10;
     private javax.swing.JLabel fondobotones11;
     private javax.swing.JLabel fondobotones12;
     private javax.swing.JLabel fondobotones13;
+    private javax.swing.JLabel fondobotones14;
+    private javax.swing.JLabel fondobotones15;
+    private javax.swing.JLabel fondobotones16;
     private javax.swing.JLabel fondobotones2;
     private javax.swing.JLabel fondobotones3;
     private javax.swing.JLabel fondobotones4;
