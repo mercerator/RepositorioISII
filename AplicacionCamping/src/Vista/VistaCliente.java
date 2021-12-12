@@ -13,6 +13,7 @@ import java.util.Calendar;
 import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -108,6 +109,14 @@ public class VistaCliente extends javax.swing.JFrame {
         bttReservas = new javax.swing.JButton();
         bttEventos = new javax.swing.JButton();
         panelReservas = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lMisReservas = new javax.swing.JList<>();
+        btnMod = new javax.swing.JButton();
+        fondobotones6 = new javax.swing.JLabel();
+        btnNReserva = new javax.swing.JButton();
+        fondobotones7 = new javax.swing.JLabel();
+        fondoVistaCLiente2 = new javax.swing.JLabel();
+        fblanco2 = new javax.swing.JLabel();
         panelModReserva = new javax.swing.JPanel();
         lbl_fechentrada = new javax.swing.JLabel();
         fEntrada = new datechooser.beans.DateChooserCombo();
@@ -121,14 +130,6 @@ public class VistaCliente extends javax.swing.JFrame {
         modReservaAtras = new javax.swing.JButton();
         fondobotones10 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        lMisReservas = new javax.swing.JList<>();
-        btnMod = new javax.swing.JButton();
-        fondobotones6 = new javax.swing.JLabel();
-        btnNReserva = new javax.swing.JButton();
-        fondobotones7 = new javax.swing.JLabel();
-        fondoVistaCLiente2 = new javax.swing.JLabel();
-        fblanco2 = new javax.swing.JLabel();
         panelEventos = new javax.swing.JPanel();
         panelFronton = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -195,6 +196,52 @@ public class VistaCliente extends javax.swing.JFrame {
         getContentPane().add(bttEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 30));
 
         panelReservas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lMisReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
+        lMisReservas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lMisReservas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(lMisReservas);
+
+        panelReservas.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 480, 170));
+
+        btnMod.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnMod.setText("Modificar");
+        btnMod.setToolTipText("");
+        btnMod.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnMod.setContentAreaFilled(false);
+        btnMod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModActionPerformed(evt);
+            }
+        });
+        panelReservas.add(btnMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 150, 30));
+
+        fondobotones6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones6.setText("jLabel2");
+        panelReservas.add(fondobotones6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 150, 30));
+
+        btnNReserva.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnNReserva.setText("Nueva Reserva");
+        btnNReserva.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnNReserva.setContentAreaFilled(false);
+        btnNReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNReservaActionPerformed(evt);
+            }
+        });
+        panelReservas.add(btnNReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 150, 30));
+
+        fondobotones7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
+        fondobotones7.setText("jLabel2");
+        panelReservas.add(fondobotones7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 150, 30));
+
+        fondoVistaCLiente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/areaCliente.png"))); // NOI18N
+        fondoVistaCLiente2.setText("jLabel2");
+        panelReservas.add(fondoVistaCLiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, -200, -1, -1));
+
+        fblanco2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
+        fblanco2.setText("jLabel2");
+        panelReservas.add(fblanco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, -1, -1));
 
         panelModReserva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -263,53 +310,7 @@ public class VistaCliente extends javax.swing.JFrame {
         fondo.setPreferredSize(new java.awt.Dimension(240, 260));
         panelModReserva.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 290));
 
-        panelReservas.add(panelModReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 520, 310));
-
-        lMisReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mis Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
-        lMisReservas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lMisReservas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(lMisReservas);
-
-        panelReservas.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 340, 150));
-
-        btnMod.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnMod.setText("Modificar");
-        btnMod.setToolTipText("");
-        btnMod.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnMod.setContentAreaFilled(false);
-        btnMod.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModActionPerformed(evt);
-            }
-        });
-        panelReservas.add(btnMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 150, 30));
-
-        fondobotones6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
-        fondobotones6.setText("jLabel2");
-        panelReservas.add(fondobotones6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 150, 30));
-
-        btnNReserva.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnNReserva.setText("Nueva Reserva");
-        btnNReserva.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnNReserva.setContentAreaFilled(false);
-        btnNReserva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNReservaActionPerformed(evt);
-            }
-        });
-        panelReservas.add(btnNReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 150, 30));
-
-        fondobotones7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/blancoroto.jpg"))); // NOI18N
-        fondobotones7.setText("jLabel2");
-        panelReservas.add(fondobotones7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 150, 30));
-
-        fondoVistaCLiente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/areaCliente.png"))); // NOI18N
-        fondoVistaCLiente2.setText("jLabel2");
-        panelReservas.add(fondoVistaCLiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, -200, -1, -1));
-
-        fblanco2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoBlanco.png"))); // NOI18N
-        fblanco2.setText("jLabel2");
-        panelReservas.add(fblanco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, -1, -1));
+        panelReservas.add(panelModReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 520, 310));
 
         getContentPane().add(panelReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 660, 490));
 
@@ -582,11 +583,16 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_pPiscinaAtrasActionPerformed
 
     private void pPiscinaUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pPiscinaUnirseActionPerformed
-        cliente.unirsePiscina();
-        lEventos.addElement("Piscina");
-        lMisEventos.updateUI();
-        panelPiscina.setVisible(false);
-        actionOn();
+        if(!cliente.getSancion()){
+            cliente.unirsePiscina();
+            lEventos.addElement("Piscina");
+            lMisEventos.updateUI();
+            panelPiscina.setVisible(false);
+            actionOn();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No puedes unirte a un evento. Estás sancionado.", "Sancionado", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_pPiscinaUnirseActionPerformed
 
     private void pFrontonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pFrontonAtrasActionPerformed
@@ -595,19 +601,31 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_pFrontonAtrasActionPerformed
 
     private void pFrontonUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pFrontonUnirseActionPerformed
-        cliente.unirseFronton();
-        lEventos.addElement("Fronton");
-        lMisEventos.updateUI();
-        panelFronton.setVisible(false);
-        actionOn();
+        if(!cliente.getSancion()){
+            cliente.unirseFronton();
+            lEventos.addElement("Fronton");
+            lMisEventos.updateUI();
+            panelFronton.setVisible(false);
+            actionOn();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No puedes unirte a un evento. Estás sancionado.", "Sancionado", JOptionPane.ERROR_MESSAGE);
+        }
+            
     }//GEN-LAST:event_pFrontonUnirseActionPerformed
 
     private void pCLubUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pCLubUnirseActionPerformed
-        cliente.unirseClub();
-        lEventos.addElement("Club Social");
-        lMisEventos.updateUI();
-        panelClub.setVisible(false);
-        actionOn();
+        if(!cliente.getSancion()){
+            cliente.unirseClub();
+            lEventos.addElement("Club Social");
+            lMisEventos.updateUI();
+            panelClub.setVisible(false);    
+            actionOn();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No puedes unirte a un evento. Estás sancionado.", "Sancionado", JOptionPane.ERROR_MESSAGE);
+        }
+        
     }//GEN-LAST:event_pCLubUnirseActionPerformed
 
     private void pClubAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pClubAtrasActionPerformed

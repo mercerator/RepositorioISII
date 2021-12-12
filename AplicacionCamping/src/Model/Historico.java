@@ -14,9 +14,9 @@ import java.util.Date;
 public class Historico {
     private Date fechaEntrada;
     private Date fechaSalida;
-    private int precioTotal;
+    private double precioTotal;
     
-    public Historico(Date fechaEntrada, Date fechaSalida, int precioTotal){
+    public Historico(Date fechaEntrada, Date fechaSalida, double precioTotal){
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
         this.precioTotal = precioTotal;

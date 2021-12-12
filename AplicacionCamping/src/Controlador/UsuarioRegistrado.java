@@ -61,4 +61,5 @@ public class UsuarioRegistrado {
 
         return resultado;
     }
+    
 }

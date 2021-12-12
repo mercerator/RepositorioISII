@@ -30,6 +30,7 @@ public class Camping {
     protected ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
     protected ArrayList<Reserva> reservas = new ArrayList<Reserva>();
     protected ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+    protected ArrayList<Historico> historicos = new ArrayList<Historico>();
 
     protected ArrayList<DatosReserva> reserva = new ArrayList<DatosReserva>();
 
@@ -79,7 +80,7 @@ public class Camping {
         Gerente per4 = new Gerente("Jacques", "123", this);
         usuarios.add(per4);
         
-        Cliente cli = new Cliente("Pepe", "123", this, "", "", "", "");
+        Cliente cli = new Cliente("Pepe", "123", this, "Pepe", "Maria", "jose", "juan");
         usuarios.add(cli);
         
         // Generacion de parcelas
@@ -330,5 +331,23 @@ public class Camping {
     
     public ListasEventos listasEventos(){
         return new ListasEventos(eventoPiscina, eventoFronton, eventoClub);
+    }
+    
+    public void tramitarReserva(Reserva reserva){
+        reserva.tramitarReserva();
+        historicos.add(new Historico(reserva.getFechaIni(), reserva.getFechaFin(), reserva.getPrecioTotal(descuento)));
+        reservas.remove(reserva);
+    }
+    
+    public void sancionarClienteFronton(Cliente cliente){
+        eventoFronton.remove(cliente);
+    }
+    
+    public void sancionarClientePiscina(Cliente cliente){
+        eventoPiscina.remove(cliente);
+    }
+    
+    public void sancionarClienteClub(Cliente cliente){
+        eventoClub.remove(cliente);
     }
 }

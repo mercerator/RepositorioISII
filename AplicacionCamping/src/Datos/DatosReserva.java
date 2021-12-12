@@ -27,6 +27,7 @@ public class DatosReserva {
     public Date fechaIni;
     public Date fechaFin;
     public ArrayList parcelasSeleccionadas = new ArrayList<>();
+    public ArrayList<Integer> precioParcelas = new ArrayList<Integer>();
 
     public DatosReserva(int id, Date fechaIni, Date fechaFin, ArrayList<Parcela> parcelasSeleccionadas, 
             String nombreApellidos, String dni, String telefono, String correo, String cp) {
@@ -39,6 +40,10 @@ public class DatosReserva {
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
         this.parcelasSeleccionadas = parcelasSeleccionadas;
+        
+        for(Parcela p: parcelasSeleccionadas){
+            precioParcelas.add(p.getPrecioDia());
+        }
 
     }
 

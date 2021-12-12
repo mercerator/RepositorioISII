@@ -82,4 +82,29 @@ public class Reserva {
     public int getId() {
         return id;
     }
+    
+    public int getPrecioReserva(){
+        int precioParcelas = 0;
+        for(Parcela p: parcelas){
+            precioParcelas += p.getPrecioDia();
+        }
+        return precioParcelas;
+    }
+    
+    public double getPrecioTotal(int descuento){
+        double precioTotal = this.getDias() * this.getPrecioReserva();
+        
+        if(this.getDias() >= 15)
+            precioTotal -= precioTotal * descuento / 100.0;
+        
+        return precioTotal;
+    }
+    public void tramitarReserva(){
+        cliente.tramitarReserva(this);
+    }
+    
+    public double getDias(){
+        return Math.floor((fechaFin.getTime() - fechaIni.getTime()) / 1000 / 60 / 60 / 24);
+    }
+    
 }

@@ -25,6 +25,7 @@ public class Cliente extends UsuarioRegistrado {
     private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
     private ArrayList<Evento> eventos = new ArrayList<Evento>();
     private Reserva reservaAct;
+    private boolean sancionado = false;
     
     public Cliente(String usuario, String contraseña, Camping camping, String nombreApellidos, String telefono, String correo, String cp) {
         super(usuario, contraseña, camping);
@@ -151,5 +152,22 @@ public class Cliente extends UsuarioRegistrado {
         
     public void eliminarClub(){
         camping.eliminarClub(this);
+    }
+    
+    public void tramitarReserva(Reserva reserva){
+        reservas.remove(reserva);
+    }
+    
+    public boolean getSancion(){
+        return sancionado;
+    }
+    
+    public void setSancion(boolean sancion){
+        sancionado = sancion;
+    }
+    
+    @Override
+    public String toString(){
+        return nombreApellidos;
     }
 }
