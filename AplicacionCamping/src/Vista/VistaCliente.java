@@ -53,12 +53,7 @@ public class VistaCliente extends javax.swing.JFrame {
         }
         
         lEventos = new DefaultListModel();
-        lMisEventos.setModel(lEventos);
-        
-        for(Object evento: this.cliente.getEventos()){
-            lEventos.addElement(evento);
-        }
-        
+        lMisEventos.setModel(lEventos);      
         
     }
     public void actionOff(){

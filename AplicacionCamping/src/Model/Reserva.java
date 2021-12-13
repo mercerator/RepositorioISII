@@ -34,14 +34,6 @@ public class Reserva {
         return cliente.getNombre();
     }
 
-    /*public Boolean getLuz() {
-        return datosreserva.luz;
-    }
-
-    public void setLuz(DatosReserva _luz) {
-        datosreserva = _luz;
-    }
-    */
     public Date getFechaIni() {
         return this.fechaIni;
     }

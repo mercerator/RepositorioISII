@@ -33,15 +33,6 @@ public class Gerente extends UsuarioRegistrado {
         return camping.getDescuento();
     }
 
-    
-    public Object devolverParcelas() {
-        return camping.devolverParcela(i);
-    }
-    
-    public ListaParcelas consultarParcela() {
-        return camping.consultarParcelas();
-    }
-
     public ArrayList consultarReserva() {
         return camping.consultarReserva();
     }

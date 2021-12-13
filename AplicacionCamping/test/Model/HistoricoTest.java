@@ -5,10 +5,21 @@
  */
 package Model;
 
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 /**
  *
  * @author Alex
  */
-public class Evento {
+public class HistoricoTest {
+    
+    public HistoricoTest() {
+    }
+
+    @Test
+    public void testSomeMethod() {
+        assert(true);
+    }
     
 }

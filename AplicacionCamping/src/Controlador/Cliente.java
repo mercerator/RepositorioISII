@@ -8,7 +8,6 @@ package Controlador;
 import Datos.DatosParcela;
 import Datos.DatosReserva;
 import Model.Camping;
-import Model.Evento;
 import Model.Parcela;
 import Model.Reserva;
 import Model.Tienda;
@@ -23,7 +22,6 @@ public class Cliente extends UsuarioRegistrado {
     private String cp;
     private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
     private ArrayList<Tienda> tiendas = new ArrayList<Tienda>();
-    private ArrayList<Evento> eventos = new ArrayList<Evento>();
     private Reserva reservaAct;
     private boolean sancionado = false;
     
@@ -36,22 +34,10 @@ public class Cliente extends UsuarioRegistrado {
         
     }
 
-    //mejor reservas
-    public DatosParcela consultarDatosParcela(Object parcela) {
-        Parcela par = (Parcela) parcela;
-        return par.consultarDatosParcela((ArrayList) parcela);
-    }
-     
     public ArrayList consultarParcelas() {
         return camping.cParcelas();
     }
 
-    /*
-    public ListaParcelas consultarParcelas() {
-        return camping.consultarParcelas();
-    }
-    
-     */
     public void guardarClienteBD(){
         camping.guardarClienteBD(this);
     }
@@ -70,10 +56,6 @@ public class Cliente extends UsuarioRegistrado {
     
     public ArrayList getReservas(){
         return reservas;
-    }
-    
-    public ArrayList getEventos(){
-        return eventos;
     }
 
     public String getNombreApellidos() {

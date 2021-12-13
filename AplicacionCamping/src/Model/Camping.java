@@ -25,7 +25,6 @@ public class Camping {
     protected Cliente cliente;
 
     protected ArrayList<UsuarioRegistrado> usuarios = new ArrayList<UsuarioRegistrado>();
-    protected ArrayList<Actividad> actividades = new ArrayList<Actividad>();
 
     protected ArrayList<Parcela> parcelas = new ArrayList<Parcela>();
     protected ArrayList<Reserva> reservas = new ArrayList<Reserva>();
@@ -122,21 +121,6 @@ public class Camping {
 
     public ArrayList cParcelas() {
         return parcelas;
-    }
-
-    public ListaParcelas consultarParcelas() {
-        return new ListaParcelas(parcelas);
-    }
-
-    public ArrayList<Parcela> consultarParcelasDisponibles() {
-        ArrayList<Parcela> parcelasDisponibles = new ArrayList<>();
-        for (int i = 0; i < parcelasConAsignacion.size(); i++) {
-            Parcela parcela = parcelasConAsignacion.get(i);
-            if (parcela.consultarReservas()) {
-                parcelasDisponibles.add(parcela);
-            }
-        }
-        return parcelasDisponibles;
     }
 
     public ArrayList consultarReserva() {
@@ -350,4 +334,5 @@ public class Camping {
     public void sancionarClienteClub(Cliente cliente){
         eventoClub.remove(cliente);
     }
+    
 }
